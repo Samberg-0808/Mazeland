@@ -3,7 +3,7 @@
 ## Prototype1
 https://user-images.githubusercontent.com/43019291/188762106-7a9d8c32-ecdc-44ea-8f32-f517e22f52ed.MP4
 
-## Prototype2
+## Prototype1
 https://user-images.githubusercontent.com/43019291/188762160-ec72b6b2-8312-4b6b-ace2-a427fa37b2ea.MP4
 
 ## Prototype3

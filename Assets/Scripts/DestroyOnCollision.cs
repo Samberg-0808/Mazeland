@@ -7,13 +7,14 @@ public class DestroyOnCollision : MonoBehaviour
 {
     // Start is called before the first frame updat
 
-    public PlayerControl script;
     public Text MyscoreText;
 
     public Text Timer;
     private int ScoreNum;
 
     public float TimeLeft;
+
+    public GameObject[] enemy;
 
     void Start()
     {
@@ -30,29 +31,58 @@ public class DestroyOnCollision : MonoBehaviour
 
     private void OnCollisionEnter2D(Collision2D collision) {
         
-        if (collision.gameObject.tag == "Circle") {
-
-            if (collision.gameObject.name == "Circle1(Clone)") {
+        if (collision.gameObject.tag == "Coin") {
+            ScoreNum += 5;
+            if (collision.gameObject.name == "coin-1(Clone)") {
                 ScoreNum +=1;
             }
-            else if (collision.gameObject.name == "Circle2(Clone)") {
+            else if (collision.gameObject.name == "coin-2(Clone)") {
+                ScoreNum +=2;
+            }
+            else if (collision.gameObject.name == "coin-3(Clone)") {
                 ScoreNum +=5;
             }
-            else if (collision.gameObject.name == "Circle3(Clone)") {
+            else if (collision.gameObject.name == "coin-4(Clone)") {
                 ScoreNum +=10;
             }
-            else if (collision.gameObject.name == "Circle4(Clone)") {
+            else if (collision.gameObject.name == "coin-5(Clone)") {
                 ScoreNum +=20;
-            }
-            else if (collision.gameObject.name == "Circle5(Clone)") {
-                ScoreNum +=50;
             }
             Destroy(collision.gameObject);
             MyscoreText.text = "Score: " + ScoreNum;
         }
-        if (collision.gameObject.tag == "Bonus") {
+
+        if (collision.gameObject.name == "Enemy-1") {
+            ScoreNum +=1;
+            MyscoreText.text = "Score: " + ScoreNum;
             Destroy(collision.gameObject);
-            script.movementSpeed *=2;
+        }
+
+        if (collision.gameObject.name == "Enemy-2") {
+            if (ScoreNum % 2 == 0) {
+                ScoreNum +=2;
+                MyscoreText.text = "Score: " + ScoreNum;
+            } 
+            else {
+                Vector3 temp = new Vector3(0f,0f,0f);
+                Instantiate(enemy[(ScoreNum%2)-1], temp, transform.rotation);
+                ScoreNum -= 2;
+                MyscoreText.text = "Score: " + ScoreNum;
+            }
+            Destroy(collision.gameObject);
+        }
+        if (collision.gameObject.name == "Enemy-3") {
+            if (ScoreNum % 3 == 0) {
+                ScoreNum +=3;
+                MyscoreText.text = "Score: " + ScoreNum; 
+            } 
+            else {
+                Vector3 temp = new Vector3(2f,2f,0f);
+                Instantiate(enemy[(ScoreNum%3)-1], temp, transform.rotation);
+                ScoreNum -= 3;
+                MyscoreText.text = "Score: " + ScoreNum;
+            }
+            Destroy(collision.gameObject);
         }
     }
 

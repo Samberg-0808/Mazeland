@@ -14,6 +14,7 @@ public class SpawnerGenerator : MonoBehaviour
 
     List<Vector3> EnemyVectors = new List<Vector3> ();
     
+    public sendToGoogle sc = new sendToGoogle();
 
     // Start is called before the first frame update
 
@@ -28,6 +29,12 @@ public class SpawnerGenerator : MonoBehaviour
         if (i % 800 == 0) {
             spawnEnemies();
         }
+    }
+
+    private void Awake() {
+        long _sessionID = System.DateTime.Now.Ticks;
+
+        sc.Send();
     }
 
     void spawnCoins() {

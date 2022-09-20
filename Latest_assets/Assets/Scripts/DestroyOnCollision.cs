@@ -9,7 +9,7 @@ public class DestroyOnCollision : MonoBehaviour
     // Start is called before the first frame updat
 
     public Text MyscoreText;
-
+    public  GameObject point;
     public static event Action OnPlayerScore;
     public Text Timer;
     private int ScoreNum;
@@ -33,6 +33,11 @@ public class DestroyOnCollision : MonoBehaviour
             updateTimer(TimeLeft);
         }
 
+        if(ScoreNum >= 150) {
+            OnPlayerScore?.Invoke();
+            point.SetActive(false);
+        }
+
         progressBar.setProgressBar(ScoreNum);
     }
 
@@ -41,8 +46,10 @@ public class DestroyOnCollision : MonoBehaviour
 
         if (collision.gameObject.name == "Circle") {
             OnPlayerScore?.Invoke();
+            point.SetActive(false);
         }
         if (ScoreNum == 0 & collision.gameObject.tag == "Enemy") {
+            point.SetActive(false);
             OnPlayerScore?.Invoke();
         }
 

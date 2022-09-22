@@ -1,6 +1,6 @@
 # Mazeland
 
-This version is based on Survival_with_Main_Menu/Assets from survial_improvement branch.
+This version is based on Survival_with_Main_Menu/Assets from survial_improvement branch, whitch is also copied into this branch.
 
 Update:
 1. Health system is added with initial life value of 3.

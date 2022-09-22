@@ -51,8 +51,9 @@ public class DestroyOnCollision : MonoBehaviour
             //point.SetActive(false);
         }
         if (ScoreNum == 0 & collision.gameObject.tag == "Enemy") {
-            point.SetActive(false);
-            OnPlayerScore?.Invoke();
+            life.TakeDamage();
+            //point.SetActive(false);
+            //OnPlayerScore?.Invoke();
         }
 
         if (collision.gameObject.tag == "Coin") {
@@ -101,12 +102,13 @@ public class DestroyOnCollision : MonoBehaviour
                 points.transform.GetComponent<TextMesh>().text = "+2";
             } 
             else {
-                Vector3 temp = new Vector3(0f,0f,0f);
-                Instantiate(enemy[(ScoreNum%2)-1], temp, transform.rotation);
-                ScoreNum -= 2;
-                MyscoreText.text = "Score: " + ScoreNum;
-                GameObject points = Instantiate(floatingpoints, transform.position, Quaternion.identity) as GameObject;
-                points.transform.GetComponent<TextMesh>().text = "-2";
+                life.TakeDamage();
+                //Vector3 temp = new Vector3(0f,0f,0f);
+                //Instantiate(enemy[(ScoreNum%2)-1], temp, transform.rotation);
+                //ScoreNum -= 2;
+                //MyscoreText.text = "Score: " + ScoreNum;
+                //GameObject points = Instantiate(floatingpoints, transform.position, Quaternion.identity) as GameObject;
+                //points.transform.GetComponent<TextMesh>().text = "-2";
             }
             Destroy(collision.gameObject);
         }
@@ -118,12 +120,13 @@ public class DestroyOnCollision : MonoBehaviour
                 points.transform.GetComponent<TextMesh>().text = "+3";
             } 
             else {
-                Vector3 temp = new Vector3(2f,2f,0f);
-                Instantiate(enemy[(ScoreNum%3)-1], temp, transform.rotation);
-                ScoreNum -= 3;
-                MyscoreText.text = "Score: " + ScoreNum;
-                GameObject points = Instantiate(floatingpoints, transform.position, Quaternion.identity) as GameObject;
-                points.transform.GetComponent<TextMesh>().text = "-3";
+                life.TakeDamage();
+                //Vector3 temp = new Vector3(2f,2f,0f);
+                //Instantiate(enemy[(ScoreNum%3)-1], temp, transform.rotation);
+                //ScoreNum -= 3;
+                //MyscoreText.text = "Score: " + ScoreNum;
+                //GameObject points = Instantiate(floatingpoints, transform.position, Quaternion.identity) as GameObject;
+                //points.transform.GetComponent<TextMesh>().text = "-3";
             }
             Destroy(collision.gameObject);
         }

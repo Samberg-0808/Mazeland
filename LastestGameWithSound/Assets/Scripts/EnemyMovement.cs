@@ -6,6 +6,8 @@ public class EnemyMovement : MonoBehaviour
 {
     // Start is called before the first frame update
     public float position_change_rate = 2f;
+    // TODO - can move enemy_level to a new 'Enemy.cs' script
+    public int enemy_level = 1;
     private int time_count = 0;
     private int x_sign = 1;
     private int y_sign = 1;

@@ -50,14 +50,11 @@ public class DestroyOnCollision : MonoBehaviour
         if (collision.gameObject.name == "Circle") {
             life.TakeDamage();
             hitSound.Play();
+            Vector3 position_change = (collision.gameObject.transform.position - transform.position);
+            position_change.Normalize();
+            transform.position += position_change;
             //OnPlayerScore?.Invoke();
             //point.SetActive(false);
-        }
-        if (ScoreNum == 0 & collision.gameObject.tag == "Enemy") {
-            life.TakeDamage();
-            hitSound.Play();
-            //point.SetActive(false);
-            //OnPlayerScore?.Invoke();
         }
 
         if (collision.gameObject.tag == "Coin") {
@@ -92,24 +89,23 @@ public class DestroyOnCollision : MonoBehaviour
             gainSound.Play();
         }
 
-        if (collision.gameObject.name == "Enemy-1(Clone)") {
-            ScoreNum +=1;
-            MyscoreText.text = "Score: " + ScoreNum;
-            Destroy(collision.gameObject);
-            GameObject points = Instantiate(floatingpoints, transform.position, Quaternion.identity) as GameObject;
-            points.transform.GetComponent<TextMesh>().text = "+1";
-            gainSound.Play();
-        }
-
-        if (collision.gameObject.name == "Enemy-2(Clone)") {
-            if (ScoreNum % 2 == 0) {
-                ScoreNum +=2;
+        if (collision.gameObject.tag == "Enemy") {
+            int enemy_level = collision.gameObject.GetComponent<EnemyMovement>().enemy_level;
+            if (ScoreNum % enemy_level == 0) {
+                ScoreNum +=enemy_level;
                 MyscoreText.text = "Score: " + ScoreNum;
                 GameObject points = Instantiate(floatingpoints, transform.position, Quaternion.identity) as GameObject;
-                points.transform.GetComponent<TextMesh>().text = "+2";
+                points.transform.GetComponent<TextMesh>().text = "+"+enemy_level;
                 gainSound.Play();
+                Destroy(collision.gameObject);
             } 
             else {
+                /* TODO - consider following improvements for collision
+                   - camera shake when collision happens
+                   - smoother collision effect by overriding player update()
+                   - a very short invincibility period right after collision
+                */
+                transform.position += transform.position - collision.gameObject.transform.position;
                 life.TakeDamage();
                 hitSound.Play();
                 //Vector3 temp = new Vector3(0f,0f,0f);
@@ -119,27 +115,7 @@ public class DestroyOnCollision : MonoBehaviour
                 //GameObject points = Instantiate(floatingpoints, transform.position, Quaternion.identity) as GameObject;
                 //points.transform.GetComponent<TextMesh>().text = "-2";
             }
-            Destroy(collision.gameObject);
-        }
-        if (collision.gameObject.name == "Enemy-3(Clone)") {
-            if (ScoreNum % 3 == 0) {
-                ScoreNum +=3;
-                MyscoreText.text = "Score: " + ScoreNum;
-                GameObject points = Instantiate(floatingpoints, transform.position, Quaternion.identity) as GameObject;
-                points.transform.GetComponent<TextMesh>().text = "+3";
-                gainSound.Play();
-            } 
-            else {
-                life.TakeDamage();
-                hitSound.Play();
-                //Vector3 temp = new Vector3(2f,2f,0f);
-                //Instantiate(enemy[(ScoreNum%3)-1], temp, transform.rotation);
-                //ScoreNum -= 3;
-                //MyscoreText.text = "Score: " + ScoreNum;
-                //GameObject points = Instantiate(floatingpoints, transform.position, Quaternion.identity) as GameObject;
-                //points.transform.GetComponent<TextMesh>().text = "-3";
-            }
-            Destroy(collision.gameObject);
+            
         }
 
         if (ScoreNum < 0) {

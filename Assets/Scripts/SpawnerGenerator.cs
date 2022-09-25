@@ -22,11 +22,11 @@ public class SpawnerGenerator : MonoBehaviour
     void Update()
     {
         i++;
-        if (i % 1000 == 0) {
+        if (i % 200 == 0) {
             spawnCoins();
         }
 
-        if (i % 2000 == 0) {
+        if (i % 400 == 0) {
             spawnEnemies();
         }
         

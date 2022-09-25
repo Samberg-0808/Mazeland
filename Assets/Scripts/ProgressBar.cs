@@ -13,9 +13,9 @@ public class ProgressBar : MonoBehaviour
         image.fillAmount = 0f;
     }
 
-    public void setProgressBar(int score)
+    public void setProgressBar(int score, int target)
     {
-        progressPercentage = score / 50f;
+        progressPercentage = score / (float)target;
         image.fillAmount = progressPercentage;
     }
 }

@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using System;
+using UnityEngine.SceneManagement;
 
 public class DestroyOnCollision : MonoBehaviour
 {
@@ -18,7 +19,14 @@ public class DestroyOnCollision : MonoBehaviour
 
     public GameObject[] enemy;
 
+    public static event Action NextLevel;
     public ProgressBar progressBar;
+    public Dictionary<string, int> levelScoreTarget = new Dictionary<string, int>
+                {
+                    ["Level1"] = 40,
+                    ["Level2"] = 100,
+                    ["Level3"] = 150
+                }; 
 
     public EnemyStatus enemyStatus;
     public GameObject floatingpoints;
@@ -47,12 +55,17 @@ public class DestroyOnCollision : MonoBehaviour
             updateTimer(TimeLeft);
         }
 
-        if(ScoreNum >= 50) {
-            OnPlayerScore?.Invoke();
+        // Return the current Active Scene to get the name of the current scene
+        Scene scene = SceneManager.GetActiveScene();
+
+        if(ScoreNum >= levelScoreTarget[scene.name]) {
+            //OnPlayerScore?.Invoke();
+            //Display the next level menu
+            NextLevel?.Invoke();
             point.SetActive(false);
         }
-
-        progressBar.setProgressBar(ScoreNum);
+    
+        progressBar.setProgressBar(ScoreNum, levelScoreTarget[scene.name]);
 
         enemy = FindObjectsOfType(typeof(GameObject)) as GameObject[]; //关键代码，获取所有gameobject元素给数组obj
         foreach (GameObject child in enemy)    //遍历所有gameobject

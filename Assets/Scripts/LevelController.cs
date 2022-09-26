@@ -21,7 +21,6 @@ public class LevelController : MonoBehaviour
     }
 
     public void StartNextLevel(){
-        DestroyOnCollision.IsNextLevel = true;
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);        
     }
 }

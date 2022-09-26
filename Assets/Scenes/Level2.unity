@@ -2381,6 +2381,7 @@ MonoBehaviour:
   cameraShake: {fileID: 519420033}
   Enemy: {fileID: 0}
   Player: {fileID: 0}
+  sc: {fileID: 708223234}
 --- !u!114 &708223234
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2450,7 +2451,6 @@ MonoBehaviour:
   - {fileID: 840687081}
   - {fileID: 1060530267}
   - {fileID: 1986119459}
-  sc: {fileID: 708223234}
 --- !u!4 &747449436
 Transform:
   m_ObjectHideFlags: 0

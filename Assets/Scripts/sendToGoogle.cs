@@ -19,7 +19,6 @@ public class SendToGoogle : MonoBehaviour{
         this.time_level1 = time_level1;
         this.time_level2 = time_level2;
         this.death_level = death_level;
-
         StartCoroutine(Post(sessionID.ToString(), time_level1.ToString(), time_level2.ToString(), death_level.ToString()));
     }
 

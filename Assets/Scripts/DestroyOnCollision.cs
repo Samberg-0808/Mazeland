@@ -25,7 +25,6 @@ public class DestroyOnCollision : MonoBehaviour
     private long _sessionID;
     private Scene scene;
     public static event Action NextLevel;
-    public static bool IsNextLevel;
     public ProgressBar progressBar;
     public Dictionary<string, int> levelScoreTarget = new Dictionary<string, int>
                 {
@@ -49,7 +48,7 @@ public class DestroyOnCollision : MonoBehaviour
 
     private Stopwatch stopwatch = new Stopwatch();
 
-    
+    private bool death_flag = true;
     private void Awake() {
         _sessionID = System.DateTime.Now.Ticks;
 
@@ -67,7 +66,7 @@ public class DestroyOnCollision : MonoBehaviour
 
         stopwatch.Start();   
 
-        IsNextLevel = false;
+
     }
 
     void Update() {
@@ -77,10 +76,6 @@ public class DestroyOnCollision : MonoBehaviour
         }
 
 
-        if (IsNextLevel) {
-            stopwatch.Start();
-            IsNextLevel = false; 
-        }
 
         // Return the current Active Scene to get the name of the current scene
         scene = SceneManager.GetActiveScene();
@@ -97,6 +92,7 @@ public class DestroyOnCollision : MonoBehaviour
                 sc.Send(_sessionID, levelTime, -1, -1);
             }
             else if (scene.name == "Level2") {
+                UnityEngine.Debug.Log(levelTime);
                 sc.Send(_sessionID, -1, levelTime, -1);
             }
 
@@ -221,7 +217,7 @@ public class DestroyOnCollision : MonoBehaviour
         //     OnPlayerScore?.Invoke();
         // }
 
-        if (life.IsDead()) 
+        if (life.IsDead() & this.death_flag) 
         { 
             OnPlayerScore?.Invoke();
             int level;
@@ -230,12 +226,10 @@ public class DestroyOnCollision : MonoBehaviour
                 sc.Send(_sessionID, -1, -1, level);
             }
             else if (scene.name == "Level2") {
-                stopwatch.Stop();
-                long levelTime = stopwatch.ElapsedMilliseconds;
-                levelTime = levelTime / 1000;
                 level = 2;
-                sc.Send(_sessionID, levelTime, -1, level);
-            } 
+                sc.Send(_sessionID, -1, -1, level);
+            }
+            this.death_flag = false;
         }
     }
 

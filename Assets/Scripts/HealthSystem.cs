@@ -16,10 +16,7 @@ public class HealthSystem : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (dead == true) 
-        {
-            Debug.Log("Game Over");
-        }
+
     
     }
 

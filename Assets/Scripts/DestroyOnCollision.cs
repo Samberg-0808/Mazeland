@@ -4,6 +4,8 @@ using UnityEngine;
 using UnityEngine.UI;
 using System;
 using UnityEngine.SceneManagement;
+using System.Diagnostics;
+using System.Threading;
 
 public class DestroyOnCollision : MonoBehaviour
 {
@@ -15,11 +17,15 @@ public class DestroyOnCollision : MonoBehaviour
     public Text Timer;
     public int ScoreNum;
 
+
     public float TimeLeft;
 
     public GameObject[] enemy;
 
+    private long _sessionID;
+    private Scene scene;
     public static event Action NextLevel;
+    public static bool IsNextLevel;
     public ProgressBar progressBar;
     public Dictionary<string, int> levelScoreTarget = new Dictionary<string, int>
                 {
@@ -39,14 +45,29 @@ public class DestroyOnCollision : MonoBehaviour
     public GameObject Enemy;
     public GameObject Player;
 
+    public SendToGoogle sc = new SendToGoogle();
+
+    private Stopwatch stopwatch = new Stopwatch();
+
+    
+    private void Awake() {
+        _sessionID = System.DateTime.Now.Ticks;
+
+    }
 
     void Start()
     {
+        scene = SceneManager.GetActiveScene();
+        UnityEngine.Debug.Log(scene.name);
         ScoreNum = 0;
         MyscoreText.text = "Score " + ScoreNum;
 
         Enemy = GameObject.FindWithTag("Enemy");
         Player = GameObject.FindWithTag("Player");
+
+        stopwatch.Start();   
+
+        IsNextLevel = false;
     }
 
     void Update() {
@@ -55,10 +76,30 @@ public class DestroyOnCollision : MonoBehaviour
             updateTimer(TimeLeft);
         }
 
-        // Return the current Active Scene to get the name of the current scene
-        Scene scene = SceneManager.GetActiveScene();
 
+        if (IsNextLevel) {
+            stopwatch.Start();
+            IsNextLevel = false; 
+        }
+
+        // Return the current Active Scene to get the name of the current scene
+        scene = SceneManager.GetActiveScene();
         if(ScoreNum >= levelScoreTarget[scene.name]) {
+            ScoreNum = 0;
+            stopwatch.Stop();
+            long levelTime = stopwatch.ElapsedMilliseconds;
+            levelTime = levelTime / 1000;
+
+            //sc.Send(_sessionID, levelTime, -1, -1);
+
+
+            if (scene.name == "Level1") {
+                sc.Send(_sessionID, levelTime, -1, -1);
+            }
+            else if (scene.name == "Level2") {
+                sc.Send(_sessionID, -1, levelTime, -1);
+            }
+
             //OnPlayerScore?.Invoke();
             //Display the next level menu
             NextLevel?.Invoke();
@@ -174,15 +215,27 @@ public class DestroyOnCollision : MonoBehaviour
             // }
         }
 
-        if (ScoreNum < 0) {
-            ScoreNum = 0;
-            Debug.Log("Game Over");
-            OnPlayerScore?.Invoke();
-        }
+        // if (ScoreNum < 0) {
+        //     ScoreNum = 0;
+        //     Debug.Log("Game Over");
+        //     OnPlayerScore?.Invoke();
+        // }
 
         if (life.IsDead()) 
         { 
             OnPlayerScore?.Invoke();
+            int level;
+            if (scene.name == "Level1") {
+                level = 1;
+                sc.Send(_sessionID, -1, -1, level);
+            }
+            else if (scene.name == "Level2") {
+                stopwatch.Stop();
+                long levelTime = stopwatch.ElapsedMilliseconds;
+                levelTime = levelTime / 1000;
+                level = 2;
+                sc.Send(_sessionID, levelTime, -1, level);
+            } 
         }
     }
 
@@ -198,9 +251,9 @@ public class DestroyOnCollision : MonoBehaviour
 
     public IEnumerator GetInvulnerable() {
         Physics.IgnoreCollision(this.GetComponent<Collider>(), Enemy.GetComponent<Collider>(), true);
-        Debug.Log("Disable Collision called");
+        //Debug.Log("Disable Collision called");
         yield return new WaitForSeconds(3f);
-        Debug.Log("ReEnable Collision called");
+        //Debug.Log("ReEnable Collision called");
         Physics.IgnoreCollision(this.GetComponent<Collider>(), Enemy.GetComponent<Collider>(), false);
     }
 }

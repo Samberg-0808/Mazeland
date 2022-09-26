@@ -3,28 +3,27 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Networking;
 
-
-
-public class sendToGoogle : MonoBehaviour{
+public class SendToGoogle : MonoBehaviour{
     // https://docs.google.com/forms/u/1/d/e/1FAIpQLScAKUaeTVtmaZVdJtC2UGpBmcAurawS4vsSKxxMW0_3XSgHCQ/formResponse
     [SerializeField] private string URL;
     // data needs to collect
-    private long _sessionID;
-    private int _testInt;
-    private bool _testBool;
-    private float _testFloat;
+    private long sessionID;
+    private long time_level1;
+    private long time_level2;
+    private int death_level;
 
-    public void Send()
+    public void Send(long sessionID, long time_level1, long time_level2, int death_level)
     {
         // Assign variables
-        _testInt = Random.Range(0, 101);
-        _testBool = true;
-        _testFloat = Random.Range(0.0f, 10.0f);
+        this.sessionID = sessionID;
+        this.time_level1 = time_level1;
+        this.time_level2 = time_level2;
+        this.death_level = death_level;
 
-        StartCoroutine(Post(_sessionID.ToString(), _testInt.ToString(), _testBool.ToString(), _testFloat.ToString()));
+        StartCoroutine(Post(sessionID.ToString(), time_level1.ToString(), time_level2.ToString(), death_level.ToString()));
     }
 
-    private IEnumerator Post(string sessionID, string testInt, string testBool, string testFloat)
+    public IEnumerator Post(string sessionID, string testInt, string testBool, string testFloat)
     {
     // Create the form and enter responses
         WWWForm form = new WWWForm();

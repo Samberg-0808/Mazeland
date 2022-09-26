@@ -2224,8 +2224,8 @@ GameObject:
   - component: {fileID: 708223229}
   - component: {fileID: 708223228}
   - component: {fileID: 708223233}
-  - component: {fileID: 708223234}
   - component: {fileID: 708223235}
+  - component: {fileID: 708223236}
   m_Layer: 0
   m_Name: Player
   m_TagString: Player
@@ -2381,19 +2381,7 @@ MonoBehaviour:
   cameraShake: {fileID: 519420033}
   Enemy: {fileID: 0}
   Player: {fileID: 0}
---- !u!114 &708223234
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 708223227}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 7037f3deb99d76a4d9c58eff4525a7fe, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  URL: https://docs.google.com/forms/u/1/d/e/1FAIpQLScAKUaeTVtmaZVdJtC2UGpBmcAurawS4vsSKxxMW0_3XSgHCQ/formResponse
+  sc: {fileID: 708223236}
 --- !u!114 &708223235
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2411,6 +2399,19 @@ MonoBehaviour:
   - {fileID: 630216526}
   - {fileID: 1457427705}
   life: 3
+--- !u!114 &708223236
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 708223227}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7037f3deb99d76a4d9c58eff4525a7fe, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  URL: https://docs.google.com/forms/u/1/d/e/1FAIpQLScAKUaeTVtmaZVdJtC2UGpBmcAurawS4vsSKxxMW0_3XSgHCQ/formResponse
 --- !u!1 &747449434
 GameObject:
   m_ObjectHideFlags: 0
@@ -2450,7 +2451,6 @@ MonoBehaviour:
   - {fileID: 840687081}
   - {fileID: 1060530267}
   - {fileID: 1986119459}
-  sc: {fileID: 708223234}
 --- !u!4 &747449436
 Transform:
   m_ObjectHideFlags: 0

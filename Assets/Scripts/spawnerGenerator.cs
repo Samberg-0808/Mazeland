@@ -4,69 +4,53 @@ using UnityEngine;
 
 public class spawnerGenerator : MonoBehaviour
 {
-    private const int V = 0;
     private int i = 0;
 
-    public GameObject[] spheres;
+    public GameObject[] coins;
 
-    public GameObject[] bonus;
+    public GameObject[] enemies;
     
-    List<Vector3> vectors = new List<Vector3> ();
+    List<Vector3> CoinVectors = new List<Vector3> ();
 
+    List<Vector3> EnemyVectors = new List<Vector3> ();
+    
     // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
 
     // Update is called once per frame
     void Update()
     {
         i++;
         if (i % 200 == 0) {
-            spawnObjects();
+            spawnCoins();
         }
 
-        if (i % 1000 == 0) {
-            spawnBonus();
+        if (i % 400 == 0) {
+            spawnEnemies();
         }
+        
     }
 
-    void spawnObjects() {
-        int i = Random.Range(0, spheres.Length);
 
+    void spawnCoins() {
+        int r = Random.Range(0, coins.Length);
 
-        Vector3 p1 = new Vector3(-4.92f, -0.18f, 0.0376f);
+        Vector2 center = new Vector2(1.07f, 0.58f);
 
-        Vector3 p2 = new Vector3(-4.92f, 1.44f, 0.0376f);
+        Vector2 randomPoint = center + Random.insideUnitCircle * 4f;
 
-        Vector3 p3 = new Vector3(-4.92f, 3f, 0.0376f);
+        Instantiate(coins[r], randomPoint, transform.rotation);
 
-        Vector3 p4 = new Vector3(-4.92f, -1.73f, 0.0376f);
-
-        Vector3 p5 = new Vector3(-4.92f, -3.26f, 0.0376f);
-
-        vectors.Add(p1);
-        vectors.Add(p2);
-        vectors.Add(p3);
-        vectors.Add(p4);
-        vectors.Add(p5);
-
-        int j = Random.Range(0, vectors.Count);
-
-        GameObject clone;
-
-        clone = (GameObject) Instantiate(spheres[i], vectors[j], transform.rotation);
-
-        clone.GetComponent<Rigidbody2D> ().velocity = 5 * transform.localScale.x * clone.transform.right;
+        
  
     }
 
-    void spawnBonus() {
+    void spawnEnemies() {
+        int r = Random.Range(0, enemies.Length);
 
-        Vector3 a = new Vector3(0f, -0.72f, 0f);
+        Vector2 center = new Vector2(1.07f, 0.58f);
 
-        Instantiate(bonus[0], a, transform.rotation);
+        Vector2 randomPoint = center + Random.insideUnitCircle * 4f;
 
+        Instantiate(enemies[r], randomPoint, transform.rotation);
     }
 }

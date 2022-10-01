@@ -164,7 +164,7 @@ public class DestroyOnCollision : MonoBehaviour
             }
             Destroy(collision.gameObject);
             MyscoreText.text = "Score: " + ScoreNum;
-            // PlayerText.text = ScoreNum.ToString();
+            PlayerText.text = ScoreNum.ToString();
             gainSound.Play();
         }
 
@@ -173,7 +173,7 @@ public class DestroyOnCollision : MonoBehaviour
             if (ScoreNum % enemy_level == 0  && ScoreNum != 0) {
                 ScoreNum += enemy_level;
                 MyscoreText.text = "Score: " + ScoreNum;
-                // PlayerText.text = ScoreNum.ToString();
+                PlayerText.text = ScoreNum.ToString();
                 GameObject points = Instantiate(floatingpoints, transform.position, Quaternion.identity) as GameObject;
                 points.transform.GetComponent<TextMesh>().text = "+"+enemy_level;
                 gainSound.Play();

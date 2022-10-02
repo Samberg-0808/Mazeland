@@ -131,6 +131,7 @@ public class DestroyOnCollision : MonoBehaviour
             Vector3 position_change = (collision.gameObject.transform.position - transform.position);
             position_change.Normalize();
             transform.position += position_change;
+            StartCoroutine(cameraShake.Shake(.15f, .4f));
             //OnPlayerScore?.Invoke();
             //point.SetActive(false);
         }
@@ -192,12 +193,6 @@ public class DestroyOnCollision : MonoBehaviour
                 transform.position += transform.position - collision.gameObject.transform.position;
                 life.TakeDamage();
                 hitSound.Play();
-                //Vector3 temp = new Vector3(0f,0f,0f);
-                //Instantiate(enemy[(ScoreNum%2)-1], temp, transform.rotation);
-                //ScoreNum -= 2;
-                //MyscoreText.text = "Score: " + ScoreNum;
-                //GameObject points = Instantiate(floatingpoints, transform.position, Quaternion.identity) as GameObject;
-                //points.transform.GetComponent<TextMesh>().text = "-2";
 
                 // Add short invincibility period
                 // Physics.IgnoreCollision(Player.GetComponent<Collider>(), Enemy.GetComponent<Collider>(), true);
@@ -205,12 +200,6 @@ public class DestroyOnCollision : MonoBehaviour
             }
 
         }
-
-        // if (ScoreNum < 0) {
-        //     ScoreNum = 0;
-        //     Debug.Log("Game Over");
-        //     OnPlayerScore?.Invoke();
-        // }
 
         if (life.IsDead() & this.death_flag) 
         { 

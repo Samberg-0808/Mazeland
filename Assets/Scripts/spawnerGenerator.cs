@@ -12,6 +12,12 @@ public class spawnerGenerator : MonoBehaviour
 
     public GameObject[] items;
 
+    public int CoinsControl;
+
+    public int EnemiesControl;
+
+    public int startGameTiming;
+
     List<Vector3> CoinVectors = new List<Vector3> ();
 
     List<Vector3> EnemyVectors = new List<Vector3> ();
@@ -24,19 +30,20 @@ public class spawnerGenerator : MonoBehaviour
     void Update()
     {
         i++;
-        if (i % 200 == 0) {
-            spawnCoins();
-        }
+        if (i > startGameTiming){
+            if (i % CoinsControl == 0) {
+                spawnCoins();
+            }
 
-        if (i % 400 == 0) {
-            spawnEnemies();
-        }
+            if (i % EnemiesControl == 0) {
+                spawnEnemies();
+            }
 
-        if (i % 1000 == 0)
-        {
-            spawnItems();
+            if (i % 1000 == 0)
+            {
+                spawnItems();
+            }
         }
-
     }
 
 

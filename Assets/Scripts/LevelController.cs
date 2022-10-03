@@ -25,4 +25,14 @@ public class LevelController : MonoBehaviour
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);      
         Time.timeScale = 1;  
     }
+
+    public void SelectLevelScene(){
+        SceneManager.LoadScene("LevelMenu");
+        Time.timeScale = 1;
+    }
+
+    public void StartTutorial(){
+    SceneManager.LoadScene("Tutorial");
+    Time.timeScale = 1;
+    }
 }

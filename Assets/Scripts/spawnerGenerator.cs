@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class spawnerGenerator : MonoBehaviour
 {
@@ -18,6 +19,8 @@ public class spawnerGenerator : MonoBehaviour
 
     public int startGameTiming;
 
+    public Scene scene;
+
     List<Vector3> CoinVectors = new List<Vector3> ();
 
     List<Vector3> EnemyVectors = new List<Vector3> ();
@@ -25,6 +28,10 @@ public class spawnerGenerator : MonoBehaviour
     List<Vector3> itemVectors = new List<Vector3>();
 
     // Start is called before the first frame update
+    void Start()
+    {
+        scene = SceneManager.GetActiveScene();
+    }
 
     // Update is called once per frame
     void Update()
@@ -39,7 +46,7 @@ public class spawnerGenerator : MonoBehaviour
                 spawnEnemies();
             }
 
-            if (i % 1000 == 0)
+            if (i % 1000 == 0 & scene.name == "Level3")
             {
                 spawnItems();
             }
@@ -72,6 +79,7 @@ public class spawnerGenerator : MonoBehaviour
 
     void spawnItems()
     {
+        
         int r = Random.Range(0, items.Length);
 
         Vector2 center = new Vector2(1.07f, 0.58f);

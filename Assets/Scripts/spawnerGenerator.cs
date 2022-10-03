@@ -19,11 +19,12 @@ public class spawnerGenerator : MonoBehaviour
 
     public int startGameTiming;
 
+    public int totalEnemy;
     public Scene scene;
 
-    List<Vector3> CoinVectors = new List<Vector3> ();
+    List<Vector3> CoinVectors = new List<Vector3>();
 
-    List<Vector3> EnemyVectors = new List<Vector3> ();
+    List<Vector3> EnemyVectors = new List<Vector3>();
 
     List<Vector3> itemVectors = new List<Vector3>();
 
@@ -31,18 +32,23 @@ public class spawnerGenerator : MonoBehaviour
     void Start()
     {
         scene = SceneManager.GetActiveScene();
+        totalEnemy = 0;
     }
 
     // Update is called once per frame
     void Update()
     {
         i++;
-        if (i > startGameTiming){
-            if (i % CoinsControl == 0) {
+        if (i > startGameTiming)
+        {
+            if (i % CoinsControl == 0)
+            {
                 spawnCoins();
             }
 
-            if (i % EnemiesControl == 0) {
+            if (i % EnemiesControl == 0)
+            {
+                totalEnemy++;
                 spawnEnemies();
             }
 
@@ -54,7 +60,8 @@ public class spawnerGenerator : MonoBehaviour
     }
 
 
-    void spawnCoins() {
+    void spawnCoins()
+    {
         int r = Random.Range(0, coins.Length);
 
         Vector2 center = new Vector2(1.07f, 0.58f);
@@ -63,11 +70,12 @@ public class spawnerGenerator : MonoBehaviour
 
         Instantiate(coins[r], randomPoint, transform.rotation);
 
-        
- 
+
+
     }
 
-    void spawnEnemies() {
+    void spawnEnemies()
+    {
         int r = Random.Range(0, enemies.Length);
 
         Vector2 center = new Vector2(1.07f, 0.58f);
@@ -79,7 +87,6 @@ public class spawnerGenerator : MonoBehaviour
 
     void spawnItems()
     {
-        
         int r = Random.Range(0, items.Length);
 
         Vector2 center = new Vector2(1.07f, 0.58f);

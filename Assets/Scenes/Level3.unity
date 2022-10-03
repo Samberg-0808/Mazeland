@@ -2935,11 +2935,13 @@ MonoBehaviour:
   - {fileID: 1986119459}
   progressBar: {fileID: 1530992129}
   enemyStatus: {fileID: 0}
+  enemyKilled: 0
   floatingpoints: {fileID: 1125919789}
   life: {fileID: 708223235}
   speed: {fileID: 708223230}
   gainSound: {fileID: 368366439}
   hitSound: {fileID: 462726317}
+  sg: {fileID: 747449435}
   cameraShake: {fileID: 519420033}
   Enemy: {fileID: 0}
   Player: {fileID: 0}
@@ -3019,6 +3021,9 @@ MonoBehaviour:
   CoinsControl: 400
   EnemiesControl: 200
   startGameTiming: 100
+  totalEnemy: 0
+  scene:
+    m_Handle: 0
 --- !u!4 &747449436
 Transform:
   m_ObjectHideFlags: 0

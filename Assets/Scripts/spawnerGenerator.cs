@@ -9,11 +9,15 @@ public class spawnerGenerator : MonoBehaviour
     public GameObject[] coins;
 
     public GameObject[] enemies;
-    
+
+    public GameObject[] items;
+
     List<Vector3> CoinVectors = new List<Vector3> ();
 
     List<Vector3> EnemyVectors = new List<Vector3> ();
-    
+
+    List<Vector3> itemVectors = new List<Vector3>();
+
     // Start is called before the first frame update
 
     // Update is called once per frame
@@ -27,7 +31,12 @@ public class spawnerGenerator : MonoBehaviour
         if (i % 400 == 0) {
             spawnEnemies();
         }
-        
+
+        if (i % 1000 == 0)
+        {
+            spawnItems();
+        }
+
     }
 
 
@@ -52,5 +61,19 @@ public class spawnerGenerator : MonoBehaviour
         Vector2 randomPoint = center + Random.insideUnitCircle * 4f;
 
         Instantiate(enemies[r], randomPoint, transform.rotation);
+    }
+
+    void spawnItems()
+    {
+        int r = Random.Range(0, items.Length);
+
+        Vector2 center = new Vector2(1.07f, 0.58f);
+
+        Vector2 randomPoint = center + Random.insideUnitCircle * 4f;
+
+        Instantiate(items[r], randomPoint, transform.rotation);
+
+
+
     }
 }

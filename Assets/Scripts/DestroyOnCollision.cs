@@ -39,6 +39,7 @@ public class DestroyOnCollision : MonoBehaviour
     public EnemyStatus enemyStatus;
     public GameObject floatingpoints;
     public HealthSystem life;
+    public PlayerControl speed;
 
     public AudioSource gainSound;
     public AudioSource hitSound;
@@ -199,6 +200,21 @@ public class DestroyOnCollision : MonoBehaviour
                 // StartCoroutine("GetInvulnerable");
             }
 
+        }
+
+        if (collision.gameObject.tag == "Item")
+        {
+
+            if (collision.gameObject.name == "heart-item(Clone)")
+            {
+                life.Heal();
+            }
+            if (collision.gameObject.name == "speed-item(Clone)")
+            {
+                speed.Speed();
+            }
+            Destroy(collision.gameObject);
+            gainSound.Play();
         }
 
         if (life.IsDead() & this.death_flag) 

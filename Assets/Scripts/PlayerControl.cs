@@ -25,4 +25,12 @@ public class PlayerControl : MonoBehaviour
       
     }
 
+    public void Speed()
+    {
+        if (movementSpeed < 6)
+        {
+            movementSpeed++;
+        }
+    }
+
 }

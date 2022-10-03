@@ -26,7 +26,8 @@ public class HealthSystem : MonoBehaviour
         if(life >= 1) 
         {
             life = life - 1;
-            Destroy(hearts[life].gameObject);
+            //Destroy(hearts[life].gameObject);
+            hearts[life].gameObject.active = false;
             Time.timeScale = 1;
         }
 
@@ -34,6 +35,16 @@ public class HealthSystem : MonoBehaviour
         {
             dead = true;
             Time.timeScale = 0;
+        }
+    }
+
+    public void Heal()
+    {
+        if (life < 3)
+        {
+            life = life + 1;
+            hearts[life-1].gameObject.active = true;
+            Time.timeScale = 1;
         }
     }
 

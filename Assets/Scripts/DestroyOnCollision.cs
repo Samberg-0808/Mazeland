@@ -63,6 +63,7 @@ public class DestroyOnCollision : MonoBehaviour
 
     }
 
+    
     void Start()
     {
         enemyKilled = 0;
@@ -77,8 +78,6 @@ public class DestroyOnCollision : MonoBehaviour
         Player = GameObject.FindWithTag("Player");
 
         stopwatch.Start();
-
-
     }
 
     void Update()
@@ -194,6 +193,7 @@ public class DestroyOnCollision : MonoBehaviour
                 points.transform.GetComponent<TextMesh>().text = "+10";
             }
             Destroy(collision.gameObject);
+            sg.currentCoins--;
             MyscoreText.text = "Score: " + ScoreNum;
             PlayerText.text = ScoreNum.ToString();
             gainSound.Play();
@@ -211,6 +211,7 @@ public class DestroyOnCollision : MonoBehaviour
                 points.transform.GetComponent<TextMesh>().text = "+" + enemy_level;
                 gainSound.Play();
                 Destroy(collision.gameObject);
+                sg.currentEnemies--;
                 enemyKilled++;
             }
             else

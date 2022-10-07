@@ -18,13 +18,16 @@ public class UIManager : MonoBehaviour
 
     public void EnableGameOverMenu() {
         gameOverMenu.SetActive(true);
+        Time.timeScale = 0;
     }
 
     public void RestartLevel() {
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
+        Time.timeScale = 1;
     }
 
     public void ReloadMainScene(){
         SceneManager.LoadScene("MainMenu");
+        Time.timeScale = 1;
     }
 }

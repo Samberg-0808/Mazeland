@@ -17,10 +17,22 @@ public class LevelController : MonoBehaviour
 
     public void EnableNextLevelMenu()
     {
+        Time.timeScale = 0;
         nextLevelMenu.SetActive(true);
     }
 
     public void StartNextLevel(){
-        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);        
+        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);      
+        Time.timeScale = 1;  
+    }
+
+    public void SelectLevelScene(){
+        SceneManager.LoadScene("LevelMenu");
+        Time.timeScale = 1;
+    }
+
+    public void StartTutorial(){
+    SceneManager.LoadScene("Tutorial");
+    Time.timeScale = 1;
     }
 }

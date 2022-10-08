@@ -24,7 +24,7 @@ public class EnemyMovement : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+
         // if (time_count == 50){
         //     x_sign = x_sign * 1;
         //     y_sign = y_sign * -1;
@@ -34,19 +34,22 @@ public class EnemyMovement : MonoBehaviour
         //     y_sign = y_sign * 1;
         //     time_count = 0;
         // }
-        
-          
+
+
         // var x_rnd = Random.value;
         // var y_rnd = Random.value;
 
         // transform.position += new Vector3(x_rnd * x_sign, y_rnd * y_sign, 0) * Time.deltaTime * position_change_rate;
 
         // time_count ++;
-    
-        player_pos = GameObject.FindGameObjectWithTag("Player").transform.position;
-        diff = new Vector3 (player_pos.x -transform.position.x  ,  player_pos.y - transform.position.y , 0);
-        diff.Normalize();
-        transform.position += diff * Time.deltaTime * position_change_rate;
+
+        if(this.gameObject.name.IndexOf('(') != -1)
+        {
+            player_pos = GameObject.FindGameObjectWithTag("Player").transform.position;
+            diff = new Vector3(player_pos.x - transform.position.x, player_pos.y - transform.position.y, 0);
+            diff.Normalize();
+            transform.position += diff * Time.deltaTime * position_change_rate;
+        }
         
     }
 }

@@ -5,7 +5,7 @@ using TMPro;
 
 public class PlayerControl : MonoBehaviour
 {
-
+    int i = 0;
     public float movementSpeed = 3.0f;
     // Start is called before the first frame update
     void Start()
@@ -21,7 +21,7 @@ public class PlayerControl : MonoBehaviour
 
         
         transform.position += new Vector3(HorizontalMovement, VerticalMovement, 0) * Time.deltaTime *  movementSpeed;
-        
+        i++;
       
     }
 
@@ -29,7 +29,12 @@ public class PlayerControl : MonoBehaviour
     {
         if (movementSpeed < 6)
         {
-            movementSpeed++;
+            int a = i;
+            movementSpeed+=2;
+            if(i - a > 10)
+            {
+                movementSpeed-=2;
+            }
         }
     }
 

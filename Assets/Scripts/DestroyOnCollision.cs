@@ -20,10 +20,15 @@ public class DestroyOnCollision : MonoBehaviour
 
     public TextMeshPro PlayerText;
 
+    [SerializeField] ParticleSystem healEffect;
+    [SerializeField] ParticleSystem windEffect;
+    [SerializeField] ParticleSystem bombEffect;
+
 
     public float TimeLeft;
 
     public GameObject[] enemy;
+    public GameObject[] coins;
 
     private long _sessionID;
     private Scene scene;
@@ -241,11 +246,33 @@ public class DestroyOnCollision : MonoBehaviour
 
             if (collision.gameObject.name == "heart-item(Clone)")
             {
+                healEffect.Play();
                 life.Heal();
+                //healEffect.Play();
             }
             if (collision.gameObject.name == "speed-item(Clone)")
             {
+                windEffect.Play();
                 speed.Speed();
+            }
+            if (collision.gameObject.name == "bomb-item(Clone)")
+            {
+                bombEffect.Play();
+                foreach (GameObject child in enemy)
+                {
+                    if (child.gameObject.tag == "Enemy" && child.gameObject.name.IndexOf('(') != -1)
+                    {
+                        Destroy(child);
+                    }
+                }
+                coins = FindObjectsOfType(typeof(GameObject)) as GameObject[];
+                foreach (GameObject coin in coins)
+                {
+                    if (coin.gameObject.tag == "Coin" && coin.gameObject.name.IndexOf('(') != -1)
+                    {
+                        Destroy(coin);
+                    }
+                }
             }
             Destroy(collision.gameObject);
             enemyKilled++;

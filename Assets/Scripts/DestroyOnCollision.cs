@@ -39,8 +39,12 @@ public class DestroyOnCollision : MonoBehaviour
         ["Tutorial"] = 1000,
         ["Level1"] = 40,
         ["Level2"] = 100,
+<<<<<<< HEAD
         ["Level3"] = 100,
         ["Level4"] = 100,
+=======
+        ["Level3"] = 150
+>>>>>>> 58249af896447e6d5832f60be1248362cadd31a7
     };
 
     public EnemyStatus enemyStatus;
@@ -164,6 +168,7 @@ public class DestroyOnCollision : MonoBehaviour
             //OnPlayerScore?.Invoke();
             //point.SetActive(false);
         }
+<<<<<<< HEAD
         if (collision.gameObject.name == "rob") 
         {
             life.TakeDamage();
@@ -173,6 +178,8 @@ public class DestroyOnCollision : MonoBehaviour
             transform.position += position_change;
             StartCoroutine(cameraShake.Shake(.15f, .4f));
         }
+=======
+>>>>>>> 58249af896447e6d5832f60be1248362cadd31a7
 
         if (collision.gameObject.tag == "Coin")
         {

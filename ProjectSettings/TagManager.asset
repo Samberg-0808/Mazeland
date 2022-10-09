@@ -3,11 +3,7 @@
 --- !u!78 &1
 TagManager:
   serializedVersion: 2
-  tags:
-  - Coin
-  - Enemy
-  - Item
-  - Rob
+  tags: []
   layers:
   - Default
   - TransparentFX
@@ -29,9 +25,9 @@ TagManager:
   - 
   - 
   - 
-  - Layer 1
-  - Layer 2
-  - Layer 3
+  - 
+  - 
+  - 
   - 
   - 
   - 
@@ -44,16 +40,4 @@ TagManager:
   m_SortingLayers:
   - name: Default
     uniqueID: 0
-    locked: 0
-  - name: Background
-    uniqueID: 2425651459
-    locked: 0
-  - name: Player
-    uniqueID: 4250941897
-    locked: 0
-  - name: Enemy
-    uniqueID: 4189426099
-    locked: 0
-  - name: Rob
-    uniqueID: 799121685
     locked: 0

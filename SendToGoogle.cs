@@ -14,10 +14,6 @@ public class SendToGoogle : MonoBehaviour
     private long time_level1;
     private long time_level2;
     private long time_level3;
-<<<<<<< HEAD
-    // private long time_level6;
-=======
->>>>>>> 58249af896447e6d5832f60be1248362cadd31a7
     private long health;
     private int death_level;
     private int total_enemy_level1;
@@ -26,11 +22,6 @@ public class SendToGoogle : MonoBehaviour
     private int killed_enemy_level2;
     private int total_enemy_level3;
     private int killed_enemy_level3;
-<<<<<<< HEAD
-    // private int total_enemy_level6;
-    // private int killed_enemy_level6;
-=======
->>>>>>> 58249af896447e6d5832f60be1248362cadd31a7
     private bool finishSend = false;
     private bool finishEnemySend = false;
 
@@ -42,10 +33,6 @@ public class SendToGoogle : MonoBehaviour
         this.time_level1 = time_level1;
         this.time_level2 = time_level2;
         this.time_level3 = time_level3;
-<<<<<<< HEAD
-        // this.time_level6 = time_level6;
-=======
->>>>>>> 58249af896447e6d5832f60be1248362cadd31a7
         this.death_level = death_level;
         this.health = health;
         finishSend = true;

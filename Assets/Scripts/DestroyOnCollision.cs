@@ -20,10 +20,15 @@ public class DestroyOnCollision : MonoBehaviour
 
     public TextMeshPro PlayerText;
 
+    [SerializeField] ParticleSystem healEffect;
+    [SerializeField] ParticleSystem windEffect;
+    [SerializeField] ParticleSystem bombEffect;
+
 
     public float TimeLeft;
 
     public GameObject[] enemy;
+    public GameObject[] coins;
 
     private long _sessionID;
     private Scene scene;
@@ -34,7 +39,8 @@ public class DestroyOnCollision : MonoBehaviour
         ["Tutorial"] = 1000,
         ["Level1"] = 40,
         ["Level2"] = 100,
-        ["Level3"] = 150
+        ["Level3"] = 100,
+        ["Level4"] = 100,
     };
 
     public EnemyStatus enemyStatus;
@@ -43,6 +49,7 @@ public class DestroyOnCollision : MonoBehaviour
     public GameObject floatingpoints;
     public HealthSystem life;
     public PlayerControl speed;
+    public static bool enemyfreeze;
 
     public AudioSource gainSound;
     public AudioSource hitSound;
@@ -158,6 +165,15 @@ public class DestroyOnCollision : MonoBehaviour
             //OnPlayerScore?.Invoke();
             //point.SetActive(false);
         }
+        if (collision.gameObject.name == "rob") 
+        {
+            life.TakeDamage();
+            hitSound.Play();
+            Vector3 position_change = (collision.gameObject.transform.position - transform.position);
+            position_change.Normalize();
+            transform.position += position_change;
+            StartCoroutine(cameraShake.Shake(.15f, .4f));
+        }
 
         if (collision.gameObject.tag == "Coin")
         {
@@ -241,11 +257,37 @@ public class DestroyOnCollision : MonoBehaviour
 
             if (collision.gameObject.name == "heart-item(Clone)")
             {
+                healEffect.Play();
                 life.Heal();
+                //healEffect.Play();
             }
             if (collision.gameObject.name == "speed-item(Clone)")
             {
+                windEffect.Play();
                 speed.Speed();
+            }
+            if (collision.gameObject.name == "bomb-item(Clone)")
+            {
+                bombEffect.Play();
+                foreach (GameObject child in enemy)
+                {
+                    if (child.gameObject.tag == "Enemy" && child.gameObject.name.IndexOf('(') != -1)
+                    {
+                        Destroy(child);
+                    }
+                }
+                coins = FindObjectsOfType(typeof(GameObject)) as GameObject[];
+                foreach (GameObject coin in coins)
+                {
+                    if (coin.gameObject.tag == "Coin" && coin.gameObject.name.IndexOf('(') != -1)
+                    {
+                        Destroy(coin);
+                    }
+                }
+            }
+            if (collision.gameObject.name == "enemyfreeze-item(Clone)")
+            {
+                StartCoroutine(freeze());
             }
             Destroy(collision.gameObject);
             enemyKilled++;
@@ -296,5 +338,13 @@ public class DestroyOnCollision : MonoBehaviour
         yield return new WaitForSeconds(3f);
         //Debug.Log("ReEnable Collision called");
         Physics.IgnoreCollision(this.GetComponent<Collider>(), Enemy.GetComponent<Collider>(), false);
+    }
+    
+    public IEnumerator freeze()
+    {
+        enemyfreeze = true;
+        yield return new WaitForSeconds(5.0f);
+        print("i hate this2");
+        enemyfreeze = false;
     }
 }

@@ -30,11 +30,11 @@ public class spawnerGenerator : MonoBehaviour
 
 
 
-    List<Vector3> CoinVectors = new List<Vector3>();
+    List<Vector2> CoinVectors = new List<Vector2>();
 
-    List<Vector3> EnemyVectors = new List<Vector3>();
+    List<Vector2> EnemyVectors = new List<Vector2>();
 
-    List<Vector3> itemVectors = new List<Vector3>();
+    List<Vector2> itemVectors = new List<Vector2>();
 
     // Start is called before the first frame update
     void Start()
@@ -78,9 +78,12 @@ public class spawnerGenerator : MonoBehaviour
         int r = Random.Range(0, coins.Length);
 
         Vector2 center = new Vector2(1.07f, 0.58f);
-
         Vector2 randomPoint = center + Random.insideUnitCircle * 4f;
+        if (scene.name == "Level3")
+        {
+            randomPoint = center + Random.insideUnitCircle * 50f;
 
+        }
         Instantiate(coins[r], randomPoint, transform.rotation);
 
 
@@ -96,9 +99,12 @@ public class spawnerGenerator : MonoBehaviour
         int r = Random.Range(0, enemies.Length);
 
         Vector2 center = new Vector2(1.07f, 0.58f);
-
         Vector2 randomPoint = center + Random.insideUnitCircle * 4f;
+        if (scene.name == "Level3")
+        {
+            randomPoint = center + Random.insideUnitCircle * 50f;
 
+        }
         Instantiate(enemies[r], randomPoint, transform.rotation);
     }
 
@@ -111,7 +117,11 @@ public class spawnerGenerator : MonoBehaviour
         Vector2 center = new Vector2(1.07f, 0.58f);
 
         Vector2 randomPoint = center + Random.insideUnitCircle * 4f;
+        if (scene.name == "Level3")
+        {
+            randomPoint = center + Random.insideUnitCircle * 50f;
 
+        }
         Instantiate(items[r], randomPoint, transform.rotation);
 
 

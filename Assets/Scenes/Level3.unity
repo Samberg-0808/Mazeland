@@ -2842,6 +2842,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   movementSpeed: 3
+<<<<<<< Updated upstream
+=======
+  timestop: 0
+>>>>>>> Stashed changes
 --- !u!212 &708223231
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -3016,8 +3020,15 @@ MonoBehaviour:
   - {fileID: 1060530267}
   - {fileID: 1986119459}
   items:
+<<<<<<< Updated upstream
   - {fileID: 781783255}
   - {fileID: 1604728762}
+=======
+  - {fileID: 106401204}
+  - {fileID: 1617559911}
+  - {fileID: 1604728762}
+  - {fileID: 781783255}
+>>>>>>> Stashed changes
   CoinsControl: 400
   EnemiesControl: 200
   startGameTiming: 100
@@ -4916,7 +4927,11 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
+<<<<<<< Updated upstream
   m_RootOrder: 15
+=======
+  m_RootOrder: 14
+>>>>>>> Stashed changes
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1167111752
 GameObject:

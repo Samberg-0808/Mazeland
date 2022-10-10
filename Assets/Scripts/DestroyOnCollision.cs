@@ -17,6 +17,7 @@ public class DestroyOnCollision : MonoBehaviour
     public static event Action OnPlayerScore;
     public Text Timer;
     public int ScoreNum;
+    public static bool timefreeze = false;
 
     public TextMeshPro PlayerText;
 
@@ -297,4 +298,18 @@ public class DestroyOnCollision : MonoBehaviour
         //Debug.Log("ReEnable Collision called");
         Physics.IgnoreCollision(this.GetComponent<Collider>(), Enemy.GetComponent<Collider>(), false);
     }
+<<<<<<< Updated upstream
+=======
+    
+    public IEnumerator freeze()
+    {
+        Time.timeScale = 0.01f;
+        timefreeze = true;
+        print("i hate this");
+        yield return new WaitForSeconds(0.07f);
+        print("i hate this2");
+        timefreeze = false;
+        Time.timeScale = 1;
+    }
+>>>>>>> Stashed changes
 }

@@ -79,7 +79,11 @@ public class spawnerGenerator : MonoBehaviour
 
         Vector2 center = new Vector2(1.07f, 0.58f);
 
+<<<<<<< Updated upstream
         Vector2 randomPoint = center + Random.insideUnitCircle * 4f;
+=======
+        Vector2 randomPoint = center + Random.insideUnitCircle * 50f;
+>>>>>>> Stashed changes
 
         Instantiate(coins[r], randomPoint, transform.rotation);
 
@@ -97,7 +101,11 @@ public class spawnerGenerator : MonoBehaviour
 
         Vector2 center = new Vector2(1.07f, 0.58f);
 
+<<<<<<< Updated upstream
         Vector2 randomPoint = center + Random.insideUnitCircle * 4f;
+=======
+        Vector2 randomPoint = center + Random.insideUnitCircle * 50f;
+>>>>>>> Stashed changes
 
         Instantiate(enemies[r], randomPoint, transform.rotation);
     }
@@ -110,7 +118,11 @@ public class spawnerGenerator : MonoBehaviour
 
         Vector2 center = new Vector2(1.07f, 0.58f);
 
+<<<<<<< Updated upstream
         Vector2 randomPoint = center + Random.insideUnitCircle * 4f;
+=======
+        Vector2 randomPoint = center + Random.insideUnitCircle * 50f;
+>>>>>>> Stashed changes
 
         Instantiate(items[r], randomPoint, transform.rotation);
 

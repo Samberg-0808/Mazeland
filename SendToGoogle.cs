@@ -4,84 +4,58 @@ using UnityEngine;
 using UnityEngine.Networking;
 
 
-public class SendToGoogle : MonoBehaviour
+
+public class sendToGoogle : MonoBehaviour
 {
     // https://docs.google.com/forms/u/1/d/e/1FAIpQLScAKUaeTVtmaZVdJtC2UGpBmcAurawS4vsSKxxMW0_3XSgHCQ/formResponse
     [SerializeField] private string URL;
-    
     // data needs to collect
     private long sessionID;
-    private long time_level1;
-    private long time_level2;
-    private long time_level3;
+    private long passed_level;
+    private long time;
     private long health;
     private int death_level;
-    private int total_enemy_level1;
-    private int killed_enemy_level1;
-    private int total_enemy_level2;
-    private int killed_enemy_level2;
-    private int total_enemy_level3;
-    private int killed_enemy_level3;
-    private bool finishSend = false;
-    private bool finishEnemySend = false;
+    private int total_enemy;
+    private int killed_enemy;
+    private int total_point;
+    private int gained_point;
+    private int total_item;
+    private int gained_item;
 
 
-    public void Send(long sessionID, long time_level1, long time_level2, long time_level3, int death_level, int health)
+    public void Send(long sessionID, long passed_level, long time, int health, int death_level, int total_enemy, int killed_enemy, int total_point, int gained_point, int total_item, int gained_item)
     {
         // Assign variables
         this.sessionID = sessionID;
-        this.time_level1 = time_level1;
-        this.time_level2 = time_level2;
-        this.time_level3 = time_level3;
-        this.death_level = death_level;
+        this.passed_level = passed_level;
+        this.time = time;
         this.health = health;
-        finishSend = true;
-        if (finishSend & finishEnemySend)
-        {
-            StartCoroutine(Post(sessionID.ToString(), time_level1.ToString(), time_level2.ToString(), time_level3.ToString(), health.ToString(), death_level.ToString(), total_enemy_level1.ToString(), killed_enemy_level1.ToString(), total_enemy_level2.ToString(), killed_enemy_level2.ToString(), total_enemy_level3.ToString(), killed_enemy_level3.ToString()));
-            finishSend = false;
-            finishEnemySend = false;
-        }
+        this.death_level = death_level;
+        this.total_enemy = total_enemy;
+        this.killed_enemy = killed_enemy;
+        this.total_point = total_point;
+        this.gained_point = gained_point;
+        this.total_item = total_item;
+        this.gained_item = gained_item;
+
+        StartCoroutine(Post(sessionID.ToString(), passed_level.ToString(), time.ToString(), health.ToString(), death_level.ToString(), total_enemy.ToString(), killed_enemy.ToString(), total_point.ToString(), gained_point.ToString(), total_item.ToString(), gained_item.ToString()));
     }
 
-    public void enemySend(int total_enemy_level1, int killed_enemy_level1, int total_enemy_level2, int killed_enemy_level2, int total_enemy_level3, int killed_enemy_level3)
-    {
-        // Assign variables
-        
-        this.total_enemy_level1 = 5;
-        this.killed_enemy_level1 = 10;
-        this.total_enemy_level2 = total_enemy_level2;
-        this.killed_enemy_level2 = killed_enemy_level2;
-        this.total_enemy_level3 = total_enemy_level3;
-        this.killed_enemy_level3 = killed_enemy_level3;
-        finishEnemySend = true;
-        if (finishSend & finishEnemySend)
-        {
-            StartCoroutine(Post(sessionID.ToString(), time_level1.ToString(), time_level2.ToString(), time_level3.ToString(), health.ToString(), death_level.ToString(), total_enemy_level1.ToString(), killed_enemy_level1.ToString(), total_enemy_level2.ToString(), killed_enemy_level2.ToString(), total_enemy_level3.ToString(), killed_enemy_level3.ToString()));
-            
-            finishSend = false;
-            finishEnemySend = false;
-        }
-    }
-
-
-    public IEnumerator Post(string sessionID, string time_level1, string time_level2, string time_level3, string health, string death_level, string total_enemy_level1, string killed_enemy_level1, string total_enemy_level2, string killed_enemy_level2, string total_enemy_level3, string killed_enemy_level3)
+    public IEnumerator Post(string sessionID, string passed_level, string time, string health, string death_level, string total_enemy, string killed_enemy, string total_point, string gained_point, string total_item, string gained_item)
     {
         // Create the form and enter responses
         WWWForm form = new WWWForm();
         form.AddField("entry.2147114500", sessionID);
-        form.AddField("entry.1520665706", time_level1);
-        form.AddField("entry.395357265", time_level2);
-        form.AddField("entry.1702477465", time_level3);
+        form.AddField("entry.1520665706", passed_level);
+        form.AddField("entry.395357265", time);
         form.AddField("entry.1270885527", health);
         form.AddField("entry.1433072369", death_level);
-        form.AddField("entry.1493968021", total_enemy_level1);
-        form.AddField("entry.1140383565", killed_enemy_level1);
-        form.AddField("entry.1678029494", total_enemy_level2);
-        form.AddField("entry.1786326949", killed_enemy_level2);
-        form.AddField("entry.571703737", total_enemy_level3);
-        form.AddField("entry.631109625", killed_enemy_level3);
-        Debug.Log(total_enemy_level1);
+        form.AddField("entry.1493968021", total_enemy);
+        form.AddField("entry.1140383565", killed_enemy);
+        form.AddField("entry.1678029494", total_point);
+        form.AddField("entry.1786326949", gained_point);
+        form.AddField("entry.571703737", total_item);
+        form.AddField("entry.631109625", gained_item);
         using (UnityWebRequest www = UnityWebRequest.Post(URL, form))
         {
             yield return www.SendWebRequest();

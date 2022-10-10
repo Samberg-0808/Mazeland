@@ -51,6 +51,7 @@
      <Compile Include="Assets/Epic Toon FX/Demo/Scripts/ETFXTarget.cs" />
      <Compile Include="Assets/Epic Toon FX/Scripts/ETFXRotation.cs" />
      <Compile Include="Assets/Scripts/PlayerControl.cs" />
+     <Compile Include="Assets/ElementalMeters/Scripts/MeterButtons.cs" />
      <Compile Include="Assets/Scripts/MainMenu.cs" />
      <Compile Include="Assets/Epic Toon FX/Demo/Scripts/ETFXSceneManager.cs" />
      <Compile Include="Assets/Scripts/EnemyStatus.cs" />
@@ -68,11 +69,10 @@
      <Compile Include="Assets/Scripts/CameraShake.cs" />
      <Compile Include="Assets/Scripts/UIManager.cs" />
      <Compile Include="Assets/Epic Toon FX/Demo/Scripts/ETFXProjectileScript.cs" />
-     <Compile Include="Assets/Scripts/OpenSkipTutorial.cs" />
-     <Compile Include="Assets/Scripts/spawnerGenerator.cs" />
-     <Compile Include="Assets/ElementalMeters/Scripts/MeterButtons.cs" />
-     <Compile Include="Assets/ElementalMeters/Scripts/PlayerController.cs" />
      <Compile Include="Assets/ElementalMeters/Scripts/MeterScript.cs" />
+     <Compile Include="Assets/Scripts/OpenSkipTutorial.cs" />
+     <Compile Include="Assets/ElementalMeters/Scripts/PlayerController.cs" />
+     <Compile Include="Assets/Scripts/spawnerGenerator.cs" />
      <None Include="Assets/TextMesh Pro/Shaders/TMPro.cginc" />
      <None Include="Assets/Epic Toon FX/Prefabs/Environment/Environment FX.txt" />
      <None Include="Assets/TextMesh Pro/Shaders/TMP_SDF-Mobile Overlay.shader" />

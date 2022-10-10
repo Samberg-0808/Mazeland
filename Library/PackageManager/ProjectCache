@@ -5,7 +5,7 @@ m_ProjectFiles:
     m_ContentTrackingEnabled: 1
     m_ModificationDate:
       serializedVersion: 2
-      ticks: 638009569350000000
+      ticks: 638010324410000000
     m_Hash: 4074846344
   m_LockFileStatus:
     m_FilePath: /Users/nokathrine/Documents/GitHub/Mazeland/Packages/packages-lock.json
@@ -13,7 +13,7 @@ m_ProjectFiles:
     m_ContentTrackingEnabled: 1
     m_ModificationDate:
       serializedVersion: 2
-      ticks: 638009569420000000
+      ticks: 638010324410000000
     m_Hash: 553237153
 m_EmbeddedPackageManifests:
   m_ManifestsStatus: {}
@@ -95,6 +95,7 @@ m_ResolvedPackages:
     - 1.17.0
     - 1.17.1
     - 1.17.2
+    - 1.17.6
     - 2.0.0-preview.6
     - 2.0.0-preview.8
     - 2.0.0-preview.15
@@ -108,6 +109,7 @@ m_ResolvedPackages:
     compatible:
     - 1.17.1
     - 1.17.2
+    - 1.17.6
     - 2.0.0-preview.6
     - 2.0.0-preview.8
     - 2.0.0-preview.15
@@ -118,7 +120,7 @@ m_ResolvedPackages:
     - 2.1.0-preview.3
     - 2.1.0-preview.5
     - 2.1.0-preview.6
-    verified: 1.17.2
+    verified: 1.17.6
   dependencies:
   - name: com.unity.services.core
     version: 1.0.1

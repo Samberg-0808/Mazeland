@@ -49,6 +49,7 @@ public class DestroyOnCollision : MonoBehaviour
     public GameObject floatingpoints;
     public HealthSystem life;
     public PlayerControl speed;
+    public static bool enemyfreeze;
 
     public AudioSource gainSound;
     public AudioSource hitSound;
@@ -284,7 +285,7 @@ public class DestroyOnCollision : MonoBehaviour
                     }
                 }
             }
-            if (collision.gameObject.name == "atimefreeze-item(Clone)")
+            if (collision.gameObject.name == "enemyfreeze-item(Clone)")
             {
                 StartCoroutine(freeze());
             }
@@ -341,10 +342,9 @@ public class DestroyOnCollision : MonoBehaviour
     
     public IEnumerator freeze()
     {
-        Time.timeScale = 0.001f;
-        print("i hate this");
-        yield return new WaitForSeconds(0.007f);
+        enemyfreeze = true;
+        yield return new WaitForSeconds(5.0f);
         print("i hate this2");
-        Time.timeScale = 1;
+        enemyfreeze = false;
     }
 }

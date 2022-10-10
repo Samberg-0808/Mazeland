@@ -6,7 +6,7 @@ using UnityEngine;
 public class EnemyMovement : MonoBehaviour
 {
     // Start is called before the first frame update
-    public float position_change_rate = 0.2f;
+    public float position_change_rate = 1.0f;
     // TODO - can move enemy_level to a new 'Enemy.cs' script
     public int enemy_level = 1;
 
@@ -28,8 +28,14 @@ public class EnemyMovement : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-
-
+        if (DestroyOnCollision.enemyfreeze == true)
+        {
+            position_change_rate = 0.0f;
+        }
+        if (DestroyOnCollision.enemyfreeze == false)
+        {
+            position_change_rate = 1.0f;
+        }
         // if (time_count == 50){
         //     x_sign = x_sign * 1;
         //     y_sign = y_sign * -1;
@@ -66,4 +72,5 @@ public class EnemyMovement : MonoBehaviour
             transform.position += position_change;
         }
     }
+
 }

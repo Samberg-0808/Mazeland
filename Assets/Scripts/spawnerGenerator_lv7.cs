@@ -86,7 +86,7 @@ public class spawnerGenerator_lv7 : MonoBehaviour
 
         if (locationCount == 0)
         {
-            Vector2 center = new Vector2(1.43f, 2.22f);
+            Vector2 center = new Vector2(0f, 5.5f);
 
             Vector2 randomPoint = center + Random.insideUnitCircle * randomRange;
 
@@ -94,14 +94,14 @@ public class spawnerGenerator_lv7 : MonoBehaviour
         }
         else if (locationCount == 1)
         {
-            Vector2 center = new Vector2(6.29f, -6.41f);
+            Vector2 center = new Vector2(-4.7f, -2.3f);
 
             Vector2 randomPoint = center + Random.insideUnitCircle * randomRange;
 
             Instantiate(coins[r], randomPoint, transform.rotation);
         }
         else {
-            Vector2 center = new Vector2(-3.34f, -6.41f);
+            Vector2 center = new Vector2(4.3f, -2.8f);
 
             Vector2 randomPoint = center + Random.insideUnitCircle * randomRange;
 
@@ -123,7 +123,7 @@ public class spawnerGenerator_lv7 : MonoBehaviour
 
         if (locationCount == 0)
         {
-            Vector2 center = new Vector2(1.43f, 2.22f);
+            Vector2 center = new Vector2(0f, 5.5f);
 
             Vector2 randomPoint = center + Random.insideUnitCircle * randomRange;
 
@@ -131,7 +131,7 @@ public class spawnerGenerator_lv7 : MonoBehaviour
         }
         else if (locationCount == 1)
         {
-            Vector2 center = new Vector2(6.29f, -6.41f);
+            Vector2 center = new Vector2(-4.7f, -2.3f);
 
             Vector2 randomPoint = center + Random.insideUnitCircle * randomRange;
 
@@ -139,7 +139,7 @@ public class spawnerGenerator_lv7 : MonoBehaviour
         }
         else
         {
-            Vector2 center = new Vector2(-3.34f, -6.41f);
+            Vector2 center = new Vector2(4.3f, -2.8f);
 
             Vector2 randomPoint = center + Random.insideUnitCircle * randomRange;
 
@@ -157,7 +157,7 @@ public class spawnerGenerator_lv7 : MonoBehaviour
 
         if (locationCount == 0)
         {
-            Vector2 center = new Vector2(1.43f, 2.22f);
+            Vector2 center = new Vector2(0f, 5.5f);
 
             Vector2 randomPoint = center + Random.insideUnitCircle * randomRange;
 
@@ -165,7 +165,7 @@ public class spawnerGenerator_lv7 : MonoBehaviour
         }
         else if (locationCount == 1)
         {
-            Vector2 center = new Vector2(6.29f, -6.41f);
+            Vector2 center = new Vector2(-4.7f, -2.3f);
 
             Vector2 randomPoint = center + Random.insideUnitCircle * randomRange;
 
@@ -173,7 +173,7 @@ public class spawnerGenerator_lv7 : MonoBehaviour
         }
         else
         {
-            Vector2 center = new Vector2(-3.34f, -6.41f);
+            Vector2 center = new Vector2(4.3f, -2.8f);
 
             Vector2 randomPoint = center + Random.insideUnitCircle * randomRange;
 

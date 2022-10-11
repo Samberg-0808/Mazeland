@@ -16,9 +16,9 @@ public class EnemyStatus : MonoBehaviour
     public void updateColor(int ScoreNum) {
         if (ScoreNum > 0) {
             if (ScoreNum % enemy_level == 0) {
-                sr.color = new Color(0, 1, 0, 1);//green
+                sr.color = new Color32(93, 255, 185, 255);//green
             } else {
-                sr.color = new Color(1, 0, 0, 1);//red
+                sr.color = new Color32(239, 83, 98, 255);//red
             }
         }
     }

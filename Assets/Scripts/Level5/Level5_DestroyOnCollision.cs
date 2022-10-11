@@ -35,8 +35,8 @@ public class Level5_DestroyOnCollision : MonoBehaviour
         ["Tutorial"] = 1000,
         ["Level1"] = 40,
         ["Level2"] = 100,
-        ["Level3"] = 150,
-        ["Level5"] = 10
+        ["Level3"] = 100,
+        ["Level5"] = 100
     };
 
     public EnemyStatus enemyStatus;

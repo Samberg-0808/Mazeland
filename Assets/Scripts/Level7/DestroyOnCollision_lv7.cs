@@ -34,7 +34,7 @@ public class DestroyOnCollision_lv7 : MonoBehaviour
         ["Tutorial"] = 1000,
         ["Level1"] = 40,
         ["Level2"] = 100,
-        ["Level3"] = 150,
+        ["Level3"] = 100,
         ["Level7"] = 40
     };
 

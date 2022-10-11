@@ -418,8 +418,8 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 309448951}
-        m_TargetAssemblyTypeName: LevelController, Assembly-CSharp
+      - m_Target: {fileID: 309448953}
+        m_TargetAssemblyTypeName: Level7_LevelController, Assembly-CSharp
         m_MethodName: SelectLevelScene
         m_Mode: 1
         m_Arguments:
@@ -552,8 +552,8 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 309448950}
-        m_TargetAssemblyTypeName: UIManager, Assembly-CSharp
+      - m_Target: {fileID: 309448952}
+        m_TargetAssemblyTypeName: Level7_UIManager, Assembly-CSharp
         m_MethodName: RestartLevel
         m_Mode: 1
         m_Arguments:
@@ -1070,8 +1070,8 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 309448951}
-        m_TargetAssemblyTypeName: LevelController, Assembly-CSharp
+      - m_Target: {fileID: 309448953}
+        m_TargetAssemblyTypeName: Level7_LevelController, Assembly-CSharp
         m_MethodName: StartNextLevel
         m_Mode: 1
         m_Arguments:
@@ -1132,8 +1132,8 @@ GameObject:
   - component: {fileID: 309448948}
   - component: {fileID: 309448947}
   - component: {fileID: 309448946}
-  - component: {fileID: 309448950}
-  - component: {fileID: 309448951}
+  - component: {fileID: 309448952}
+  - component: {fileID: 309448953}
   m_Layer: 5
   m_Name: Canvas
   m_TagString: Untagged
@@ -1233,7 +1233,7 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0, y: 0}
---- !u!114 &309448950
+--- !u!114 &309448952
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -1242,11 +1242,11 @@ MonoBehaviour:
   m_GameObject: {fileID: 309448945}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 282d87f43ab464823a44abb6f94413e3, type: 3}
+  m_Script: {fileID: 11500000, guid: f54a518a78682e14d8c8e3dc55dab56e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   gameOverMenu: {fileID: 1874956005}
---- !u!114 &309448951
+--- !u!114 &309448953
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -1255,7 +1255,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 309448945}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 8508e42de4881c046b59a2a89af92467, type: 3}
+  m_Script: {fileID: 11500000, guid: 5eddf354077897e4a899e1788e023245, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   nextLevelMenu: {fileID: 1042238446}
@@ -3605,8 +3605,8 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 309448950}
-        m_TargetAssemblyTypeName: UIManager, Assembly-CSharp
+      - m_Target: {fileID: 309448952}
+        m_TargetAssemblyTypeName: Level7_UIManager, Assembly-CSharp
         m_MethodName: ReloadMainScene
         m_Mode: 1
         m_Arguments:
@@ -6130,8 +6130,8 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 309448950}
-        m_TargetAssemblyTypeName: UIManager, Assembly-CSharp
+      - m_Target: {fileID: 309448952}
+        m_TargetAssemblyTypeName: Level7_UIManager, Assembly-CSharp
         m_MethodName: RestartLevel
         m_Mode: 1
         m_Arguments:
@@ -7784,8 +7784,8 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 309448950}
-        m_TargetAssemblyTypeName: UIManager, Assembly-CSharp
+      - m_Target: {fileID: 309448952}
+        m_TargetAssemblyTypeName: Level7_UIManager, Assembly-CSharp
         m_MethodName: ReloadMainScene
         m_Mode: 1
         m_Arguments:

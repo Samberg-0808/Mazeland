@@ -8,7 +8,7 @@ using System.Diagnostics;
 using System.Threading;
 using TMPro;
 
-public class DestroyOnCollision : MonoBehaviour
+public class Level5_DestroyOnCollision : MonoBehaviour
 {
     // Start is called before the first frame updat
 
@@ -18,8 +18,9 @@ public class DestroyOnCollision : MonoBehaviour
     public Text Timer;
     public int ScoreNum;
 
-    public TextMeshPro PlayerText;
+    public HideMask hidemask;
 
+    public TextMeshPro PlayerText;
 
     public float TimeLeft;
 
@@ -35,7 +36,7 @@ public class DestroyOnCollision : MonoBehaviour
         ["Level1"] = 40,
         ["Level2"] = 100,
         ["Level3"] = 150,
-        ["Level5"] = 100
+        ["Level5"] = 10
     };
 
     public EnemyStatus enemyStatus;
@@ -124,6 +125,7 @@ public class DestroyOnCollision : MonoBehaviour
 
             //OnPlayerScore?.Invoke();
             //Display the next level menu
+            hidemask.DisableMask();
             NextLevel?.Invoke();
             point.SetActive(false);
         }
@@ -255,6 +257,7 @@ public class DestroyOnCollision : MonoBehaviour
 
         if (life.IsDead() & this.death_flag)
         {
+            hidemask.DisableMask();
             OnPlayerScore?.Invoke();
             int level;
             if (scene.name == "Level1")

@@ -1875,7 +1875,7 @@ GameObject:
   - component: {fileID: 708223234}
   - component: {fileID: 708223236}
   - component: {fileID: 708223235}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Player
   m_TagString: Player
   m_Icon: {fileID: 0}
@@ -2065,6 +2065,9 @@ MonoBehaviour:
   cameraShake: {fileID: 519420033}
   Enemy: {fileID: 0}
   Player: {fileID: 0}
+  Immune_item: {fileID: 0}
+  spriteRenderer: {fileID: 0}
+  c: {r: 0, g: 0, b: 0, a: 0}
   sc: {fileID: 708223234}
 --- !u!1 &750836782
 GameObject:
@@ -3565,7 +3568,7 @@ GameObject:
   - component: {fileID: 1537767069}
   - component: {fileID: 1537767068}
   - component: {fileID: 1537767067}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: PlayerText
   m_TagString: Untagged
   m_Icon: {fileID: 0}

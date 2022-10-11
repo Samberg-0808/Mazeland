@@ -1616,6 +1616,16 @@ PrefabInstance:
       propertyPath: m_Name
       value: Player
       objectReference: {fileID: 0}
+    - target: {fileID: 2499795015943659811, guid: 50c7e30e4e60bd740b7644ef3eae73dc,
+        type: 3}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 2499795017130285005, guid: 50c7e30e4e60bd740b7644ef3eae73dc,
+        type: 3}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 50c7e30e4e60bd740b7644ef3eae73dc, type: 3}
 --- !u!1001 &2285096266288953178
@@ -1629,6 +1639,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Enemy-5
+      objectReference: {fileID: 0}
+    - target: {fileID: 2285096264378396793, guid: 5cace8596e15f044696273549f0784b9,
+        type: 3}
+      propertyPath: m_Layer
+      value: 11
       objectReference: {fileID: 0}
     - target: {fileID: 2285096264378396797, guid: 5cace8596e15f044696273549f0784b9,
         type: 3}
@@ -1685,6 +1700,11 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 2285096265806948194, guid: 5cace8596e15f044696273549f0784b9,
+        type: 3}
+      propertyPath: m_Layer
+      value: 11
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 5cace8596e15f044696273549f0784b9, type: 3}
 --- !u!1001 &3076615106533105138
@@ -1698,6 +1718,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Enemy-2
+      objectReference: {fileID: 0}
+    - target: {fileID: 3076615107306471451, guid: 042ecbb34641d7c40842f48cfb520e0e,
+        type: 3}
+      propertyPath: m_Layer
+      value: 9
       objectReference: {fileID: 0}
     - target: {fileID: 3076615107306471455, guid: 042ecbb34641d7c40842f48cfb520e0e,
         type: 3}
@@ -1753,6 +1778,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3076615107697203420, guid: 042ecbb34641d7c40842f48cfb520e0e,
+        type: 3}
+      propertyPath: m_Layer
+      value: 9
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 042ecbb34641d7c40842f48cfb520e0e, type: 3}
@@ -2039,10 +2069,20 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 6443455923560628079, guid: b50c83088b3ac614eb8b0fe35a19f3bb,
+        type: 3}
+      propertyPath: m_Layer
+      value: 10
+      objectReference: {fileID: 0}
     - target: {fileID: 6443455925171057178, guid: b50c83088b3ac614eb8b0fe35a19f3bb,
         type: 3}
       propertyPath: m_Name
       value: Enemy-3
+      objectReference: {fileID: 0}
+    - target: {fileID: 6443455925171057178, guid: b50c83088b3ac614eb8b0fe35a19f3bb,
+        type: 3}
+      propertyPath: m_Layer
+      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 6443455925171057180, guid: b50c83088b3ac614eb8b0fe35a19f3bb,
         type: 3}

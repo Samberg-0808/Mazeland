@@ -3,7 +3,15 @@
 --- !u!78 &1
 TagManager:
   serializedVersion: 2
-  tags: []
+  tags:
+  - Item
+  - Coin
+  - Enemy
+  - Rob
+  - Portal1
+  - Portal2
+  - Portal3
+  - immune
   layers:
   - Default
   - TransparentFX
@@ -13,10 +21,10 @@ TagManager:
   - UI
   - 
   - 
-  - 
-  - 
-  - 
-  - 
+  - Player
+  - Enemy-2
+  - Enemy-3
+  - Enemy-5
   - 
   - 
   - 

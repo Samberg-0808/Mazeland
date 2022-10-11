@@ -3450,6 +3450,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 7870616054859685236, guid: 32761ef532df2d349a5de84bd6235e56,
+        type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 70
+      objectReference: {fileID: 0}
     - target: {fileID: 7870616054933941726, guid: 32761ef532df2d349a5de84bd6235e56,
         type: 3}
       propertyPath: m_AnchoredPosition.x
@@ -3458,7 +3463,12 @@ PrefabInstance:
     - target: {fileID: 7870616054933941726, guid: 32761ef532df2d349a5de84bd6235e56,
         type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: 449
+      value: 500
+      objectReference: {fileID: 0}
+    - target: {fileID: 7870616054947829010, guid: 32761ef532df2d349a5de84bd6235e56,
+        type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 390
       objectReference: {fileID: 0}
     - target: {fileID: 7870616054966838062, guid: 32761ef532df2d349a5de84bd6235e56,
         type: 3}
@@ -3665,6 +3675,16 @@ PrefabInstance:
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
       value: Level7_UIManager, Assembly-CSharp
       objectReference: {fileID: 0}
+    - target: {fileID: 7870616056061131053, guid: 32761ef532df2d349a5de84bd6235e56,
+        type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 400
+      objectReference: {fileID: 0}
+    - target: {fileID: 7870616056223893216, guid: 32761ef532df2d349a5de84bd6235e56,
+        type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 70
+      objectReference: {fileID: 0}
     - target: {fileID: 7870616056384104673, guid: 32761ef532df2d349a5de84bd6235e56,
         type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
@@ -3679,6 +3699,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
       value: Level7_UIManager, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 7870616056751660737, guid: 32761ef532df2d349a5de84bd6235e56,
+        type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 70
       objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 7870616055750875853, guid: 32761ef532df2d349a5de84bd6235e56, type: 3}

@@ -18,8 +18,9 @@ public class DestroyOnCollision : MonoBehaviour
     public Text Timer;
     public int ScoreNum;
 
-    public TextMeshPro PlayerText;
+    //public HideMask hidemask;
 
+    public TextMeshPro PlayerText;
 
     public float TimeLeft;
 
@@ -33,10 +34,8 @@ public class DestroyOnCollision : MonoBehaviour
     {
         ["Tutorial"] = 1000,
         ["Level1"] = 40,
-        ["Level2"] = 100,
-        ["Level3"] = 150,
-        ["Level4"] = 100,
-        ["Level5"] = 100
+        ["Level2"] = 60,
+        ["Level3"] = 60
     };
 
     public EnemyStatus enemyStatus;
@@ -53,9 +52,6 @@ public class DestroyOnCollision : MonoBehaviour
     public CameraShake cameraShake;
     public GameObject Enemy;
     public GameObject Player;
-    public GameObject Immune_item;
-    public SpriteRenderer spriteRenderer;
-    public Color c;
 
     public SendToGoogle sc = new SendToGoogle();
 
@@ -81,8 +77,6 @@ public class DestroyOnCollision : MonoBehaviour
 
         Enemy = GameObject.FindWithTag("Enemy");
         Player = GameObject.FindWithTag("Player");
-        spriteRenderer = gameObject.GetComponent<SpriteRenderer>();
-        c = spriteRenderer.material.color;
 
         stopwatch.Start();
     }
@@ -130,6 +124,7 @@ public class DestroyOnCollision : MonoBehaviour
 
             //OnPlayerScore?.Invoke();
             //Display the next level menu
+            //hidemask.DisableMask();
             NextLevel?.Invoke();
             point.SetActive(false);
         }
@@ -231,14 +226,14 @@ public class DestroyOnCollision : MonoBehaviour
                 // Add camera shake (duration, magnitude)
                 StartCoroutine(cameraShake.Shake(.15f, .4f));
 
-                // Add short invincibility period
-                StartCoroutine("IgnoreCollision");
-
 
                 transform.position += transform.position - collision.gameObject.transform.position;
                 life.TakeDamage();
                 hitSound.Play();
 
+                // Add short invincibility period
+                // Physics.IgnoreCollision(Player.GetComponent<Collider>(), Enemy.GetComponent<Collider>(), true);
+                // StartCoroutine("GetInvulnerable");
             }
 
         }
@@ -261,6 +256,7 @@ public class DestroyOnCollision : MonoBehaviour
 
         if (life.IsDead() & this.death_flag)
         {
+            //hidemask.DisableMask();
             OnPlayerScore?.Invoke();
             int level;
             if (scene.name == "Level1")
@@ -283,14 +279,6 @@ public class DestroyOnCollision : MonoBehaviour
             }
             this.death_flag = false;
         }
-
-        // Add collison immune item
-        if (collision.gameObject.tag == "immune")
-        {
-            Destroy(collision.gameObject);
-            gainSound.Play();
-            StartCoroutine("IgnoreCollision");
-        }
     }
 
     void updateTimer(float currentTime)
@@ -304,18 +292,12 @@ public class DestroyOnCollision : MonoBehaviour
     }
 
 
-    // Temporarily ignore collision for 3 seconds
-    IEnumerator IgnoreCollision() {
-        Physics2D.IgnoreLayerCollision(8, 9, true);
-        Physics2D.IgnoreLayerCollision(8, 10, true);
-        Physics2D.IgnoreLayerCollision(8, 11, true);
-        c.a = 0.5f;
-        spriteRenderer.material.color = c;
+    public IEnumerator GetInvulnerable()
+    {
+        Physics.IgnoreCollision(this.GetComponent<Collider>(), Enemy.GetComponent<Collider>(), true);
+        //Debug.Log("Disable Collision called");
         yield return new WaitForSeconds(3f);
-        Physics2D.IgnoreLayerCollision(8, 9, false);
-        Physics2D.IgnoreLayerCollision(8, 10, false);
-        Physics2D.IgnoreLayerCollision(8, 11, false);
-        c.a = 1f;
-        spriteRenderer.material.color = c;
+        //Debug.Log("ReEnable Collision called");
+        Physics.IgnoreCollision(this.GetComponent<Collider>(), Enemy.GetComponent<Collider>(), false);
     }
 }

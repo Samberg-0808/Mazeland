@@ -18594,7 +18594,7 @@ PrefabInstance:
     - target: {fileID: 7870616054859685236, guid: 32761ef532df2d349a5de84bd6235e56,
         type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: 70
+      value: 40
       objectReference: {fileID: 0}
     - target: {fileID: 7870616054933941727, guid: 32761ef532df2d349a5de84bd6235e56,
         type: 3}
@@ -18790,12 +18790,12 @@ PrefabInstance:
     - target: {fileID: 7870616056223893216, guid: 32761ef532df2d349a5de84bd6235e56,
         type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: 70
+      value: 40
       objectReference: {fileID: 0}
     - target: {fileID: 7870616056751660737, guid: 32761ef532df2d349a5de84bd6235e56,
         type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: 70
+      value: 40
       objectReference: {fileID: 0}
     - target: {fileID: 7870616056978776006, guid: 32761ef532df2d349a5de84bd6235e56,
         type: 3}
@@ -19103,9 +19103,6 @@ MonoBehaviour:
   cameraShake: {fileID: 519420033}
   Enemy: {fileID: 0}
   Player: {fileID: 0}
-  Immune_item: {fileID: 0}
-  spriteRenderer: {fileID: 0}
-  c: {r: 0, g: 0, b: 0, a: 0}
   sc: {fileID: 1957332842}
 --- !u!1001 &1959242694
 PrefabInstance:

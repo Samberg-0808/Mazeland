@@ -328,4 +328,12 @@ public class DestroyOnCollision_lv7 : MonoBehaviour
         c.a = 1f;
         spriteRenderer.material.color = c;
     }
+    //  public IEnumerator GetInvulnerable()
+    // {
+    //     Physics.IgnoreCollision(this.GetComponent<Collider>(), Enemy.GetComponent<Collider>(), true);
+    //     //Debug.Log("Disable Collision called");
+    //     yield return new WaitForSeconds(3f);
+    //     //Debug.Log("ReEnable Collision called");
+    //     Physics.IgnoreCollision(this.GetComponent<Collider>(), Enemy.GetComponent<Collider>(), false);
+    // }
 }

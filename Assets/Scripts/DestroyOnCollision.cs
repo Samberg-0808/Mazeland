@@ -35,7 +35,8 @@ public class DestroyOnCollision : MonoBehaviour
         ["Tutorial"] = 1000,
         ["Level1"] = 40,
         ["Level2"] = 60,
-        ["Level3"] = 60
+        ["Level3"] = 60,
+        ["Level4"] = 60
     };
 
     public EnemyStatus enemyStatus;

@@ -52,22 +52,37 @@ For example, if the player has point 15, the player can kill enemies with number
 ## Drawing for Level 1:
 ![alt text](https://github.com/Samberg-0808/Mazeland/blob/main/GDD%20figures/Picture4.jpg?raw=true)
 Level 1 is the basic idea of the game. It shows the basic game mechanics of the game and helps players get more familiar with our games. The goal for level1 is to collect enough points or kill enough enemies to reach a goal score.
+
 ## Drawing for Level 2:
 ![alt text](https://github.com/Samberg-0808/Mazeland/blob/main/GDD%20figures/Picture5.jpg?raw=true)
 Except for the basic game mechanics, the outside circle starts to shrink and the player will get damage if the player hits the balck circle.The goal for level2 is to collect enough points or kill enough enemies to reach a goal score.
+
 ## Drawing for Level 3:
 ![alt text](https://github.com/Samberg-0808/Mazeland/blob/main/GDD%20figures/Picture6.jpg?raw=true)
 We add some items in level 3. The first item is “red heart”, players can get one more life if they collect it. The second item is “tornado”. It will increase the players’ movement speed. The goal for level3 is to collect enough points or kill enough enemies to reach a goal score.
+
 ## Drawing for Level 4:
 ![alt text](https://github.com/Samberg-0808/Mazeland/blob/main/GDD%20figures/Picture7.jpg?raw=true)
 The level 4 has a stick rotating inside the circle. The circle will no longer shrink and players need to escape from the stick.The goal for level4 is to collect enough points or kill enough enemies to reach a goal score.
+
 ## Drawing for Level 5:
 ![alt text](https://github.com/Samberg-0808/Mazeland/blob/main/GDD%20figures/Picture8.jpg?raw=true)
 Players still need to collect as many points as possible to complete this level, but their vision is blocked. They are only able to view a small area around themselves. The goal for level5 is to collect enough points or kill enough enemies to reach a goal score.
+
 ## Drawing for Level 6:
 ![alt text](https://github.com/Samberg-0808/Mazeland/blob/main/GDD%20figures/Picture9.jpg?raw=true)
 We add three portals at level 6. Players can travel to another portal if they control the yellow circle and collide with the portal. The goal for level6 is to collect enough points or kill enough enemies to reach a goal score.
 
+# Analysis
+## Data collection:
+We send our metric to a Google Form through Unity. We can then get a spreadsheet with all the metrics tracked.
+
+![alt text](https://github.com/Samberg-0808/Mazeland/blob/main/GDD%20figures/Picture10.jpg?raw=true)
+
+## Data analysis:
+We will save the data from the Google Form as the .csv file. The collected variables are starting time for each level, end time for each level, and the dead level for each player. We will then calculate the average survival time and number of players that pass/fail each level with pandas. The results of the data analysis will be plotted out by matplotlib.
+
+![alt text](https://github.com/Samberg-0808/Mazeland/blob/main/GDD%20figures/Picture11.jpg?raw=true)
 
 
 

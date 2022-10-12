@@ -42,6 +42,8 @@ Last-man-standing gameplay with the survival, exploration and scavenging element
 
 Move the player orb to collect generated point cubes to increase total score. The player is able to eliminate certain cubes by collision. In the meanwhile, the battleground will gradually shrink to a random size. The play will have to stay in the battleground in order to be alive and reach certain points to level up.
 ## Drawing:
+![alt text](https://github.com/Samberg-0808/Mazeland/blob/main/GDD%20figures/Picture1.jpg?raw=true)
+(Samberg-0808/Mazeland/blob/main/GDD%20figures/Picture1.jpg)
 
 
 

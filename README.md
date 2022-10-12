@@ -84,6 +84,21 @@ We will save the data from the Google Form as the .csv file. The collected varia
 
 ![alt text](https://github.com/Samberg-0808/Mazeland/blob/main/GDD%20figures/Picture11.jpg?raw=true)
 
+## Data 1
+![alt text](https://github.com/Samberg-0808/Mazeland/blob/main/GDD%20figures/Picture13.jpg?raw=true)
+
+## Data 2
+![alt text](https://github.com/Samberg-0808/Mazeland/blob/main/GDD%20figures/Picture14.jpg?raw=true)
+
+## Data 3
+![alt text](https://github.com/Samberg-0808/Mazeland/blob/main/GDD%20figures/Picture15.jpg?raw=true)
+
+## Data 4
+![alt text](https://github.com/Samberg-0808/Mazeland/blob/main/GDD%20figures/Picture16.jpg?raw=true)
+
+## Data 6
+![alt text](https://github.com/Samberg-0808/Mazeland/blob/main/GDD%20figures/Picture17.jpg?raw=true)
+
 
 
 

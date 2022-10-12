@@ -45,6 +45,7 @@ Move the player orb to collect generated point cubes to increase total score. Th
 ![alt text](https://github.com/Samberg-0808/Mazeland/blob/main/GDD%20figures/Picture1.jpg?raw=true)
 
 The player can move by using WASD. Collect points by colliding with cubes. Try to collect as many points as possible to level up. Always stay in the safe zone to avoid loss of points.
+
 ![alt text](https://github.com/Samberg-0808/Mazeland/blob/main/GDD%20figures/Picture2.jpg?raw=true)
 ![alt text](https://github.com/Samberg-0808/Mazeland/blob/main/GDD%20figures/Picture3.jpg?raw=true)
 For example, if the player has point 15, the player can kill enemies with number 5 on it. However, the player cannot kill enemies with number 2 on it since 15 is not divisible by 2. If the player with points 15 hits enemies with number 2, the player will get penalties like decreasing two of the total points and generate an enemy with a number which is the reminder of it.

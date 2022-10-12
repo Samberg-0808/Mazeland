@@ -21,7 +21,11 @@ public class spawnerGenerator : MonoBehaviour
 
     public int startGameTiming;
 
+    // **** data code ****
     public int totalEnemy;
+    public int totalCoins;
+    public int totalItems;
+    // ********
 
     public int coinsLimit;
     public int enemiesLimit;
@@ -44,7 +48,12 @@ public class spawnerGenerator : MonoBehaviour
     void Start()
     {
         scene = SceneManager.GetActiveScene();
+
+        // **** data code ****
         totalEnemy = 0;
+        totalCoins = 0;
+        totalItems = 0;
+        // ********
         
         currentCoins = 0;
         currentEnemies = 0;
@@ -60,11 +69,17 @@ public class spawnerGenerator : MonoBehaviour
             {
                 spawnCoins();
                 currentCoins++;
+
+                // **** data code ****
+                totalCoins++;
+                // ********
             }
 
             if (i % EnemiesControl == 0 & currentEnemies < enemiesLimit)
             {
+                // **** data code ****
                 totalEnemy++;
+                // ********
                 currentEnemies++;
                 spawnEnemies();
             }
@@ -72,6 +87,10 @@ public class spawnerGenerator : MonoBehaviour
             if (i % 1000 == 0 & scene.name == "Level3")
             {
                 spawnItems();
+
+                // **** data code ****
+                totalItems++;
+                // ********
             }
         }
     }

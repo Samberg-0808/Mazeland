@@ -39,9 +39,14 @@ public class DestroyOnCollision : MonoBehaviour
         ["Level4"] = 60
     };
 
-    public EnemyStatus enemyStatus;
-
+    // **** data code ****
     public int enemyKilled;
+    public int pointGained;
+    public int itemGained;
+    private Stopwatch stopwatch = new Stopwatch();
+    // ********
+
+    public EnemyStatus enemyStatus;
     public GameObject floatingpoints;
     public HealthSystem life;
     public PlayerControl speed;
@@ -56,7 +61,7 @@ public class DestroyOnCollision : MonoBehaviour
 
     public SendToGoogle sc = new SendToGoogle();
 
-    private Stopwatch stopwatch = new Stopwatch();
+    
 
     private bool death_flag = true;
     private void Awake()
@@ -68,7 +73,13 @@ public class DestroyOnCollision : MonoBehaviour
     
     void Start()
     {
+        // **** data code ****
         enemyKilled = 0;
+        pointGained = 0;
+        itemGained = 0;
+        stopwatch.Start();
+        // ********
+
         scene = SceneManager.GetActiveScene();
         UnityEngine.Debug.Log(scene.name);
         ScoreNum = 0;
@@ -79,7 +90,7 @@ public class DestroyOnCollision : MonoBehaviour
         Enemy = GameObject.FindWithTag("Enemy");
         Player = GameObject.FindWithTag("Player");
 
-        stopwatch.Start();
+        
     }
 
     void Update()
@@ -97,35 +108,35 @@ public class DestroyOnCollision : MonoBehaviour
         if (ScoreNum >= levelScoreTarget[scene.name])
         {
             ScoreNum = 0;
+
+            // **** data code ****
             stopwatch.Stop();
             long levelTime = stopwatch.ElapsedMilliseconds;
             levelTime = levelTime / 1000;
-
-            //sc.Send(_sessionID, levelTime, -1, -1);
-
-
+            long currLevel = 0;
             if (scene.name == "Level1")
             {
-
-                sc.Send(_sessionID, levelTime, -1, -1, -1, life.life);
-                sc.enemySend(sg.totalEnemy, enemyKilled, -1, -1, -1, -1);
+                currLevel = 1;
             }
             else if (scene.name == "Level2")
             {
-                UnityEngine.Debug.Log(levelTime);
-                sc.Send(_sessionID, -1, levelTime, -1, -1, life.life);
-                sc.enemySend(-1, -1, sg.totalEnemy, enemyKilled, -1, -1);
+                currLevel = 2;
             }
             else if (scene.name == "Level3")
             {
-                UnityEngine.Debug.Log(levelTime);
-                sc.Send(_sessionID, -1, -1, levelTime, -1, life.life);
-                sc.enemySend(-1, -1, -1, -1, sg.totalEnemy, enemyKilled);
+                currLevel = 3;
             }
+            else if (scene.name == "Level4")
+            {
+                currLevel = 4;
+            }
+            sc.Send(_sessionID, currLevel, levelTime, -1, life.life);
+            sc.enemySend(sg.totalEnemy, enemyKilled, sg.totalCoins, pointGained, sg.totalItems, itemGained);
+            // ********
 
-            //OnPlayerScore?.Invoke();
+
+
             //Display the next level menu
-            //hidemask.DisableMask();
             NextLevel?.Invoke();
             point.SetActive(false);
         }
@@ -196,6 +207,11 @@ public class DestroyOnCollision : MonoBehaviour
                 points.transform.GetComponent<TextMesh>().text = "+10";
             }
             Destroy(collision.gameObject);
+
+            // **** data code ****
+            pointGained++;
+            // ********
+
             sg.currentCoins--;
             MyscoreText.text = "Score: " + ScoreNum;
             PlayerText.text = ScoreNum.ToString();
@@ -215,7 +231,11 @@ public class DestroyOnCollision : MonoBehaviour
                 gainSound.Play();
                 Destroy(collision.gameObject);
                 sg.currentEnemies--;
+
+                // **** data code ****
                 enemyKilled++;
+                // ********
+
             }
             else
             {
@@ -251,7 +271,11 @@ public class DestroyOnCollision : MonoBehaviour
                 speed.Speed();
             }
             Destroy(collision.gameObject);
-            enemyKilled++;
+
+            // **** data code ****
+            itemGained++;
+            // ********
+
             gainSound.Play();
         }
 
@@ -259,25 +283,29 @@ public class DestroyOnCollision : MonoBehaviour
         {
             //hidemask.DisableMask();
             OnPlayerScore?.Invoke();
-            int level;
+
+            // **** data code ****
+            int level = 0;
             if (scene.name == "Level1")
             {
                 level = 1;
-                sc.Send(_sessionID, -1, -1, -1, level, -1);
-                sc.enemySend(-1, -1, -1, -1, -1, -1);
             }
             else if (scene.name == "Level2")
             {
                 level = 2;
-                sc.Send(_sessionID, -1, -1, -1, level, -1);
-                sc.enemySend(-1, -1, -1, -1, -1, -1);
             }
             else if (scene.name == "Level3")
             {
                 level = 3;
-                sc.Send(_sessionID, -1, -1, -1, level, -1);
-                sc.enemySend(-1, -1, -1, -1, -1, -1);
             }
+            else if (scene.name == "Level4")
+            {
+                level = 4;
+            }
+            sc.Send(_sessionID, -1, -1, level, -1);
+            sc.enemySend(-1, -1, -1, -1, -1, -1);
+            // ********
+
             this.death_flag = false;
         }
     }

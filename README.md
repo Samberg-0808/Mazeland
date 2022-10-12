@@ -77,27 +77,27 @@ We add three portals at level 6. Players can travel to another portal if they co
 ## Data collection:
 We send our metric to a Google Form through Unity. We can then get a spreadsheet with all the metrics tracked.
 
-![alt text](https://github.com/Samberg-0808/Mazeland/blob/main/GDD%20figures/Picture10.jpg?raw=true)
+![alt text](https://github.com/Samberg-0808/Mazeland/blob/main/GDD%20figures/Picture10.png?raw=true)
 
 ## Data analysis:
 We will save the data from the Google Form as the .csv file. The collected variables are starting time for each level, end time for each level, and the dead level for each player. We will then calculate the average survival time and number of players that pass/fail each level with pandas. The results of the data analysis will be plotted out by matplotlib.
 
-![alt text](https://github.com/Samberg-0808/Mazeland/blob/main/GDD%20figures/Picture11.jpg?raw=true)
+![alt text](https://github.com/Samberg-0808/Mazeland/blob/main/GDD%20figures/Picture11.png?raw=true)
 
 ## Data 1
-![alt text](https://github.com/Samberg-0808/Mazeland/blob/main/GDD%20figures/Picture13.jpg?raw=true)
+![alt text](https://github.com/Samberg-0808/Mazeland/blob/main/GDD%20figures/Picture13.png?raw=true)
 
 ## Data 2
-![alt text](https://github.com/Samberg-0808/Mazeland/blob/main/GDD%20figures/Picture14.jpg?raw=true)
+![alt text](https://github.com/Samberg-0808/Mazeland/blob/main/GDD%20figures/Picture14.png?raw=true)
 
 ## Data 3
-![alt text](https://github.com/Samberg-0808/Mazeland/blob/main/GDD%20figures/Picture15.jpg?raw=true)
+![alt text](https://github.com/Samberg-0808/Mazeland/blob/main/GDD%20figures/Picture15.png?raw=true)
 
 ## Data 4
-![alt text](https://github.com/Samberg-0808/Mazeland/blob/main/GDD%20figures/Picture16.jpg?raw=true)
+![alt text](https://github.com/Samberg-0808/Mazeland/blob/main/GDD%20figures/Picture16.png?raw=true)
 
 ## Data 6
-![alt text](https://github.com/Samberg-0808/Mazeland/blob/main/GDD%20figures/Picture17.jpg?raw=true)
+![alt text](https://github.com/Samberg-0808/Mazeland/blob/main/GDD%20figures/Picture17.png?raw=true)
 
 
 

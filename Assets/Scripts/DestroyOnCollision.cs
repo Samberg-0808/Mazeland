@@ -32,6 +32,7 @@ public class DestroyOnCollision : MonoBehaviour
     public ProgressBar progressBar;
     public Dictionary<string, int> levelScoreTarget = new Dictionary<string, int>
     {
+        ["GameTutorial"] = 1000,
         ["Tutorial"] = 1000,
         ["Level1"] = 40,
         ["Level2"] = 60,

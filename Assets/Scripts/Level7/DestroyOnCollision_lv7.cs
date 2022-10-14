@@ -297,6 +297,9 @@ public class DestroyOnCollision_lv7 : MonoBehaviour
         float seconds = Mathf.FloorToInt(currentTime % 60);
 
         Timer.text = string.Format("{0:00} : {1:00}", minutes, seconds);
+        if (minutes == 0 & seconds == 0) {
+            OnPlayerScore?.Invoke();
+        }
     }
 
 

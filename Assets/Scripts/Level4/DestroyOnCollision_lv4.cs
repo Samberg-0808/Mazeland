@@ -59,7 +59,7 @@ public class DestroyOnCollision_lv4 : MonoBehaviour
 
     public AudioSource gainSound;
     public AudioSource hitSound;
-    public spawnerGenerator_lv4 sg;
+    public spawnerGenerator sg;
 
     public CameraShake cameraShake;
     public GameObject Immune_item;
@@ -157,15 +157,15 @@ public class DestroyOnCollision_lv4 : MonoBehaviour
             //OnPlayerScore?.Invoke();
             //point.SetActive(false);
         }
-        if (collision.gameObject.name == "rob")
-        {
-            life.TakeDamage();
-            hitSound.Play();
-            Vector3 position_change = (collision.gameObject.transform.position - transform.position);
-            position_change.Normalize();
-            transform.position += position_change;
-            StartCoroutine(cameraShake.Shake(.15f, .4f));
-        }
+        // if (collision.gameObject.name == "rob")
+        // {
+        //     life.TakeDamage();
+        //     hitSound.Play();
+        //     Vector3 position_change = (collision.gameObject.transform.position - transform.position);
+        //     position_change.Normalize();
+        //     transform.position += position_change;
+        //     StartCoroutine(cameraShake.Shake(.15f, .4f));
+        // }
 
         if (collision.gameObject.tag == "Coin")
         {
@@ -327,6 +327,9 @@ public class DestroyOnCollision_lv4 : MonoBehaviour
         float seconds = Mathf.FloorToInt(currentTime % 60);
 
         Timer.text = string.Format("{0:00} : {1:00}", minutes, seconds);
+        if (minutes == 0 & seconds == 0) {
+            OnPlayerScore?.Invoke();
+        }
     }
 
 

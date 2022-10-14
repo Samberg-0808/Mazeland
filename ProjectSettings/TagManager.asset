@@ -22,9 +22,9 @@ TagManager:
   - 
   - 
   - Player
-  - Enemy-2
-  - Enemy-3
-  - Enemy-5
+  - Real-enemy
+  - Fake-enemy
+  - 
   - 
   - 
   - 

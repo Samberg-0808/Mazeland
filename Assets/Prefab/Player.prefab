@@ -164,8 +164,10 @@ MonoBehaviour:
   - {fileID: 0}
   - {fileID: 0}
   progressBar: {fileID: 0}
-  enemyStatus: {fileID: 0}
   enemyKilled: 0
+  pointGained: 0
+  itemGained: 0
+  enemyStatus: {fileID: 0}
   floatingpoints: {fileID: 0}
   life: {fileID: 0}
   speed: {fileID: 0}
@@ -173,8 +175,9 @@ MonoBehaviour:
   hitSound: {fileID: 0}
   sg: {fileID: 0}
   cameraShake: {fileID: 0}
-  Enemy: {fileID: 0}
-  Player: {fileID: 0}
+  Immune_item: {fileID: 0}
+  spriteRenderer: {fileID: 0}
+  c: {r: 0, g: 0, b: 0, a: 0}
   sc: {fileID: 0}
 --- !u!114 &2499795015943659739
 MonoBehaviour:

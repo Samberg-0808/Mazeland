@@ -32,7 +32,6 @@ public class DestroyOnCollision : MonoBehaviour
     public ProgressBar progressBar;
     public Dictionary<string, int> levelScoreTarget = new Dictionary<string, int>
     {
-        ["GameTutorial"] = 1000,
         ["Tutorial"] = 1000,
         ["Level1"] = 40,
         ["Level2"] = 60,
@@ -57,8 +56,9 @@ public class DestroyOnCollision : MonoBehaviour
     public spawnerGenerator sg;
 
     public CameraShake cameraShake;
-    public GameObject Enemy;
-    public GameObject Player;
+    public GameObject Immune_item;
+    public SpriteRenderer spriteRenderer;
+    public Color c;
 
     public SendToGoogle sc = new SendToGoogle();
 
@@ -87,11 +87,9 @@ public class DestroyOnCollision : MonoBehaviour
         MyscoreText.text = "Score " + ScoreNum;
         PlayerText.text = ScoreNum.ToString();
 
-
-        Enemy = GameObject.FindWithTag("Enemy");
-        Player = GameObject.FindWithTag("Player");
-
-        
+        spriteRenderer = gameObject.GetComponent<SpriteRenderer>();
+        c = spriteRenderer.material.color;
+        Physics2D.IgnoreLayerCollision(8, 9, false); // reset IgnoreCollision
     }
 
     void Update()
@@ -170,8 +168,6 @@ public class DestroyOnCollision : MonoBehaviour
             position_change.Normalize();
             transform.position += position_change;
             StartCoroutine(cameraShake.Shake(.15f, .4f));
-            //OnPlayerScore?.Invoke();
-            //point.SetActive(false);
         }
 
         if (collision.gameObject.tag == "Coin")
@@ -236,7 +232,6 @@ public class DestroyOnCollision : MonoBehaviour
                 // **** data code ****
                 enemyKilled++;
                 // ********
-
             }
             else
             {
@@ -245,17 +240,15 @@ public class DestroyOnCollision : MonoBehaviour
                    - smoother collision effect by overriding player update()
                    - a very short invincibility period right after collision
                 */
-                // Add camera shake (duration, magnitude)
+                // Add camera shake
                 StartCoroutine(cameraShake.Shake(.15f, .4f));
 
+                // Add short invincibility period
+                StartCoroutine("IgnoreCollision");
 
                 transform.position += transform.position - collision.gameObject.transform.position;
                 life.TakeDamage();
                 hitSound.Play();
-
-                // Add short invincibility period
-                // Physics.IgnoreCollision(Player.GetComponent<Collider>(), Enemy.GetComponent<Collider>(), true);
-                // StartCoroutine("GetInvulnerable");
             }
 
         }
@@ -309,6 +302,14 @@ public class DestroyOnCollision : MonoBehaviour
 
             this.death_flag = false;
         }
+
+        // Add collison immune item
+        if (collision.gameObject.tag == "Immune")
+        {
+            Destroy(collision.gameObject);
+            gainSound.Play();
+            StartCoroutine("IgnoreCollision");
+        }
     }
 
     void updateTimer(float currentTime)
@@ -322,12 +323,17 @@ public class DestroyOnCollision : MonoBehaviour
     }
 
 
-    public IEnumerator GetInvulnerable()
-    {
-        Physics.IgnoreCollision(this.GetComponent<Collider>(), Enemy.GetComponent<Collider>(), true);
-        //Debug.Log("Disable Collision called");
-        yield return new WaitForSeconds(3f);
-        //Debug.Log("ReEnable Collision called");
-        Physics.IgnoreCollision(this.GetComponent<Collider>(), Enemy.GetComponent<Collider>(), false);
+    // Temporarily ignore collision for 3 seconds
+    IEnumerator IgnoreCollision() {
+        Physics2D.IgnoreLayerCollision(8, 9, true);
+        for (int i = 0; i < 6; i++) {
+            c.a = 0.5f;
+            spriteRenderer.material.color = c;
+            yield return new WaitForSeconds(0.25f);
+            c.a = 1f;
+            spriteRenderer.material.color = c;
+            yield return new WaitForSeconds(0.25f);
+        }
+        Physics2D.IgnoreLayerCollision(8, 9, false);
     }
 }

@@ -12,7 +12,7 @@ public class ArrowBlink: MonoBehaviour
 
     void Start()
     {
-        StartCoroutine(OriginalShowAndHide(2.0f));
+        StartCoroutine(OriginalShowAndHide(1.5f));
     }
     void Awake()
     {

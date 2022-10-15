@@ -22,12 +22,22 @@ public class Tutorial_DestroyOnCollision: MonoBehaviour
     public GameObject Enemy_3;
     public GameObject Enemy_2;
     public GameObject Arrow3to2;
+    public GameObject Arrow3to3;
     public Color startColor = Color.magenta;
     public Color endColor = Color.yellow;
     [Range(0,10)]
     public float speed = 1;
     
     public Image img3to2;
+    public Image img3to3;
+
+    public TextMeshProUGUI Math0and3;
+    public TextMeshProUGUI Math3and2;
+    public TextMeshProUGUI Math3and3;
+    public TextMeshProUGUI Math3plus3;
+    public TextMeshProUGUI Math6and2;
+    public TextMeshProUGUI Math6plus2;
+
     void Start()
     {
         ScoreNum = 0;
@@ -38,10 +48,19 @@ public class Tutorial_DestroyOnCollision: MonoBehaviour
         Enemy = GameObject.FindWithTag("Enemy");
         Player = GameObject.FindWithTag("Player");
         
-        //Hide Enemy 2 and 3
+        //Hide Enemy and arrow
         Enemy_2.SetActive(false);
         Enemy_3.SetActive(false);
         Arrow3to2.SetActive(false);
+        Arrow3to3.SetActive(false);
+
+        //hide math formula
+        Math0and3.enabled = false;
+        Math3and2.enabled = false;
+        Math3and3.enabled = false;
+        Math3plus3.enabled = false;
+        Math6and2.enabled = false;
+        Math6plus2.enabled = false;
     }
 
     void Update()
@@ -61,25 +80,18 @@ public class Tutorial_DestroyOnCollision: MonoBehaviour
         if (Arrow3to2.active == true)
         {
             img3to2.color = Color.Lerp(startColor, endColor, Mathf.PingPong(Time.time * speed, 1));
+            StartCoroutine(OriginalShowAndHide(Arrow3to2, 1.5f));
+        }
+
+        if (Arrow3to3.active == true)
+        {
+            img3to3.color = Color.Lerp(startColor, endColor, Mathf.PingPong(Time.time * speed, 1));
+            StartCoroutine(OriginalShowAndHide(Arrow3to3, 1.5f));
         }
     }
 
     private void OnCollisionEnter2D(Collision2D collision)
     {
-
-/*
-        if (collision.gameObject.name == "Circle")
-        {
-          //  life.TakeDamage();
-          //  hitSound.Play();
-            Vector3 position_change = (collision.gameObject.transform.position - transform.position);
-            position_change.Normalize();
-            transform.position += position_change;
-           // StartCoroutine(cameraShake.Shake(.15f, .4f));
-            //OnPlayerScore?.Invoke();
-            //point.SetActive(false);
-        }
-     */ 
 
         if (collision.gameObject.tag == "Coin")
         {
@@ -101,8 +113,11 @@ public class Tutorial_DestroyOnCollision: MonoBehaviour
                 ScoreNum += 3;
                 GameObject points = Instantiate(floatingpoints, transform.position, Quaternion.identity) as GameObject;
                 points.transform.GetComponent<TextMesh>().text = "+3";
-                Arrow3to2.SetActive(true);
-                Enemy_2.SetActive(true);
+              
+                StartCoroutine(TextShowAndHide(Math0and3, 4.0f));
+                StartCoroutine(ShowArrowAndEnemy(Arrow3to2, Enemy_2, 4.0f));
+                // Arrow3to2.SetActive(true);
+                // Enemy_2.SetActive(true);
             }
 
             Destroy(collision.gameObject);
@@ -125,6 +140,18 @@ public class Tutorial_DestroyOnCollision: MonoBehaviour
                // gainSound.Play();
                 Destroy(collision.gameObject);
 
+
+                if (collision.gameObject.name == "3-Enemy")
+                {
+                    StartCoroutine(TextShowAndHide(Math3and3, 2.5f));
+                    StartCoroutine(TextDelaytoShow(Math3plus3, 2.5f, 2.5f));
+                }
+
+                if (collision.gameObject.name == "2-Enemy")
+                {
+                    StartCoroutine(TextShowAndHide(Math6and2, 2.5f));
+                    StartCoroutine(TextDelaytoShow(Math6plus2, 2.5f, 2.5f));
+                }
             }
 
             else
@@ -132,8 +159,14 @@ public class Tutorial_DestroyOnCollision: MonoBehaviour
 
                 if (collision.gameObject.name == "2-Enemy")
                 {
-                    Enemy_3.SetActive(true);
+                    StartCoroutine(TextShowAndHide(Math3and2, 4.0f));
+                    StartCoroutine(ShowArrowAndEnemy(Arrow3to3, Enemy_3, 4.0f));
+                    
+                    // Enemy_3.SetActive(true);
+                    // Arrow3to3.SetActive(true);
                 }
+
+                
                 transform.position += transform.position - collision.gameObject.transform.position;
              //   life.TakeDamage();
             //    hitSound.Play();
@@ -146,6 +179,33 @@ public class Tutorial_DestroyOnCollision: MonoBehaviour
         }
     }
     
-    
+    IEnumerator OriginalShowAndHide(GameObject arrow, float delay)
+    {
+        arrow.SetActive(true);
+        yield return new WaitForSeconds(delay);
+        arrow.SetActive(false);
+    }
+
+    IEnumerator TextShowAndHide(TextMeshProUGUI mathText, float delay)
+    {
+        mathText.enabled = true;
+        yield return new WaitForSeconds(delay);
+        mathText.enabled = false;
+    }
+
+    IEnumerator ShowArrowAndEnemy(GameObject arrow, GameObject enemy, float delay)
+    {
+        yield return new WaitForSeconds(delay);
+        arrow.SetActive(true);
+        enemy.SetActive(true);
+    }
+
+    IEnumerator TextDelaytoShow(TextMeshProUGUI mathText, float delay, float showTime)
+    {
+        yield return new WaitForSeconds(delay);
+        mathText.enabled = true;
+        yield return new WaitForSeconds(showTime);
+        mathText.enabled = false;
+    }
 
 }

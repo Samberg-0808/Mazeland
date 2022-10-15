@@ -32,7 +32,7 @@ public class LevelController : MonoBehaviour
     }
 
     public void StartTutorial(){
-    SceneManager.LoadScene("Tutorial");
+    SceneManager.LoadScene("GameTutorial");
     Time.timeScale = 1;
     }
 }

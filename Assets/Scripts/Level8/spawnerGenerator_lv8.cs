@@ -33,6 +33,9 @@ public class spawnerGenerator_lv8 : MonoBehaviour
     public int currentCoins;
     public int currentEnemies;
     public Scene scene;
+    //copy paste start
+    public Vector3 player_pos;
+    //copy paste end
 
 
 
@@ -93,6 +96,9 @@ public class spawnerGenerator_lv8 : MonoBehaviour
                 // ********
             }
         }
+        //copy paste start
+        player_pos = GameObject.FindGameObjectWithTag("Player").transform.position;
+        //copy paste end
     }
 
 
@@ -121,6 +127,10 @@ public class spawnerGenerator_lv8 : MonoBehaviour
         Vector2 randomPoint = center + Random.insideUnitCircle * 4f;
 
         Instantiate(enemies[r], randomPoint, transform.rotation);
+        if (Vector2.Distance(player_pos, randomPoint) > 1.0f)
+        {
+            Instantiate(enemies[r], randomPoint, transform.rotation);
+        }
     }
 
   

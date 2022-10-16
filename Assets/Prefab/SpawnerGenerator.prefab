@@ -55,10 +55,14 @@ MonoBehaviour:
   - {fileID: 6443455925171057178, guid: b50c83088b3ac614eb8b0fe35a19f3bb, type: 3}
   - {fileID: 2285096264378396793, guid: 5cace8596e15f044696273549f0784b9, type: 3}
   items: []
+  immune_items: []
+  Player: {fileID: 2499795015943659811, guid: 50c7e30e4e60bd740b7644ef3eae73dc, type: 3}
   CoinsControl: 400
   EnemiesControl: 200
   startGameTiming: 100
   totalEnemy: 0
+  totalCoins: 0
+  totalItems: 0
   coinsLimit: 10
   enemiesLimit: 10
   currentCoins: 0

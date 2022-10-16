@@ -473,7 +473,7 @@ MonoBehaviour:
     type: 3}
   m_PrefabInstance: {fileID: 2178138575840732460}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
+  m_GameObject: {fileID: 2178138575840732461}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 790ff2b9884cfad489500bcfb32cb55f, type: 3}
@@ -1253,7 +1253,7 @@ MonoBehaviour:
     type: 3}
   m_PrefabInstance: {fileID: 2178138575840732460}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
+  m_GameObject: {fileID: 2178138575840732461}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 7037f3deb99d76a4d9c58eff4525a7fe, type: 3}
@@ -3141,6 +3141,12 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 50c7e30e4e60bd740b7644ef3eae73dc, type: 3}
+--- !u!1 &2178138575840732461 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 2499795015943659811, guid: 50c7e30e4e60bd740b7644ef3eae73dc,
+    type: 3}
+  m_PrefabInstance: {fileID: 2178138575840732460}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &7051528711000069351
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -3203,6 +3209,11 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 7051528711596521660, guid: 2524eb1486d52314788a932c8a773564,
+        type: 3}
+      propertyPath: Player
+      value: 
+      objectReference: {fileID: 2178138575840732461}
     - target: {fileID: 7051528711596521660, guid: 2524eb1486d52314788a932c8a773564,
         type: 3}
       propertyPath: coins.Array.size

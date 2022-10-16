@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
-public class spawnerGenerator : MonoBehaviour
+public class spawnerGenerator_lv8 : MonoBehaviour
 {
     private int i = 0;
 
@@ -32,10 +32,10 @@ public class spawnerGenerator : MonoBehaviour
 
     public int currentCoins;
     public int currentEnemies;
+    public Scene scene;
     //copy paste start
     public Vector3 player_pos;
     //copy paste end
-    public Scene scene;
 
 
 
@@ -87,7 +87,7 @@ public class spawnerGenerator : MonoBehaviour
                 spawnEnemies();
             }
 
-            if (i % 1000 == 0 & scene.name == "Level3")
+            if (i % 1000 == 0 & scene.name == "Level8")
             {
                 spawnItems();
 
@@ -117,6 +117,7 @@ public class spawnerGenerator : MonoBehaviour
     }
 
 
+
     public void spawnEnemies()
     {
         int r = Random.Range(0, enemies.Length);
@@ -124,13 +125,12 @@ public class spawnerGenerator : MonoBehaviour
         Vector2 center = new Vector2(1.07f, 0.58f);
 
         Vector2 randomPoint = center + Random.insideUnitCircle * 4f;
-        
-        //copy paste start and also delete the orignal instantiate line
-        if(Vector2.Distance (player_pos, randomPoint) > 1.0f)
+
+        Instantiate(enemies[r], randomPoint, transform.rotation);
+        if (Vector2.Distance(player_pos, randomPoint) > 1.0f)
         {
             Instantiate(enemies[r], randomPoint, transform.rotation);
         }
-        //copy paste end
     }
 
   
@@ -142,8 +142,9 @@ public class spawnerGenerator : MonoBehaviour
         Vector2 center = new Vector2(1.07f, 0.58f);
 
         Vector2 randomPoint = center + Random.insideUnitCircle * 4f;
-        
+
         Instantiate(items[r], randomPoint, transform.rotation);
+
     }
 
     public void spawnImmuneItems() {

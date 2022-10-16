@@ -1367,7 +1367,7 @@ SpriteRenderer:
   m_Size: {x: 1, y: 1}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
-  m_WasSpriteAssigned: 1
+  m_WasSpriteAssigned: 0
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
 --- !u!4 &166376747
@@ -7358,7 +7358,7 @@ SpriteRenderer:
   m_Size: {x: 1, y: 1}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
-  m_WasSpriteAssigned: 1
+  m_WasSpriteAssigned: 0
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
 --- !u!4 &1380485664
@@ -11580,6 +11580,11 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 7051528711596521660, guid: 2524eb1486d52314788a932c8a773564,
+        type: 3}
+      propertyPath: Player
+      value: 
+      objectReference: {fileID: 708223227}
     - target: {fileID: 7051528711596521661, guid: 2524eb1486d52314788a932c8a773564,
         type: 3}
       propertyPath: m_Name

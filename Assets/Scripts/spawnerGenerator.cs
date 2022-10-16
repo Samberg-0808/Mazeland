@@ -32,6 +32,9 @@ public class spawnerGenerator : MonoBehaviour
 
     public int currentCoins;
     public int currentEnemies;
+    //copy paste start
+    public Vector3 player_pos;
+    //copy paste end
     public Scene scene;
 
 
@@ -93,6 +96,9 @@ public class spawnerGenerator : MonoBehaviour
                 // ********
             }
         }
+        //copy paste start
+        player_pos = GameObject.FindGameObjectWithTag("Player").transform.position;
+        //copy paste end
     }
 
 
@@ -111,7 +117,6 @@ public class spawnerGenerator : MonoBehaviour
     }
 
 
-
     public void spawnEnemies()
     {
         int r = Random.Range(0, enemies.Length);
@@ -119,8 +124,13 @@ public class spawnerGenerator : MonoBehaviour
         Vector2 center = new Vector2(1.07f, 0.58f);
 
         Vector2 randomPoint = center + Random.insideUnitCircle * 4f;
-
-        Instantiate(enemies[r], randomPoint, transform.rotation);
+        
+        //copy paste start and also delete the orignal instantiate line
+        if(Vector2.Distance (player_pos, randomPoint) > 1.0f)
+        {
+            Instantiate(enemies[r], randomPoint, transform.rotation);
+        }
+        //copy paste end
     }
 
   
@@ -132,9 +142,8 @@ public class spawnerGenerator : MonoBehaviour
         Vector2 center = new Vector2(1.07f, 0.58f);
 
         Vector2 randomPoint = center + Random.insideUnitCircle * 4f;
-
+        
         Instantiate(items[r], randomPoint, transform.rotation);
-
     }
 
     public void spawnImmuneItems() {

@@ -38,7 +38,7 @@ public class DestroyOnCollision_lv8 : MonoBehaviour
         ["Level2"] = 60,
         ["Level3"] = 60,
         ["Level4"] = 60,
-        ["Level8"] = 60
+        ["Level8"] = 40
     };
 
     // **** data code ****
@@ -219,7 +219,7 @@ public class DestroyOnCollision_lv8 : MonoBehaviour
 
         if (collision.gameObject.tag == "Enemy")
         {
-            int enemy_level = collision.gameObject.GetComponent<EnemyMovement>().enemy_level;
+            int enemy_level = collision.gameObject.GetComponent<EnemyMovement_lv8>().enemy_level;
             if (ScoreNum % enemy_level == 0 && ScoreNum != 0)
             {
                 ScoreNum += enemy_level;

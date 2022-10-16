@@ -332,7 +332,7 @@ GameObject:
     type: 3}
   m_PrefabInstance: {fileID: 242088804}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &242088806
+--- !u!114 &242088812
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -341,10 +341,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 242088805}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 10b8df843f885de4696d3de5ba96fd04, type: 3}
+  m_Script: {fileID: 11500000, guid: 5d9e063884dd3db439bfc09370e7ff9f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  position_change_rate: 2
+  position_change_rate: 1
   enemy_level: 5
 --- !u!1001 &284862223
 PrefabInstance:
@@ -422,7 +422,7 @@ GameObject:
     type: 3}
   m_PrefabInstance: {fileID: 284862223}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &284862225
+--- !u!114 &284862231
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -431,10 +431,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 284862224}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 10b8df843f885de4696d3de5ba96fd04, type: 3}
+  m_Script: {fileID: 11500000, guid: 5d9e063884dd3db439bfc09370e7ff9f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  position_change_rate: 2
+  position_change_rate: 1
   enemy_level: 2
 --- !u!1 &368366437
 GameObject:
@@ -822,7 +822,7 @@ GameObject:
     type: 3}
   m_PrefabInstance: {fileID: 432424647}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &432424649
+--- !u!114 &432424655
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -831,10 +831,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 432424648}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 10b8df843f885de4696d3de5ba96fd04, type: 3}
+  m_Script: {fileID: 11500000, guid: 5d9e063884dd3db439bfc09370e7ff9f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  position_change_rate: 2
+  position_change_rate: 1
   enemy_level: 3
 --- !u!1 &462726315
 GameObject:
@@ -2743,6 +2743,7 @@ MonoBehaviour:
   currentEnemies: 0
   scene:
     m_Handle: 0
+  player_pos: {x: 0, y: 0, z: 0}
 --- !u!1001 &1864878062
 PrefabInstance:
   m_ObjectHideFlags: 0

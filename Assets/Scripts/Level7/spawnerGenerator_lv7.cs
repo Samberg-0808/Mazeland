@@ -32,6 +32,7 @@ public class spawnerGenerator_lv7 : MonoBehaviour
 
     public int currentCoins;
     public int currentEnemies;
+    public Vector3 player_pos;
     public Scene scene;
 
 
@@ -98,6 +99,7 @@ public class spawnerGenerator_lv7 : MonoBehaviour
                 locationCount = 0;
             }
         }
+        player_pos = GameObject.FindGameObjectWithTag("Player").transform.position;
     }
 
 
@@ -148,7 +150,10 @@ public class spawnerGenerator_lv7 : MonoBehaviour
 
             Vector2 randomPoint = center + Random.insideUnitCircle * randomRange;
 
-            Instantiate(enemies[r], randomPoint, transform.rotation);
+            if (Vector2.Distance(player_pos, randomPoint) > 1.0f)
+            {
+                Instantiate(enemies[r], randomPoint, transform.rotation);
+            }
         }
         else if (locationCount == 1)
         {
@@ -156,7 +161,10 @@ public class spawnerGenerator_lv7 : MonoBehaviour
 
             Vector2 randomPoint = center + Random.insideUnitCircle * randomRange;
 
-            Instantiate(enemies[r], randomPoint, transform.rotation);
+            if (Vector2.Distance(player_pos, randomPoint) > 1.0f)
+            {
+                Instantiate(enemies[r], randomPoint, transform.rotation);
+            }
         }
         else
         {
@@ -164,7 +172,10 @@ public class spawnerGenerator_lv7 : MonoBehaviour
 
             Vector2 randomPoint = center + Random.insideUnitCircle * randomRange;
 
-            Instantiate(enemies[r], randomPoint, transform.rotation);
+            if (Vector2.Distance(player_pos, randomPoint) > 1.0f)
+            {
+                Instantiate(enemies[r], randomPoint, transform.rotation);
+            }
 
         }
 

@@ -12,6 +12,9 @@ TagManager:
   - Portal2
   - Portal3
   - immune
+  - Portal4
+  - Portal5
+  - Portal6
   layers:
   - Default
   - TransparentFX

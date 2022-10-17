@@ -36,7 +36,7 @@ public class DestroyOnCollision_lv6 : MonoBehaviour
         ["Level1"] = 40,
         ["Level2"] = 100,
         ["Level3"] = 150,
-        ["Level6"] = 100
+        ["Level6"] = 200
     };
 
     // **** data code ****
@@ -115,7 +115,7 @@ public class DestroyOnCollision_lv6 : MonoBehaviour
             levelTime = levelTime / 1000;
             long currLevel = 6;
             sc.Send(_sessionID, currLevel, levelTime, -1, life.life);
-            //sc.enemySend(sg.totalEnemy, enemyKilled, sg.totalCoins, pointGained, sg.totalItems, itemGained);
+            sc.enemySend(sg.totalEnemy, enemyKilled, sg.totalCoins, pointGained, sg.totalItems, itemGained);
             // ********
 
             //OnPlayerScore?.Invoke();
@@ -145,17 +145,17 @@ public class DestroyOnCollision_lv6 : MonoBehaviour
     {
 
 
-        if (collision.gameObject.name == "Circle")
-        {
-            life.TakeDamage();
-            hitSound.Play();
-            Vector3 position_change = (collision.gameObject.transform.position - transform.position);
-            position_change.Normalize();
-            transform.position += position_change;
-            StartCoroutine(cameraShake.Shake(.15f, .4f));
-            //OnPlayerScore?.Invoke();
-            //point.SetActive(false);
-        }
+        // if (collision.gameObject.name == "Circle")
+        // {
+        //     life.TakeDamage();
+        //     hitSound.Play();
+        //     Vector3 position_change = (collision.gameObject.transform.position - transform.position);
+        //     position_change.Normalize();
+        //     transform.position += position_change;
+        //     StartCoroutine(cameraShake.Shake(.15f, .4f));
+        //     //OnPlayerScore?.Invoke();
+        //     //point.SetActive(false);
+        // }
 
         if (collision.gameObject.tag == "Coin")
         {
@@ -180,21 +180,21 @@ public class DestroyOnCollision_lv6 : MonoBehaviour
             }
             else if (collision.gameObject.name == "coin-4(Clone)")
             {
+                ScoreNum += 4;
+                GameObject points = Instantiate(floatingpoints, transform.position, Quaternion.identity) as GameObject;
+                points.transform.GetComponent<TextMesh>().text = "+4";
+            }
+            else if (collision.gameObject.name == "coin-5(Clone)")
+            {
                 ScoreNum += 5;
                 GameObject points = Instantiate(floatingpoints, transform.position, Quaternion.identity) as GameObject;
                 points.transform.GetComponent<TextMesh>().text = "+5";
             }
-            else if (collision.gameObject.name == "coin-5(Clone)")
+            else if (collision.gameObject.name == "coin-200(Clone)")
             {
-                ScoreNum += 10;
+                ScoreNum += 200;
                 GameObject points = Instantiate(floatingpoints, transform.position, Quaternion.identity) as GameObject;
-                points.transform.GetComponent<TextMesh>().text = "+10";
-            }
-            else if (collision.gameObject.name == "coin-100(Clone)")
-            {
-                ScoreNum += 100;
-                GameObject points = Instantiate(floatingpoints, transform.position, Quaternion.identity) as GameObject;
-                points.transform.GetComponent<TextMesh>().text = "+100";
+                points.transform.GetComponent<TextMesh>().text = "+200";
             }
             Destroy(collision.gameObject);
             // sg.currentCoins--;
@@ -235,12 +235,12 @@ public class DestroyOnCollision_lv6 : MonoBehaviour
                    - a very short invincibility period right after collision
                 */
                 // Add camera shake (duration, magnitude)
-                StartCoroutine(cameraShake.Shake(.15f, .4f));
+                //StartCoroutine(cameraShake.Shake(.15f, .4f));
 
                 // Add short invincibility period
-                StartCoroutine("IgnoreCollision");
+                //StartCoroutine("IgnoreCollision");
 
-                transform.position += transform.position - collision.gameObject.transform.position;
+                //transform.position += transform.position - collision.gameObject.transform.position;
                 life.TakeDamage();
                 hitSound.Play();
             }

@@ -14,11 +14,6 @@ public class Tutorial_DestroyOnCollision: MonoBehaviour
     public int ScoreNum;
     public Text MyscoreText;
     public TextMeshPro PlayerText;
-    public static event Action OnPlayerScore;
-
-    public AudioSource gainSound;
-    public AudioSource hitSound;
-
     public GameObject point;
     public GameObject Enemy;
     public GameObject Player;
@@ -35,8 +30,6 @@ public class Tutorial_DestroyOnCollision: MonoBehaviour
     public Color endColor = Color.yellow;
     [Range(0,10)]
     public float speed = 1;
-    // public HealthSystem life;
-    // private bool death_flag = true;
     
     public Image img3to2;
     public Image img3to3;
@@ -54,8 +47,6 @@ public class Tutorial_DestroyOnCollision: MonoBehaviour
     public TextMeshProUGUI DivisibleText;
     public TextMeshProUGUI DivisibleText1;
     public TextMeshProUGUI DivisibleText2;
-
-    public GameObject RestartTutorial;
 
     void Start()
     {
@@ -76,7 +67,6 @@ public class Tutorial_DestroyOnCollision: MonoBehaviour
         Arrow3to3.SetActive(false);
 
         Coin3.SetActive(false);
-        RestartTutorial.SetActive(false);
 
         //hide math formula
         Math0and3.enabled = false;
@@ -144,8 +134,8 @@ public class Tutorial_DestroyOnCollision: MonoBehaviour
                 GameObject points = Instantiate(floatingpoints, transform.position, Quaternion.identity) as GameObject;
                 points.transform.GetComponent<TextMesh>().text = "+3";
               
-                StartCoroutine(TextShowAndHide(Math0and3, 4.0f));
-                StartCoroutine(ShowArrowAndEnemy(Arrow3to2, Enemy_2, 2.0f));
+                StartCoroutine(TextShowAndHide(Math0and3, 5.0f));
+                StartCoroutine(ShowArrowAndEnemy(Arrow3to2, Enemy_2, 5.0f));
             }
             else if (collision.gameObject.name == "3-Coin-1")
             {
@@ -154,13 +144,12 @@ public class Tutorial_DestroyOnCollision: MonoBehaviour
                 points.transform.GetComponent<TextMesh>().text = "+3";
                 StartCoroutine(TextShowAndHide(Math12and3, 2.5f));
             }
-            
+
             Destroy(collision.gameObject);
+
 
             MyscoreText.text = "Score: " + ScoreNum;
             PlayerText.text = ScoreNum.ToString();
-
-            gainSound.Play();
         }
         
         if (collision.gameObject.tag == "Enemy")
@@ -173,19 +162,19 @@ public class Tutorial_DestroyOnCollision: MonoBehaviour
                 PlayerText.text = ScoreNum.ToString();
                 GameObject points = Instantiate(floatingpoints, transform.position, Quaternion.identity) as GameObject;
                 points.transform.GetComponent<TextMesh>().text = "+" + enemy_level;
-                gainSound.Play();
+               // gainSound.Play();
                 Destroy(collision.gameObject);
 
 
                 if (collision.gameObject.name == "3-Enemy")
                 {
                     StartCoroutine(TextDelaytoShow(Math3and3, 2.5f, 2.5f));
-                    StartCoroutine(TextShowAndHide(DivisibleText, 1.3f));
+                    StartCoroutine(TextShowAndHide(DivisibleText, 2.5f));
                 }
 
                 if (collision.gameObject.name == "2-Enemy")
                 {
-                    StartCoroutine(TextShowAndHide(DivisibleText1, 1.3f));
+                    StartCoroutine(TextShowAndHide(DivisibleText1, 2.5f));
                     StartCoroutine(TextDelaytoShow(Math6and2, 2.5f, 2.5f));
                     Enemy_4.SetActive(true);
                 }
@@ -199,9 +188,8 @@ public class Tutorial_DestroyOnCollision: MonoBehaviour
 
                 if (collision.gameObject.name == "5-Enemy")
                 {
-                    StartCoroutine(TextShowAndHide(DivisibleText2, 1.3f));
+                    StartCoroutine(TextShowAndHide(DivisibleText2, 2.5f));
                     StartCoroutine(TextDelaytoShow(Math15and5, 2.5f, 2.5f));
-                    StartCoroutine(ShowRestart(RestartTutorial, 4.0f));
                 }
 
             }
@@ -210,31 +198,25 @@ public class Tutorial_DestroyOnCollision: MonoBehaviour
             {
                 if (collision.gameObject.name == "2-Enemy")
                 {
-                    StartCoroutine(TextShowAndHide(Math3and2, 4.0f));
-                    StartCoroutine(ShowArrowAndEnemy(Arrow3to3, Enemy_3, 0.5f));
+                    StartCoroutine(TextShowAndHide(Math3and2, 5.0f));
+                    StartCoroutine(ShowArrowAndEnemy(Arrow3to3, Enemy_3, 5.0f));
                 }
 
                 if (collision.gameObject.name == "5-Enemy")
                 {
-                    StartCoroutine(TextShowAndHide(Math12and5, 4.0f));
+                    StartCoroutine(TextShowAndHide(Math12and5, 5.0f));
                 }
                 
                 transform.position += transform.position - collision.gameObject.transform.position;
-                // life.TakeDamage();
-                hitSound.Play();
+             //   life.TakeDamage();
+            //    hitSound.Play();
 
                 // Add short invincibility period
                 // Physics.IgnoreCollision(Player.GetComponent<Collider>(), Enemy.GetComponent<Collider>(), true);
                 // StartCoroutine("GetInvulnerable");
             }
         }
-        
-        // if (life.IsDead() & this.death_flag)
-        // {
-        //     OnPlayerScore?.Invoke();
-        // }
     }
-
     
     IEnumerator OriginalShowAndHide(GameObject arrow, float delay)
     {
@@ -265,10 +247,4 @@ public class Tutorial_DestroyOnCollision: MonoBehaviour
         mathText.enabled = false;
     }
 
-
-    IEnumerator ShowRestart(GameObject panel, float delay)
-    {
-        yield return new WaitForSeconds(delay);
-        panel.SetActive(true);
-    }
 }

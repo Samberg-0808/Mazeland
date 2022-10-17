@@ -8,7 +8,7 @@ using System.Diagnostics;
 using System.Threading;
 using TMPro;
 
-public class DestroyOnCollision_lv10 : MonoBehaviour
+public class DestroyOnCollision_lv11 : MonoBehaviour
 {
     // Start is called before the first frame updat
 
@@ -16,6 +16,7 @@ public class DestroyOnCollision_lv10 : MonoBehaviour
     public GameObject point;
     public static event Action OnPlayerScore;
     public Text Timer;
+    
     public int ScoreNum;
 
     public TextMeshPro PlayerText;
@@ -31,7 +32,12 @@ public class DestroyOnCollision_lv10 : MonoBehaviour
     public ProgressBar progressBar;
     public Dictionary<string, int> levelScoreTarget = new Dictionary<string, int>
     {
-        ["Level10"] = 21
+        ["Tutorial"] = 1000,
+        ["Level1"] = 40,
+        ["Level2"] = 100,
+        ["Level3"] = 150,
+        ["Level6"] = 200,
+        ["Level11"] = 200
     };
 
     // **** data code ****
@@ -78,7 +84,7 @@ public class DestroyOnCollision_lv10 : MonoBehaviour
         scene = SceneManager.GetActiveScene();
         UnityEngine.Debug.Log(scene.name);
         ScoreNum = 0;
-        MyscoreText.text = "Score " + ScoreNum;
+        MyscoreText.text = "Score: " + ScoreNum;
         PlayerText.text = ScoreNum.ToString();
 
         spriteRenderer = gameObject.GetComponent<SpriteRenderer>();
@@ -88,6 +94,8 @@ public class DestroyOnCollision_lv10 : MonoBehaviour
 
     void Update()
     {
+
+        
         if (TimeLeft > 0)
         {
             TimeLeft -= Time.deltaTime;
@@ -106,11 +114,10 @@ public class DestroyOnCollision_lv10 : MonoBehaviour
             stopwatch.Stop();
             long levelTime = stopwatch.ElapsedMilliseconds;
             levelTime = levelTime / 1000;
-            long currLevel = 7;
+            long currLevel = 6;
             sc.Send(_sessionID, currLevel, levelTime, -1, life.life);
             sc.enemySend(sg.totalEnemy, enemyKilled, sg.totalCoins, pointGained, sg.totalItems, itemGained);
             // ********
-        
 
             //OnPlayerScore?.Invoke();
             //Display the next level menu
@@ -118,12 +125,13 @@ public class DestroyOnCollision_lv10 : MonoBehaviour
             point.SetActive(false);
         }
 
-        progressBar.setProgressBar(ScoreNum, levelScoreTarget[scene.name]);
+        // progressBar.setProgressBar(ScoreNum, levelScoreTarget[scene.name]);
 
-        enemy = FindObjectsOfType(typeof(GameObject)) as GameObject[];
+        // UnityEngine.Debug.Log("enemy");
         foreach (GameObject child in enemy)
         {
-            if (child.gameObject.tag == "Enemy")
+            // UnityEngine.Debug.Log("sss");
+            if (child != null && child.gameObject.tag == "Enemy")
             {
                 if (ScoreNum > 0)
                 {
@@ -138,6 +146,17 @@ public class DestroyOnCollision_lv10 : MonoBehaviour
     {
 
 
+        // if (collision.gameObject.name == "Circle")
+        // {
+        //     life.TakeDamage();
+        //     hitSound.Play();
+        //     Vector3 position_change = (collision.gameObject.transform.position - transform.position);
+        //     position_change.Normalize();
+        //     transform.position += position_change;
+        //     StartCoroutine(cameraShake.Shake(.15f, .4f));
+        //     //OnPlayerScore?.Invoke();
+        //     //point.SetActive(false);
+        // }
 
         if (collision.gameObject.tag == "Coin")
         {
@@ -162,23 +181,29 @@ public class DestroyOnCollision_lv10 : MonoBehaviour
             }
             else if (collision.gameObject.name == "coin-4(Clone)")
             {
+                ScoreNum += 4;
+                GameObject points = Instantiate(floatingpoints, transform.position, Quaternion.identity) as GameObject;
+                points.transform.GetComponent<TextMesh>().text = "+4";
+            }
+            else if (collision.gameObject.name == "coin-5(Clone)")
+            {
                 ScoreNum += 5;
                 GameObject points = Instantiate(floatingpoints, transform.position, Quaternion.identity) as GameObject;
                 points.transform.GetComponent<TextMesh>().text = "+5";
             }
-            else if (collision.gameObject.name == "coin-5(Clone)")
+            else if (collision.gameObject.name == "coin-200(Clone)")
             {
-                ScoreNum += 10;
+                ScoreNum += 200;
                 GameObject points = Instantiate(floatingpoints, transform.position, Quaternion.identity) as GameObject;
-                points.transform.GetComponent<TextMesh>().text = "+10";
+                points.transform.GetComponent<TextMesh>().text = "+200";
             }
             Destroy(collision.gameObject);
+            // sg.currentCoins--;
 
             // **** data code ****
             pointGained++;
-            // ********
+            // *
 
-            sg.currentCoins--;
             MyscoreText.text = "Score: " + ScoreNum;
             PlayerText.text = ScoreNum.ToString();
             gainSound.Play();
@@ -186,7 +211,7 @@ public class DestroyOnCollision_lv10 : MonoBehaviour
 
         if (collision.gameObject.tag == "Enemy")
         {
-            int enemy_level = collision.gameObject.GetComponent<EnemyMovement_lv7>().enemy_level;
+            int enemy_level = collision.gameObject.GetComponent<EnemyMovement>().enemy_level;
             if (ScoreNum % enemy_level == 0 && ScoreNum != 0)
             {
                 ScoreNum += enemy_level;
@@ -195,8 +220,9 @@ public class DestroyOnCollision_lv10 : MonoBehaviour
                 GameObject points = Instantiate(floatingpoints, transform.position, Quaternion.identity) as GameObject;
                 points.transform.GetComponent<TextMesh>().text = "+" + enemy_level;
                 gainSound.Play();
+                
                 Destroy(collision.gameObject);
-                sg.currentEnemies--;
+                // sg.currentEnemies--;
 
                 // **** data code ****
                 enemyKilled++;
@@ -210,12 +236,12 @@ public class DestroyOnCollision_lv10 : MonoBehaviour
                    - a very short invincibility period right after collision
                 */
                 // Add camera shake (duration, magnitude)
-                StartCoroutine(cameraShake.Shake(.15f, .4f));
+                //StartCoroutine(cameraShake.Shake(.15f, .4f));
 
                 // Add short invincibility period
-                StartCoroutine("IgnoreCollision");
+                //StartCoroutine("IgnoreCollision");
 
-                transform.position += transform.position - collision.gameObject.transform.position;
+                //transform.position += transform.position - collision.gameObject.transform.position;
                 life.TakeDamage();
                 hitSound.Play();
             }
@@ -238,28 +264,29 @@ public class DestroyOnCollision_lv10 : MonoBehaviour
             // **** data code ****
             itemGained++;
             // ********
-
             gainSound.Play();
         }
 
         if (life.IsDead() & this.death_flag)
         {
             OnPlayerScore?.Invoke();
+
             // **** data code ****
-            int level = 7;
+            int level = 6;
             sc.Send(_sessionID, -1, -1, level, -1);
             sc.enemySend(-1, -1, -1, -1, -1, -1);
             // ********
+            
             this.death_flag = false;
         }
 
-        // Add collison immune item
-        if (collision.gameObject.tag == "immune")
-        {
-            Destroy(collision.gameObject);
-            gainSound.Play();
-            StartCoroutine("IgnoreCollision");
-        }
+        // Add collison immune item (optional for this level)
+        // if (collision.gameObject.tag == "immune")
+        // {
+        //     Destroy(collision.gameObject);
+        //     gainSound.Play();
+        //     StartCoroutine("IgnoreCollision");
+        // }
     }
 
     void updateTimer(float currentTime)

@@ -258,6 +258,21 @@ PrefabInstance:
       propertyPath: m_Name
       value: Enemy-5
       objectReference: {fileID: 0}
+    - target: {fileID: 2285096264378396796, guid: 5cace8596e15f044696273549f0784b9,
+        type: 3}
+      propertyPath: m_Color.b
+      value: 0.972549
+      objectReference: {fileID: 0}
+    - target: {fileID: 2285096264378396796, guid: 5cace8596e15f044696273549f0784b9,
+        type: 3}
+      propertyPath: m_Color.g
+      value: 0.7372549
+      objectReference: {fileID: 0}
+    - target: {fileID: 2285096264378396796, guid: 5cace8596e15f044696273549f0784b9,
+        type: 3}
+      propertyPath: m_Color.r
+      value: 0.38431373
+      objectReference: {fileID: 0}
     - target: {fileID: 2285096264378396797, guid: 5cace8596e15f044696273549f0784b9,
         type: 3}
       propertyPath: m_RootOrder
@@ -358,6 +373,21 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Enemy-2
+      objectReference: {fileID: 0}
+    - target: {fileID: 3076615107306471454, guid: 042ecbb34641d7c40842f48cfb520e0e,
+        type: 3}
+      propertyPath: m_Color.b
+      value: 0.9716981
+      objectReference: {fileID: 0}
+    - target: {fileID: 3076615107306471454, guid: 042ecbb34641d7c40842f48cfb520e0e,
+        type: 3}
+      propertyPath: m_Color.g
+      value: 0.73496175
+      objectReference: {fileID: 0}
+    - target: {fileID: 3076615107306471454, guid: 042ecbb34641d7c40842f48cfb520e0e,
+        type: 3}
+      propertyPath: m_Color.r
+      value: 0.38042897
       objectReference: {fileID: 0}
     - target: {fileID: 3076615107306471455, guid: 042ecbb34641d7c40842f48cfb520e0e,
         type: 3}
@@ -642,6 +672,21 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6443455925171057181, guid: b50c83088b3ac614eb8b0fe35a19f3bb,
+        type: 3}
+      propertyPath: m_Color.b
+      value: 0.972549
+      objectReference: {fileID: 0}
+    - target: {fileID: 6443455925171057181, guid: b50c83088b3ac614eb8b0fe35a19f3bb,
+        type: 3}
+      propertyPath: m_Color.g
+      value: 0.7372549
+      objectReference: {fileID: 0}
+    - target: {fileID: 6443455925171057181, guid: b50c83088b3ac614eb8b0fe35a19f3bb,
+        type: 3}
+      propertyPath: m_Color.r
+      value: 0.38431373
       objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 6443455925171057185, guid: b50c83088b3ac614eb8b0fe35a19f3bb, type: 3}
@@ -1339,16 +1384,15 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 7482667652216324306, guid: 311925a002f4447b3a28927169b83ea6,
-    type: 3}
+  m_Sprite: {fileID: 21300000, guid: 26d667414e897154a87950c1de8a639f, type: 3}
   m_Color: {r: 0.18431373, g: 0.20392157, b: 0.34117648, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
-  m_Size: {x: 1, y: 1}
+  m_Size: {x: 12, y: 6}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
-  m_WasSpriteAssigned: 0
+  m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
 --- !u!4 &1280472503
@@ -1534,12 +1578,19 @@ PrefabInstance:
     - target: {fileID: 7870616054966838062, guid: 32761ef532df2d349a5de84bd6235e56,
         type: 3}
       propertyPath: m_Text
-      value: Level 9 No more colors!
+      value: 'Level 9
+
+        No more color hints'
       objectReference: {fileID: 0}
     - target: {fileID: 7870616054966838063, guid: 32761ef532df2d349a5de84bd6235e56,
         type: 3}
       propertyPath: m_SizeDelta.x
       value: 918.72
+      objectReference: {fileID: 0}
+    - target: {fileID: 7870616054966838063, guid: 32761ef532df2d349a5de84bd6235e56,
+        type: 3}
+      propertyPath: m_SizeDelta.y
+      value: 231.3717
       objectReference: {fileID: 0}
     - target: {fileID: 7870616054966838063, guid: 32761ef532df2d349a5de84bd6235e56,
         type: 3}
@@ -1549,7 +1600,7 @@ PrefabInstance:
     - target: {fileID: 7870616054966838063, guid: 32761ef532df2d349a5de84bd6235e56,
         type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: 415
+      value: 387.10806
       objectReference: {fileID: 0}
     - target: {fileID: 7870616055750875850, guid: 32761ef532df2d349a5de84bd6235e56,
         type: 3}

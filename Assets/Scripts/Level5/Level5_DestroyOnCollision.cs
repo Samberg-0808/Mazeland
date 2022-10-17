@@ -36,7 +36,7 @@ public class Level5_DestroyOnCollision : MonoBehaviour
         ["Level1"] = 40,
         ["Level2"] = 100,
         ["Level3"] = 100,
-        ["Level5"] = 100
+        ["Level5"] = 60
     };
 
     // **** data code ****

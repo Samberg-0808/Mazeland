@@ -63,7 +63,7 @@ public class spawnerGenerator_lv8 : MonoBehaviour
     }
 
     // Update is called once per frame
-    void Update()
+    void FixedUpdate()
     {
         i++;
         if (i > startGameTiming)
@@ -87,7 +87,7 @@ public class spawnerGenerator_lv8 : MonoBehaviour
                 spawnEnemies();
             }
 
-            if (i % 8000 == 0 & scene.name == "Level8")
+            if (i % 800 == 0 & scene.name == "Level8")
             {
                 spawnItems();
 

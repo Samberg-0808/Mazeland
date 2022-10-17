@@ -59,7 +59,7 @@ public class spawnerGenerator_lv7 : MonoBehaviour
     }
 
     // Update is called once per frame
-    void Update()
+    void FixedUpdate()
     {
         i++;
         if (i > startGameTiming)

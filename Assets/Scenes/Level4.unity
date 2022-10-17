@@ -188,12 +188,12 @@ PrefabInstance:
     - target: {fileID: 7051528711596521660, guid: 2524eb1486d52314788a932c8a773564,
         type: 3}
       propertyPath: coinsLimit
-      value: 7
+      value: 8
       objectReference: {fileID: 0}
     - target: {fileID: 7051528711596521660, guid: 2524eb1486d52314788a932c8a773564,
         type: 3}
       propertyPath: CoinsControl
-      value: 1400
+      value: 130
       objectReference: {fileID: 0}
     - target: {fileID: 7051528711596521660, guid: 2524eb1486d52314788a932c8a773564,
         type: 3}
@@ -203,7 +203,7 @@ PrefabInstance:
     - target: {fileID: 7051528711596521660, guid: 2524eb1486d52314788a932c8a773564,
         type: 3}
       propertyPath: EnemiesControl
-      value: 1900
+      value: 170
       objectReference: {fileID: 0}
     - target: {fileID: 7051528711596521660, guid: 2524eb1486d52314788a932c8a773564,
         type: 3}

@@ -2079,8 +2079,8 @@ MonoBehaviour:
   items:
   - {fileID: 1563921832}
   immune_items: []
-  CoinsControl: 4000
-  EnemiesControl: 2000
+  CoinsControl: 230
+  EnemiesControl: 200
   startGameTiming: 100
   totalEnemy: 0
   totalCoins: 0

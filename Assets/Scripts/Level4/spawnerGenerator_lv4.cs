@@ -55,8 +55,7 @@ public class spawnerGenerator_lv4 : MonoBehaviour
         currentEnemies = 0;
     }
 
-    // Update is called once per frame
-    void Update()
+    void FixedUpdate()
     {
         i++;
         if (i > startGameTiming)

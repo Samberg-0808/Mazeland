@@ -62,10 +62,8 @@ public class spawnerGenerator : MonoBehaviour
         currentEnemies = 0;
     }
 
-    // Update is called once per frame
-    void Update()
+    void FixedUpdate()
     {
-        //Debug.Log(Time.time / 3);
         i++;
         if (i > startGameTiming)
         {
@@ -88,7 +86,7 @@ public class spawnerGenerator : MonoBehaviour
                 spawnEnemies();
             }
 
-            if (i % 8000 == 0 & scene.name == "Level3")
+            if (i % 800 == 0 & scene.name == "Level3")
             {
                 spawnItems();
 

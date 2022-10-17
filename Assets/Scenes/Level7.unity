@@ -3425,8 +3425,8 @@ MonoBehaviour:
   - {fileID: 717362678}
   - {fileID: 2137764365}
   items: []
-  CoinsControl: 1600
-  EnemiesControl: 1300
+  CoinsControl: 140
+  EnemiesControl: 120
   startGameTiming: 100
   totalEnemy: 0
   totalCoins: 0

@@ -24,13 +24,13 @@ public class EnemyMovement : MonoBehaviour
     }
 
     // Update is called once per frame
-    void Update()
+    void FixedUpdate()
     {
         
-        if (time_count == 1000){
+        if (time_count == 75){
             y_sign = Random.Range(0,2)*2-1;
         }
-        else if (time_count == 2000){
+        else if (time_count == 150){
             x_sign = Random.Range(0,2)*2-1;
             time_count = 0;
         }
@@ -39,7 +39,7 @@ public class EnemyMovement : MonoBehaviour
         var x_rnd = Random.value;
         var y_rnd = Random.value;
 
-        transform.position += new Vector3(x_rnd * x_sign, y_rnd * y_sign, 0) * Time.deltaTime * position_change_rate;
+        transform.position += new Vector3(x_rnd * x_sign, y_rnd * y_sign, 0) * Time.fixedDeltaTime * position_change_rate;
 
         time_count ++;
     

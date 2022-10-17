@@ -16,7 +16,7 @@ public class DestroyOnCollision_lv11 : MonoBehaviour
     public GameObject point;
     public static event Action OnPlayerScore;
     public Text Timer;
-    
+
     public int ScoreNum;
 
     public TextMeshPro PlayerText;
@@ -71,7 +71,7 @@ public class DestroyOnCollision_lv11 : MonoBehaviour
 
     }
 
-    
+
     void Start()
     {
         // **** data code ****
@@ -95,7 +95,7 @@ public class DestroyOnCollision_lv11 : MonoBehaviour
     void Update()
     {
 
-        
+
         if (TimeLeft > 0)
         {
             TimeLeft -= Time.deltaTime;
@@ -114,9 +114,9 @@ public class DestroyOnCollision_lv11 : MonoBehaviour
             stopwatch.Stop();
             long levelTime = stopwatch.ElapsedMilliseconds;
             levelTime = levelTime / 1000;
-            long currLevel = 11;
-            //sc.Send(_sessionID, currLevel, levelTime, -1, life.life);
-            //sc.enemySend(sg.totalEnemy, enemyKilled, sg.totalCoins, pointGained, sg.totalItems, itemGained);
+            long currLevel = 10;
+            sc.Send(_sessionID, currLevel, levelTime, -1, life.life);
+            sc.enemySend(3, enemyKilled, 4, pointGained, 0, 0);
             // ********
 
             //OnPlayerScore?.Invoke();
@@ -220,7 +220,7 @@ public class DestroyOnCollision_lv11 : MonoBehaviour
                 GameObject points = Instantiate(floatingpoints, transform.position, Quaternion.identity) as GameObject;
                 points.transform.GetComponent<TextMesh>().text = "+" + enemy_level;
                 gainSound.Play();
-                
+
                 Destroy(collision.gameObject);
                 // sg.currentEnemies--;
 
@@ -272,11 +272,11 @@ public class DestroyOnCollision_lv11 : MonoBehaviour
             OnPlayerScore?.Invoke();
 
             // **** data code ****
-            int level = 11;
+            int level = 10;
             sc.Send(_sessionID, -1, -1, level, -1);
             sc.enemySend(-1, -1, -1, -1, -1, -1);
             // ********
-            
+
             this.death_flag = false;
         }
 
@@ -297,16 +297,19 @@ public class DestroyOnCollision_lv11 : MonoBehaviour
         float seconds = Mathf.FloorToInt(currentTime % 60);
 
         Timer.text = string.Format("{0:00} : {1:00}", minutes, seconds);
-        if (minutes == 0 & seconds == 0) {
+        if (minutes == 0 & seconds == 0)
+        {
             OnPlayerScore?.Invoke();
         }
     }
 
 
     // Temporarily ignore collision for 3 seconds
-    IEnumerator IgnoreCollision() {
+    IEnumerator IgnoreCollision()
+    {
         Physics2D.IgnoreLayerCollision(8, 9, true);
-        for (int i = 0; i < 6; i++) {
+        for (int i = 0; i < 6; i++)
+        {
             c.a = 0.5f;
             spriteRenderer.material.color = c;
             yield return new WaitForSeconds(0.25f);

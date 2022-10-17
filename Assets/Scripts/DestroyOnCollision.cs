@@ -123,11 +123,7 @@ public class DestroyOnCollision : MonoBehaviour
             }
             else if (scene.name == "Level3")
             {
-                currLevel = 3;
-            }
-            else if (scene.name == "Level4")
-            {
-                currLevel = 4;
+                currLevel = 6;
             }
             sc.Send(_sessionID, currLevel, levelTime, -1, life.life);
             sc.enemySend(sg.totalEnemy, enemyKilled, sg.totalCoins, pointGained, sg.totalItems, itemGained);
@@ -290,11 +286,7 @@ public class DestroyOnCollision : MonoBehaviour
             }
             else if (scene.name == "Level3")
             {
-                level = 3;
-            }
-            else if (scene.name == "Level4")
-            {
-                level = 4;
+                level = 6;
             }
             sc.Send(_sessionID, -1, -1, level, -1);
             sc.enemySend(-1, -1, -1, -1, -1, -1);

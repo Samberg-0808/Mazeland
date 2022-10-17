@@ -14,6 +14,8 @@ public class EnemyMovement_lv4 : MonoBehaviour
     private int x_sign = 1;
     private int y_sign = 1;
 
+    private int freeze_modifier = 1;
+
     // private Vector3 player_pos;
     // private Vector3 diff;
 
@@ -28,28 +30,27 @@ public class EnemyMovement_lv4 : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (DestroyOnCollision_lv4.enemyfreeze == true)
+        if (DestroyOnCollision_lv4.enemyfreeze)
         {
-            position_change_rate = 0.0f;
+            freeze_modifier = 0;
         }
-        if (DestroyOnCollision_lv4.enemyfreeze == false)
+        else
         {
-            position_change_rate = 1.0f;
+            freeze_modifier = 1;
         }
-        if (time_count == 50){
-            x_sign = x_sign * 1;
-            y_sign = y_sign * -1;
+        if (time_count == 1000){
+            y_sign *= Random.Range(0,2)*2-1;
         }
-        else if (time_count == 100){
-            x_sign = x_sign * -1;
-            y_sign = y_sign * 1;
+        else if (time_count == 2000){
+            x_sign *= Random.Range(0,2)*2-1;
             time_count = 0;
         }
-
+        
+          
         var x_rnd = Random.value;
         var y_rnd = Random.value;
 
-        transform.position += new Vector3(x_rnd * x_sign, y_rnd * y_sign, 0) * Time.deltaTime * position_change_rate;
+        transform.position += new Vector3(x_rnd * x_sign, y_rnd * y_sign, 0) * Time.deltaTime * position_change_rate * freeze_modifier;
 
         time_count ++;
 

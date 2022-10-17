@@ -345,7 +345,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 10b8df843f885de4696d3de5ba96fd04, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  position_change_rate: 2
+  position_change_rate: 1
   enemy_level: 5
 --- !u!1001 &284862223
 PrefabInstance:
@@ -436,7 +436,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 10b8df843f885de4696d3de5ba96fd04, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  position_change_rate: 2
+  position_change_rate: 1
   enemy_level: 2
 --- !u!1 &368366437
 GameObject:
@@ -837,7 +837,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 10b8df843f885de4696d3de5ba96fd04, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  position_change_rate: 2
+  position_change_rate: 1
   enemy_level: 3
 --- !u!1 &462726315
 GameObject:
@@ -1272,6 +1272,7 @@ MonoBehaviour:
   enemiesLimit: 10
   currentCoins: 0
   currentEnemies: 0
+  player_pos: {x: 0, y: 0, z: 0}
   scene:
     m_Handle: 0
 --- !u!1001 &1015737341

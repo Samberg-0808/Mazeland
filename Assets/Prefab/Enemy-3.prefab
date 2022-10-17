@@ -321,7 +321,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 10b8df843f885de4696d3de5ba96fd04, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  position_change_rate: 2
+  position_change_rate: 1
   enemy_level: 3
 --- !u!114 &6443455925171057184
 MonoBehaviour:

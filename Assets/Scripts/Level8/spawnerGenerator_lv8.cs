@@ -87,7 +87,7 @@ public class spawnerGenerator_lv8 : MonoBehaviour
                 spawnEnemies();
             }
 
-            if (i % 1000 == 0 & scene.name == "Level8")
+            if (i % 8000 == 0 & scene.name == "Level8")
             {
                 spawnItems();
 

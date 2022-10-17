@@ -2731,8 +2731,8 @@ MonoBehaviour:
   items:
   - {fileID: 1563921832}
   immune_items: []
-  CoinsControl: 400
-  EnemiesControl: 200
+  CoinsControl: 4000
+  EnemiesControl: 2000
   startGameTiming: 100
   totalEnemy: 0
   totalCoins: 0
@@ -2966,10 +2966,6 @@ MonoBehaviour:
   - {fileID: 242088805}
   coins:
   - {fileID: 2050233564}
-  enemys:
-  - {fileID: 284862224}
-  - {fileID: 432424648}
-  - {fileID: 242088805}
   progressBar: {fileID: 1755362905}
   enemyKilled: 0
   pointGained: 0

@@ -87,7 +87,7 @@ public class spawnerGenerator : MonoBehaviour
                 spawnEnemies();
             }
 
-            if (i % 1000 == 0 & scene.name == "Level3")
+            if (i % 8000 == 0 & scene.name == "Level3")
             {
                 spawnItems();
 

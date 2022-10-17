@@ -25,12 +25,12 @@ public class EnemyMovement_lv7 : MonoBehaviour
     void Update()
     {
 
-        if (time_count == 50)
+        if (time_count == 200)
         {
             x_sign = x_sign * 1;
             y_sign = y_sign * -1;
         }
-        else if (time_count == 100)
+        else if (time_count == 400)
         {
             x_sign = x_sign * -1;
             y_sign = y_sign * 1;

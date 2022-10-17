@@ -1490,7 +1490,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 10b8df843f885de4696d3de5ba96fd04, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  position_change_rate: 2
+  position_change_rate: 1
   enemy_level: 2
 --- !u!1 &1437622340
 GameObject:
@@ -1780,7 +1780,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 10b8df843f885de4696d3de5ba96fd04, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  position_change_rate: 2
+  position_change_rate: 1
   enemy_level: 5
 --- !u!1 &1662778466
 GameObject:
@@ -1948,7 +1948,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 10b8df843f885de4696d3de5ba96fd04, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  position_change_rate: 2
+  position_change_rate: 1
   enemy_level: 3
 --- !u!1001 &1785694172
 PrefabInstance:
@@ -3214,6 +3214,26 @@ PrefabInstance:
       propertyPath: Player
       value: 
       objectReference: {fileID: 2178138575840732461}
+    - target: {fileID: 7051528711596521660, guid: 2524eb1486d52314788a932c8a773564,
+        type: 3}
+      propertyPath: coinsLimit
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 7051528711596521660, guid: 2524eb1486d52314788a932c8a773564,
+        type: 3}
+      propertyPath: CoinsControl
+      value: 2000
+      objectReference: {fileID: 0}
+    - target: {fileID: 7051528711596521660, guid: 2524eb1486d52314788a932c8a773564,
+        type: 3}
+      propertyPath: enemiesLimit
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 7051528711596521660, guid: 2524eb1486d52314788a932c8a773564,
+        type: 3}
+      propertyPath: EnemiesControl
+      value: 3000
+      objectReference: {fileID: 0}
     - target: {fileID: 7051528711596521660, guid: 2524eb1486d52314788a932c8a773564,
         type: 3}
       propertyPath: coins.Array.size

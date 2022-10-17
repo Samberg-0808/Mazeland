@@ -306,7 +306,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 10b8df843f885de4696d3de5ba96fd04, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  position_change_rate: 2
+  position_change_rate: 1
   enemy_level: 3
 --- !u!1001 &280922128
 PrefabInstance:
@@ -924,7 +924,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 10b8df843f885de4696d3de5ba96fd04, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  position_change_rate: 2
+  position_change_rate: 1
   enemy_level: 5
 --- !u!1 &519420028
 GameObject:
@@ -2501,7 +2501,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 10b8df843f885de4696d3de5ba96fd04, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  position_change_rate: 2
+  position_change_rate: 1
   enemy_level: 2
 --- !u!1 &1744685028
 GameObject:
@@ -2736,6 +2736,16 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7051528711596521660, guid: 2524eb1486d52314788a932c8a773564,
+        type: 3}
+      propertyPath: coinsLimit
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 7051528711596521660, guid: 2524eb1486d52314788a932c8a773564,
+        type: 3}
+      propertyPath: enemiesLimit
+      value: 6
       objectReference: {fileID: 0}
     - target: {fileID: 7051528711596521660, guid: 2524eb1486d52314788a932c8a773564,
         type: 3}

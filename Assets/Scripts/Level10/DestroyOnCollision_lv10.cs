@@ -49,7 +49,7 @@ public class DestroyOnCollision_lv10 : MonoBehaviour
 
     public AudioSource gainSound;
     public AudioSource hitSound;
-    public spawnerGenerator sg;
+    public spawnerGenerator_lv10 sg;
 
     public CameraShake cameraShake;
     public GameObject Immune_item;

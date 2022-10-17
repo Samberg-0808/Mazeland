@@ -5010,7 +5010,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 7051528711000069352}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 357c4428d5f784e9486d114318c84aeb, type: 3}
+  m_Script: {fileID: 11500000, guid: 8fbb2778fc7191047b5e03d943984943, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   coins: []

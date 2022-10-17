@@ -201,7 +201,7 @@ public class DestroyOnCollision_lv6 : MonoBehaviour
 
             // **** data code ****
             pointGained++;
-            // *
+            // ********
 
             MyscoreText.text = "Score: " + ScoreNum;
             PlayerText.text = ScoreNum.ToString();

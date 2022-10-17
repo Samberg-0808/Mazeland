@@ -114,23 +114,7 @@ public class DestroyOnCollision_lv8 : MonoBehaviour
             stopwatch.Stop();
             long levelTime = stopwatch.ElapsedMilliseconds;
             levelTime = levelTime / 1000;
-            long currLevel = 0;
-            if (scene.name == "Level1")
-            {
-                currLevel = 1;
-            }
-            else if (scene.name == "Level2")
-            {
-                currLevel = 2;
-            }
-            else if (scene.name == "Level3")
-            {
-                currLevel = 3;
-            }
-            else if (scene.name == "Level4")
-            {
-                currLevel = 4;
-            }
+            long currLevel = 8;
             sc.Send(_sessionID, currLevel, levelTime, -1, life.life);
             sc.enemySend(sg.totalEnemy, enemyKilled, sg.totalCoins, pointGained, sg.totalItems, itemGained);
             // ********
@@ -298,23 +282,7 @@ public class DestroyOnCollision_lv8 : MonoBehaviour
             OnPlayerScore?.Invoke();
 
             // **** data code ****
-            int level = 0;
-            if (scene.name == "Level1")
-            {
-                level = 1;
-            }
-            else if (scene.name == "Level2")
-            {
-                level = 2;
-            }
-            else if (scene.name == "Level3")
-            {
-                level = 3;
-            }
-            else if (scene.name == "Level4")
-            {
-                level = 4;
-            }
+            int level = 8;
             sc.Send(_sessionID, -1, -1, level, -1);
             sc.enemySend(-1, -1, -1, -1, -1, -1);
             // ********

@@ -301,7 +301,7 @@ public class DestroyOnCollision_lv4 : MonoBehaviour
         {
             OnPlayerScore?.Invoke();
 
-            // **** data code****
+            // **** data code ****
             int level = 4;
             sc.Send(_sessionID, -1, -1, level, -1);
             sc.enemySend(-1, -1, -1, -1, -1, -1);

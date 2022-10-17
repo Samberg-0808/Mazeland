@@ -52,14 +52,17 @@ public class spawnerGenerator_lv10 : MonoBehaviour
     {
         scene = SceneManager.GetActiveScene();
 
-        // **** data code ****
-        totalEnemy = 0;
-        totalCoins = 0;
-        totalItems = 0;
-        // ********
+        
         
         currentCoins = 0;
         currentEnemies = 0;
+
+        // **** data code ****
+        totalEnemy = 6;
+        totalCoins = 4;
+        totalItems = 0;
+        // ********
+
     }
 
     // Update is called once per frame

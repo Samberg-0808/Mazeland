@@ -116,7 +116,7 @@ public class DestroyOnCollision_lv12 : MonoBehaviour
             stopwatch.Stop();
             long levelTime = stopwatch.ElapsedMilliseconds;
             levelTime = levelTime / 1000;
-            long currLevel = 6;
+            long currLevel = 12;
             sc.Send(_sessionID, currLevel, levelTime, -1, life.life);
             sc.enemySend(sg.totalEnemy, enemyKilled, sg.totalCoins, pointGained, sg.totalItems, itemGained);
             // ********
@@ -204,7 +204,7 @@ public class DestroyOnCollision_lv12 : MonoBehaviour
 
             // **** data code ****
             pointGained++;
-            // *
+            // ********
 
             MyscoreText.text = "Score: " + ScoreNum;
             PlayerText.text = ScoreNum.ToString();
@@ -274,7 +274,7 @@ public class DestroyOnCollision_lv12 : MonoBehaviour
             OnPlayerScore?.Invoke();
 
             // **** data code ****
-            int level = 6;
+            int level = 12;
             sc.Send(_sessionID, -1, -1, level, -1);
             sc.enemySend(-1, -1, -1, -1, -1, -1);
             // ********

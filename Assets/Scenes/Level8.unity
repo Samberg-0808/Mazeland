@@ -2966,6 +2966,10 @@ MonoBehaviour:
   - {fileID: 242088805}
   coins:
   - {fileID: 2050233564}
+  enemys:
+  - {fileID: 284862224}
+  - {fileID: 432424648}
+  - {fileID: 242088805}
   progressBar: {fileID: 1755362905}
   enemyKilled: 0
   pointGained: 0

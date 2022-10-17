@@ -268,19 +268,18 @@ public class DestroyOnCollision_lv8 : MonoBehaviour
             }
             if (collision.gameObject.name == "bomb-item(Clone)")
             {
-                foreach (GameObject child in enemy)
-                {
-                    if (child.gameObject.tag == "Enemy" && child.gameObject.name.IndexOf('(') != -1)
-                    {
-                        Destroy(child);
-                    }
-                }
                 coins = FindObjectsOfType(typeof(GameObject)) as GameObject[];
                 foreach (GameObject coin in coins)
                 {
                     if (coin.gameObject.tag == "Coin" && coin.gameObject.name.IndexOf('(') != -1)
                     {
                         Destroy(coin);
+                        sg.currentCoins--;
+                    }
+                    if (coin.gameObject.tag == "Enemy" && coin.gameObject.name.IndexOf('(') != -1)
+                    {
+                        Destroy(coin);
+                        sg.currentEnemies--;
                     }
                 }
             }

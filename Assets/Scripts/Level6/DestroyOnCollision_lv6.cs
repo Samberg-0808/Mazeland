@@ -115,7 +115,7 @@ public class DestroyOnCollision_lv6 : MonoBehaviour
             levelTime = levelTime / 1000;
             long currLevel = 11;
             sc.Send(_sessionID, currLevel, levelTime, -1, life.life);
-            sc.enemySend(14, enemyKilled, 21, pointGained, 0, 0);
+            sc.enemySend(14, enemyKilled, 22, pointGained, 0, 0);
             // ********
 
             //OnPlayerScore?.Invoke();

@@ -1,0 +1,63 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!78 &1
+TagManager:
+  serializedVersion: 2
+  tags:
+  - Item
+  - Coin
+  - Enemy
+  - Rob
+  - Portal1
+  - Portal2
+  - Portal3
+  - immune
+  - Portal4
+  - Portal5
+  - Portal6
+  layers:
+  - Default
+  - TransparentFX
+  - Ignore Raycast
+  - 
+  - Water
+  - UI
+  - 
+  - 
+  - Player
+  - Real-enemy
+  - Fake-enemy
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - Layer 1
+  - Layer 2
+  - Layer 3
+  - coin-1
+  - coin-2
+  - coin-3
+  - coin-4
+  - coin-5
+  - 
+  - 
+  - 
+  - 
+  m_SortingLayers:
+  - name: Default
+    uniqueID: 0
+    locked: 0
+  - name: Layer 1
+    uniqueID: 2425651459
+    locked: 0
+  - name: Layer 2
+    uniqueID: 4250941897
+    locked: 0
+  - name: Layer 3
+    uniqueID: 4189426099
+    locked: 0

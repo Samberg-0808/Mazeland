@@ -48,6 +48,8 @@ public class DestroyOnCollision_lv7 : MonoBehaviour
     public EnemyStatus enemyStatus;
 
     public GameObject floatingpoints;
+
+    public GameObject tips;
     public HealthSystem life;
     public PlayerControl speed;
 
@@ -66,7 +68,6 @@ public class DestroyOnCollision_lv7 : MonoBehaviour
     private void Awake()
     {
         _sessionID = System.DateTime.Now.Ticks;
-
     }
 
     
@@ -78,6 +79,7 @@ public class DestroyOnCollision_lv7 : MonoBehaviour
         itemGained = 0;
         stopwatch.Start();
         // ********
+        // tips.SetActive(false);
 
         scene = SceneManager.GetActiveScene();
         UnityEngine.Debug.Log(scene.name);

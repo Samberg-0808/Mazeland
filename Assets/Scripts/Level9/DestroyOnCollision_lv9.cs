@@ -132,13 +132,9 @@ public class DestroyOnCollision_lv9 : MonoBehaviour
         {
             if (child.gameObject.tag == "Enemy")
             {
-                if (ScoreNum > 0)
-                {
-                    //child.gameObject.GetComponent<EnemyStatus>().updateColor(ScoreNum);
-                }
+                //child.gameObject.GetComponent<EnemyStatus>().updateColor(ScoreNum);
             }
         }
-
     }
 
     private void OnCollisionEnter2D(Collision2D collision)

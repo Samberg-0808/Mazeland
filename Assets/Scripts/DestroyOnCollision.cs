@@ -143,10 +143,7 @@ public class DestroyOnCollision : MonoBehaviour
         {
             if (child.gameObject.tag == "Enemy")
             {
-                if (ScoreNum > 0)
-                {
-                    child.gameObject.GetComponent<EnemyStatus>().updateColor(ScoreNum);
-                }
+                child.gameObject.GetComponent<EnemyStatus>().updateColor(ScoreNum);
             }
         }
 

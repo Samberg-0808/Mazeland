@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class SettingButton : MonoBehaviour
 {
@@ -41,11 +42,13 @@ public class SettingButton : MonoBehaviour
 
     public void MenuButton()
     {
-
+        SceneManager.LoadScene("LevelMenu");
+        Time.timeScale = 1;
     }
 
     public void RestartButton()
     {
-
+        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
+        Time.timeScale = 1;
     }
 }

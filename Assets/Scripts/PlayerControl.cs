@@ -32,5 +32,4 @@ public class PlayerControl : MonoBehaviour
             movementSpeed++;
         }
     }
-
 }

@@ -129,13 +129,9 @@ public class DestroyOnCollision_lv6 : MonoBehaviour
         // UnityEngine.Debug.Log("enemy");
         foreach (GameObject child in enemy)
         {
-            // UnityEngine.Debug.Log("sss");
             if (child != null && child.gameObject.tag == "Enemy")
             {
-                if (ScoreNum > 0)
-                {
-                    child.gameObject.GetComponent<EnemyStatus>().updateColor(ScoreNum);
-                }
+                child.gameObject.GetComponent<EnemyStatus>().updateColor(ScoreNum);
             }
         }
 

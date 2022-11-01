@@ -21,8 +21,8 @@ public class EnemyStatus : MonoBehaviour
     public void updateColor(int ScoreNum) {
         if (!mutable) {
             sr.color = new Color32(128, 128, 128, 255);
-        } else if (mutable && ScoreNum > 0) {
-            if (ScoreNum % enemy_level == 0) {
+        } else {
+            if (ScoreNum > 0 && ScoreNum % enemy_level == 0) {
                 sr.color = new Color32(93, 255, 185, 255); // change color to green
                 gameObject.layer = 10; // change layer to "Fake-enemy" layer 10
             } else {

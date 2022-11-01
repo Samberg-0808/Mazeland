@@ -7,6 +7,8 @@ public class SettingButton : MonoBehaviour
 {
     public bool Paused = false;
     public GameObject PauseCanvas;
+    public AudioSource gainSound;
+    public AudioSource hitSound;
     //button color 78CEFF
     // Start is called before the first frame update
     void Start()
@@ -37,7 +39,8 @@ public class SettingButton : MonoBehaviour
 
     public void MuteButton()
     {
-
+        gainSound.mute = !gainSound.mute;
+        hitSound.mute = !hitSound.mute;
     }
 
     public void MenuButton()

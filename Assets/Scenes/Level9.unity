@@ -2255,6 +2255,16 @@ PrefabInstance:
       propertyPath: m_AnchoredPosition.y
       value: 17
       objectReference: {fileID: 0}
+    - target: {fileID: 3329566954251667340, guid: 32761ef532df2d349a5de84bd6235e56,
+        type: 3}
+      propertyPath: hitSound
+      value: 
+      objectReference: {fileID: 462726317}
+    - target: {fileID: 3329566954251667340, guid: 32761ef532df2d349a5de84bd6235e56,
+        type: 3}
+      propertyPath: gainSound
+      value: 
+      objectReference: {fileID: 368366439}
     - target: {fileID: 4166679371105813616, guid: 32761ef532df2d349a5de84bd6235e56,
         type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName

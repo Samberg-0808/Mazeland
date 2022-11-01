@@ -278,6 +278,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Paused: 0
   PauseCanvas: {fileID: 720305138}
+  gainSound: {fileID: 0}
+  hitSound: {fileID: 0}
 --- !u!114 &58012936
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1077,6 +1079,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Paused: 1
   PauseCanvas: {fileID: 720305138}
+  gainSound: {fileID: 0}
+  hitSound: {fileID: 0}
 --- !u!114 &388632453
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1512,6 +1516,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Paused: 0
   PauseCanvas: {fileID: 0}
+  gainSound: {fileID: 0}
+  hitSound: {fileID: 0}
 --- !u!114 &588334200
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2059,6 +2065,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Paused: 0
   PauseCanvas: {fileID: 0}
+  gainSound: {fileID: 0}
+  hitSound: {fileID: 0}
 --- !u!114 &1145469828
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2853,6 +2861,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Paused: 0
   PauseCanvas: {fileID: 0}
+  gainSound: {fileID: 368366439}
+  hitSound: {fileID: 462726317}
 --- !u!114 &1708708727
 MonoBehaviour:
   m_ObjectHideFlags: 0

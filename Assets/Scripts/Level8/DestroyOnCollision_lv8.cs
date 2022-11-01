@@ -255,11 +255,23 @@ public class DestroyOnCollision_lv8 : MonoBehaviour
                     if (coin.gameObject.tag == "Coin" && coin.gameObject.name.IndexOf('(') != -1)
                     {
                         Destroy(coin);
+                        ScoreNum += 1;
+                        GameObject points = Instantiate(floatingpoints, transform.position, Quaternion.identity) as GameObject;
+                        points.transform.GetComponent<TextMesh>().text = "+1"; ScoreNum += 1;
+                        pointGained++;
+                        MyscoreText.text = "Score: " + ScoreNum;
+                        PlayerText.text = ScoreNum.ToString();
                         sg.currentCoins--;
                     }
                     if (coin.gameObject.tag == "Enemy" && coin.gameObject.name.IndexOf('(') != -1)
                     {
                         Destroy(coin);
+                        ScoreNum += 1;
+                        GameObject points = Instantiate(floatingpoints, transform.position, Quaternion.identity) as GameObject;
+                        points.transform.GetComponent<TextMesh>().text = "+1";
+                        pointGained++;
+                        MyscoreText.text = "Score: " + ScoreNum;
+                        PlayerText.text = ScoreNum.ToString();
                         sg.currentEnemies--;
                     }
                 }

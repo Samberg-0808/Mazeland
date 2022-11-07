@@ -56,6 +56,12 @@ public class Tutorial_DestroyOnCollision: MonoBehaviour
     public TextMeshProUGUI DivisibleText2;
 
     public GameObject RestartTutorial;
+    private Scene scene;
+    public ProgressBar progressBar;
+    public Dictionary<string, int> levelScoreTarget = new Dictionary<string, int>
+    {
+        ["GameTutorial"] = 20
+    };
 
     void Start()
     {
@@ -91,10 +97,14 @@ public class Tutorial_DestroyOnCollision: MonoBehaviour
         DivisibleText.enabled = false;
         DivisibleText1.enabled = false;
         DivisibleText2.enabled = false;
+        
     }
 
     void Update()
     {
+        scene = SceneManager.GetActiveScene();
+        progressBar.setProgressBar(ScoreNum, levelScoreTarget[scene.name]);
+
         enemy = FindObjectsOfType(typeof(GameObject)) as GameObject[];
         foreach (GameObject child in enemy)
         {

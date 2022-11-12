@@ -2727,8 +2727,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 825.69, y: 363.55}
-  m_SizeDelta: {x: 160, y: 35}
+  m_AnchoredPosition: {x: 830.89044, y: 358.39996}
+  m_SizeDelta: {x: 199.51, y: 30.948}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1102769023
 MonoBehaviour:
@@ -2806,8 +2806,8 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 10905, guid: 0000000000000000f000000000000000, type: 0}
-  m_Type: 1
+  m_Sprite: {fileID: 21300000, guid: 8f056b21a6eea4eb18b2ea1f3ea5b774, type: 3}
+  m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
   m_FillMethod: 4
@@ -3887,8 +3887,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 825.69, y: 409.38}
-  m_SizeDelta: {x: 160, y: 35}
+  m_AnchoredPosition: {x: 830.8881, y: 409.38}
+  m_SizeDelta: {x: 199.5057, y: 34.997}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1266496258
 MonoBehaviour:
@@ -3966,8 +3966,8 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 10905, guid: 0000000000000000f000000000000000, type: 0}
-  m_Type: 1
+  m_Sprite: {fileID: 21300000, guid: 8f056b21a6eea4eb18b2ea1f3ea5b774, type: 3}
+  m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
   m_FillMethod: 4
@@ -4780,8 +4780,9 @@ MonoBehaviour:
       m_Calls: []
   m_text: color hint off
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
-  m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: 9bcf73c1ca6d647ca8accd3cd7d7863d, type: 2}
+  m_sharedMaterial: {fileID: -4160996668550459820, guid: 9bcf73c1ca6d647ca8accd3cd7d7863d,
+    type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -5000,8 +5001,9 @@ MonoBehaviour:
       m_Calls: []
   m_text: color hint on
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
-  m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: 9bcf73c1ca6d647ca8accd3cd7d7863d, type: 2}
+  m_sharedMaterial: {fileID: -4160996668550459820, guid: 9bcf73c1ca6d647ca8accd3cd7d7863d,
+    type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []

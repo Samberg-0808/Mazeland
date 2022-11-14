@@ -259,6 +259,7 @@ MonoBehaviour:
   portal1: {fileID: 1127334852}
   portal2: {fileID: 1376325653}
   portal5: {fileID: 51168444}
+  portal6: {fileID: 448779498}
   count: 0
 --- !u!4 &95988086 stripped
 Transform:
@@ -1054,6 +1055,7 @@ MonoBehaviour:
   portal1: {fileID: 1127334852}
   portal2: {fileID: 1376325653}
   portal5: {fileID: 51168444}
+  portal6: {fileID: 448779498}
   count: 0
 --- !u!1 &462726315
 GameObject:
@@ -3766,6 +3768,7 @@ MonoBehaviour:
   portal1: {fileID: 1127334852}
   portal2: {fileID: 1376325653}
   portal5: {fileID: 51168444}
+  portal6: {fileID: 448779498}
   count: 0
 --- !u!1001 &1142093303
 PrefabInstance:
@@ -4531,6 +4534,7 @@ MonoBehaviour:
   portal1: {fileID: 1127334852}
   portal2: {fileID: 1376325653}
   portal5: {fileID: 51168444}
+  portal6: {fileID: 448779498}
   count: 0
 --- !u!1 &1418928079
 GameObject:

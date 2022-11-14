@@ -8,11 +8,11 @@ public class Level15_LevelController : MonoBehaviour
     public GameObject nextLevelMenu;
 
     private void OnEnable() {
-        DestroyOnCollision_lv14.NextLevel += EnableNextLevelMenu;
+        DestroyOnCollision_lv15.NextLevel += EnableNextLevelMenu;
     }
 
     private void OnDisable() {
-       DestroyOnCollision_lv14.NextLevel -= EnableNextLevelMenu;
+       DestroyOnCollision_lv15.NextLevel -= EnableNextLevelMenu;
     }
 
     public void EnableNextLevelMenu()

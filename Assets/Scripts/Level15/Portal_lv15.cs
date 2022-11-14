@@ -20,6 +20,7 @@ public class Portal_lv15 : MonoBehaviour
     public GameObject portal1;
     public GameObject portal2;
     public GameObject portal5;
+    public GameObject portal6;
     public int count = 0;
 
     // Start is called before the first frame update
@@ -68,6 +69,7 @@ public class Portal_lv15 : MonoBehaviour
             {
                 Ring3.SetActive(false);
                 portal5.SetActive(false);
+                portal6.SetActive(false);
             }
         }
     }

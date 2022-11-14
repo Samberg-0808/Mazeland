@@ -9,11 +9,11 @@ public class Level15_UIManager : MonoBehaviour
     public GameObject gameOverMenu; 
 
     private void OnEnable() {
-        DestroyOnCollision_lv14.OnPlayerScore += EnableGameOverMenu;
+        DestroyOnCollision_lv15.OnPlayerScore += EnableGameOverMenu;
     }
 
     private void OnDisable() {
-        DestroyOnCollision_lv14.OnPlayerScore -= EnableGameOverMenu;
+        DestroyOnCollision_lv15.OnPlayerScore -= EnableGameOverMenu;
     }
 
     public void EnableGameOverMenu() {

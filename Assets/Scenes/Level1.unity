@@ -3492,6 +3492,11 @@ PrefabInstance:
       propertyPath: m_RootOrder
       value: 14
       objectReference: {fileID: 0}
+    - target: {fileID: 1850205942826715306, guid: 32761ef532df2d349a5de84bd6235e56,
+        type: 3}
+      propertyPath: m_text
+      value: YOU WON !
+      objectReference: {fileID: 0}
     - target: {fileID: 2108590391328343363, guid: 32761ef532df2d349a5de84bd6235e56,
         type: 3}
       propertyPath: m_RootOrder

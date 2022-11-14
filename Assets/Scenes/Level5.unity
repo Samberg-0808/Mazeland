@@ -2120,6 +2120,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Main
       objectReference: {fileID: 0}
+    - target: {fileID: 8401266207719251569, guid: d2d3cc3ab453cdb468c90dac66da7b51,
+        type: 3}
+      propertyPath: m_text
+      value: YOU WON !
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: d2d3cc3ab453cdb468c90dac66da7b51, type: 3}
 --- !u!1 &599473708

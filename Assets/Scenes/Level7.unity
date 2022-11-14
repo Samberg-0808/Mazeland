@@ -1604,7 +1604,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 925331046}
         m_TargetAssemblyTypeName: ColorHintStatus, Assembly-CSharp
-        m_MethodName: changeStatus
+        m_MethodName: turnOffStatus
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -3531,7 +3531,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 925331046}
         m_TargetAssemblyTypeName: ColorHintStatus, Assembly-CSharp
-        m_MethodName: changeStatus
+        m_MethodName: turnOnStatus
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}

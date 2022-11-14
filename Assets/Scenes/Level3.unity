@@ -195,7 +195,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 7
-  m_Sprite: {fileID: 21300000, guid: 5d1a4f4e4706341e8aac8246a6ca238f, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 4ce9875b2405f44d7836de0053a0b68a, type: 3}
   m_Color: {r: 0.90588236, g: 1, b: 0.99077415, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -441,8 +441,8 @@ MonoBehaviour:
   m_fontMaterials: []
   m_fontColor32:
     serializedVersion: 2
-    rgba: 4292919307
-  m_fontColor: {r: 0.043137256, g: 0.75187486, b: 0.8773585, a: 1}
+    rgba: 4282454001
+  m_fontColor: {r: 0.9433962, g: 0.057849795, b: 0.25607958, a: 1}
   m_enableVertexGradient: 0
   m_colorMode: 3
   m_fontColorGradient:
@@ -1684,7 +1684,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 7870616056415710368}
         m_TargetAssemblyTypeName: ColorHintStatus, Assembly-CSharp
-        m_MethodName: changeStatus
+        m_MethodName: turnOffStatus
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -3040,8 +3040,8 @@ MonoBehaviour:
   m_fontMaterials: []
   m_fontColor32:
     serializedVersion: 2
-    rgba: 4292919307
-  m_fontColor: {r: 0.043137256, g: 0.75187486, b: 0.8773585, a: 1}
+    rgba: 4282454001
+  m_fontColor: {r: 0.9433962, g: 0.057849795, b: 0.25607958, a: 1}
   m_enableVertexGradient: 0
   m_colorMode: 3
   m_fontColorGradient:
@@ -3299,7 +3299,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 7870616056415710368}
         m_TargetAssemblyTypeName: ColorHintStatus, Assembly-CSharp
-        m_MethodName: changeStatus
+        m_MethodName: turnOnStatus
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -4042,8 +4042,8 @@ MonoBehaviour:
   m_fontMaterials: []
   m_fontColor32:
     serializedVersion: 2
-    rgba: 4292919300
-  m_fontColor: {r: 0.015686275, g: 0.75187486, b: 0.8773585, a: 1}
+    rgba: 4282454001
+  m_fontColor: {r: 0.9433962, g: 0.057849795, b: 0.25607958, a: 1}
   m_enableVertexGradient: 0
   m_colorMode: 3
   m_fontColorGradient:

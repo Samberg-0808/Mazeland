@@ -9,6 +9,29 @@ public class ColorHintStatus : MonoBehaviour
     public Button btn;
     public Text txt;
 
+   
+    public void turnOffStatus() {
+        enemy = FindObjectsOfType(typeof(GameObject)) as GameObject[];
+        foreach (GameObject child in enemy)
+        {
+            if (child.gameObject.tag == "Enemy")
+            {
+                child.gameObject.GetComponent<EnemyStatus>().offStatus();
+            }
+        }
+    }
+
+    public void turnOnStatus() {
+        enemy = FindObjectsOfType(typeof(GameObject)) as GameObject[];
+        foreach (GameObject child in enemy)
+        {
+            if (child.gameObject.tag == "Enemy")
+            {
+                child.gameObject.GetComponent<EnemyStatus>().onStatus();
+            }
+        }
+
+    }
     public void changeStatus() {
 
         bool status = true;
@@ -19,16 +42,6 @@ public class ColorHintStatus : MonoBehaviour
             if (child.gameObject.tag == "Enemy")
             {
                 child.gameObject.GetComponent<EnemyStatus>().updateStatus();
-                
-                // Text text = transform.Find("HintStatusOff").GetComponent<Text>(); 
-                // if (status) {
-                //     status = false;
-                //     if (child.gameObject.GetComponent<EnemyStatus>().mutable) {
-                //         text.text= "off"; 
-                //     } else {
-                //         text.text = "on";
-                //     }
-                // }
             }
         }
     }

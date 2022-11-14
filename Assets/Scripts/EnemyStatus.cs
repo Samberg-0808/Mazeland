@@ -15,6 +15,14 @@ public class EnemyStatus : MonoBehaviour
         sr = GetComponent<SpriteRenderer>();
     }
 
+    public void offStatus() {
+        mutable = false;
+    }
+
+    public void onStatus() {
+        mutable = true;
+    }
+
     public void updateStatus() {
         mutable = !mutable;
     }

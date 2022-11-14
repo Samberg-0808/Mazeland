@@ -33,10 +33,10 @@ public class DestroyOnCollision : MonoBehaviour
     public Dictionary<string, int> levelScoreTarget = new Dictionary<string, int>
     {
         ["Tutorial"] = 1000,
-        ["Level1"] = 30,
-        ["Level2"] = 40,
-        ["Level3"] = 50,
-        ["Level4"] = 60
+        ["Level1"] = 20,
+        ["Level2"] = 25,
+        ["Level3"] = 30,
+        ["Level4"] = 30
     };
 
     // **** data code ****

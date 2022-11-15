@@ -6307,6 +6307,16 @@ PrefabInstance:
       propertyPath: m_Color.a
       value: 0.23529412
       objectReference: {fileID: 0}
+    - target: {fileID: 7402943736616279371, guid: 32761ef532df2d349a5de84bd6235e56,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: MuteButton
+      objectReference: {fileID: 0}
+    - target: {fileID: 7402943736616279371, guid: 32761ef532df2d349a5de84bd6235e56,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
+      value: SettingButton, Assembly-CSharp
+      objectReference: {fileID: 0}
     - target: {fileID: 7434223089763155522, guid: 32761ef532df2d349a5de84bd6235e56,
         type: 3}
       propertyPath: m_IsActive

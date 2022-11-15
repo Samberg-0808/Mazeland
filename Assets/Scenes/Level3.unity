@@ -3448,8 +3448,8 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 1708708726}
-        m_TargetAssemblyTypeName: Pause, Assembly-CSharp
-        m_MethodName: PauseButton
+        m_TargetAssemblyTypeName: SettingButton, Assembly-CSharp
+        m_MethodName: MuteButton
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}

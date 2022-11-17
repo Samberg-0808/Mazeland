@@ -8,7 +8,7 @@ using System.Diagnostics;
 using System.Threading;
 using TMPro;
 
-public class DestroyOnCollision_lv4 : MonoBehaviour
+public class DestroyOnCollision_lv18 : MonoBehaviour
 {
     // Start is called before the first frame updat
 
@@ -20,9 +20,9 @@ public class DestroyOnCollision_lv4 : MonoBehaviour
 
     public TextMeshPro PlayerText;
 
-    [SerializeField] ParticleSystem healEffect;
-    [SerializeField] ParticleSystem windEffect;
-    [SerializeField] ParticleSystem bombEffect;
+    // [SerializeField] ParticleSystem healEffect;
+    // [SerializeField] ParticleSystem windEffect;
+    // [SerializeField] ParticleSystem bombEffect;
 
 
     public float TimeLeft;
@@ -36,11 +36,7 @@ public class DestroyOnCollision_lv4 : MonoBehaviour
     public ProgressBar progressBar;
     public Dictionary<string, int> levelScoreTarget = new Dictionary<string, int>
     {
-        ["Tutorial"] = 1000,
-        ["Level1"] = 40,
-        ["Level2"] = 60,
-        ["Level3"] = 60,
-        ["Level4"] = 60,
+        ["Level18"] = 60
     };
 
     public EnemyStatus enemyStatus;
@@ -59,12 +55,14 @@ public class DestroyOnCollision_lv4 : MonoBehaviour
 
     public AudioSource gainSound;
     public AudioSource hitSound;
-    public spawnerGenerator sg;
+    public spawnerGenerator_lv18 sg;
 
     public CameraShake cameraShake;
     public GameObject Immune_item;
     public SpriteRenderer spriteRenderer;
     public Color c;
+
+    public float bonusTime;
 
     public SendToGoogle sc = new SendToGoogle();
 
@@ -99,12 +97,10 @@ public class DestroyOnCollision_lv4 : MonoBehaviour
     void Update()
     {
         if (TimeLeft > 0)
-        {
+        {    
             TimeLeft -= Time.deltaTime;
-            updateTimer(TimeLeft);
-        }
-
-
+            updateTimer(TimeLeft);   
+        } 
 
         // Return the current Active Scene to get the name of the current scene
         scene = SceneManager.GetActiveScene();
@@ -115,7 +111,7 @@ public class DestroyOnCollision_lv4 : MonoBehaviour
             stopwatch.Stop();
             long levelTime = stopwatch.ElapsedMilliseconds;
             levelTime = levelTime / 1000;
-            long currLevel = 3;
+            long currLevel = 18;
             sc.Send(_sessionID, currLevel, levelTime, -1, life.life);
             sc.enemySend(sg.totalEnemy, enemyKilled, sg.totalCoins, pointGained, sg.totalItems, itemGained);
             // ********
@@ -211,7 +207,7 @@ public class DestroyOnCollision_lv4 : MonoBehaviour
 
         if (collision.gameObject.tag == "Enemy")
         {
-            int enemy_level = collision.gameObject.GetComponent<EnemyMovement_lv4>().enemy_level;
+            int enemy_level = collision.gameObject.GetComponent<EnemyMovement_lv18>().enemy_level;
             if (ScoreNum % enemy_level == 0 && ScoreNum != 0)
             {
                 ScoreNum += enemy_level;
@@ -253,18 +249,22 @@ public class DestroyOnCollision_lv4 : MonoBehaviour
 
             if (collision.gameObject.name == "heart-item(Clone)")
             {
-                healEffect.Play();
+                // healEffect.Play();
                 life.Heal();
                 //healEffect.Play();
             }
             if (collision.gameObject.name == "speed-item(Clone)")
             {
-                windEffect.Play();
+                // windEffect.Play();
                 speed.Speed();
+            }
+            if (collision.gameObject.name == "time-item(Clone)")
+            {
+                this.TimeLeft += bonusTime;
             }
             if (collision.gameObject.name == "bomb-item(Clone)")
             {
-                bombEffect.Play();
+                // bombEffect.Play();
                 foreach (GameObject child in enemy)
                 {
                     if (child.gameObject.tag == "Enemy" && child.gameObject.name.IndexOf('(') != -1)
@@ -299,7 +299,7 @@ public class DestroyOnCollision_lv4 : MonoBehaviour
             OnPlayerScore?.Invoke();
 
             // **** data code ****
-            int level = 3;
+            int level = 18;
             sc.Send(_sessionID, -1, -1, level, -1);
             sc.enemySend(-1, -1, -1, -1, -1, -1);
             // ********

@@ -38,7 +38,8 @@ public class DestroyOnCollision_lv12 : MonoBehaviour
         ["Level3"] = 150,
         ["Level6"] = 200,
         ["Level11"] = 200,
-        ["Level12"] = 200
+        ["Level12"] = 200,
+        ["Level19"] = 200
     };
 
 

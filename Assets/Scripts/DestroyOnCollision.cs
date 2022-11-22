@@ -50,6 +50,7 @@ public class DestroyOnCollision : MonoBehaviour
     public GameObject floatingpoints;
     public HealthSystem life;
     public PlayerControl speed;
+    public circleShrink freeze;
 
     public AudioSource gainSound;
     public AudioSource hitSound;
@@ -124,6 +125,10 @@ public class DestroyOnCollision : MonoBehaviour
             else if (scene.name == "Level3")
             {
                 currLevel = 6;
+            }
+            else if (scene.name == "Level20")
+            {
+                currLevel = 20;
             }
             sc.Send(_sessionID, currLevel, levelTime, -1, life.life);
             sc.enemySend(sg.totalEnemy, enemyKilled, sg.totalCoins, pointGained, sg.totalItems, itemGained);
@@ -256,6 +261,10 @@ public class DestroyOnCollision : MonoBehaviour
             if (collision.gameObject.name == "speed-item(Clone)")
             {
                 speed.Speed();
+            }
+            if (collision.gameObject.name == "freeze-item(Clone)")
+            {
+                freeze.Freeze();
             }
             Destroy(collision.gameObject);
 

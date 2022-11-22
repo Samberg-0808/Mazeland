@@ -92,7 +92,7 @@ public class spawnerGenerator_lv16 : MonoBehaviour
                 spawnEnemies();
             }
 
-            if (i % 750 == 0)
+            if ((i+400) % 750 == 0)
             {
                 spawnItems();
 

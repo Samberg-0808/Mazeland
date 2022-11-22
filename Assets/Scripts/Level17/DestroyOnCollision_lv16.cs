@@ -67,6 +67,12 @@ public class DestroyOnCollision_lv16 : MonoBehaviour
 
     public CameraShake cameraShake;
     public GameObject Immune_item;
+
+    public GameObject starting_tips;
+
+    public GameObject item_tips;
+    
+    public GameObject tips_button; 
     public SpriteRenderer spriteRenderer;
     public Color c;
     private Color attackColor = new Color32(255, 160, 180, 255);
@@ -75,7 +81,7 @@ public class DestroyOnCollision_lv16 : MonoBehaviour
 
     private bool attackPhase = false;
 
-    
+    private bool gotFirstItem = false;
 
     private bool death_flag = true;
     private void Awake()
@@ -87,6 +93,7 @@ public class DestroyOnCollision_lv16 : MonoBehaviour
     
     void Start()
     {
+        item_tips.SetActive(false);
         // **** data code ****
         enemyKilled = 0;
         pointGained = 0;
@@ -103,6 +110,23 @@ public class DestroyOnCollision_lv16 : MonoBehaviour
         spriteRenderer = gameObject.GetComponent<SpriteRenderer>();
         c = spriteRenderer.material.color;
         Physics2D.IgnoreLayerCollision(8, 9, false); // reset IgnoreCollision
+        
+        Time.timeScale = 0;
+    }
+
+    public void HideStartingTips()
+    {
+        starting_tips.SetActive(false);
+        tips_button.SetActive(false);
+        Time.timeScale = 1;
+    }
+
+
+    public void HideItemTips()
+    {
+        item_tips.SetActive(false);
+        tips_button.SetActive(false);
+        Time.timeScale = 1;
     }
 
     void Update()
@@ -273,6 +297,12 @@ public class DestroyOnCollision_lv16 : MonoBehaviour
             }
             if (collision.gameObject.name == "attack-item(Clone)")
             {
+                if (!gotFirstItem) {
+                    Time.timeScale = 0;
+                    item_tips.SetActive(true);
+                    tips_button.SetActive(true);
+                    gotFirstItem = true;
+                }
                 Destroy(collision.gameObject);
                 gainSound.Play();
                 StartCoroutine("AttackPhase");

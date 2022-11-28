@@ -9,6 +9,7 @@ public class SettingButton : MonoBehaviour
     public GameObject PauseCanvas;
     public AudioSource gainSound;
     public AudioSource hitSound;
+    public AudioSource BGM;
     //button color 78CEFF
     // Start is called before the first frame update
     void Start()
@@ -41,6 +42,7 @@ public class SettingButton : MonoBehaviour
     {
         gainSound.mute = !gainSound.mute;
         hitSound.mute = !hitSound.mute;
+        BGM.mute = ! BGM.mute;
     }
 
     public void MenuButton()

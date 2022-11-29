@@ -6,6 +6,8 @@ public class EnemyStatus : MonoBehaviour
 {
     public int enemy_level = 1;
 
+    public bool mutable = true;
+
     public SpriteRenderer sr;
     // Start is called before the first frame update
     void Start()
@@ -13,9 +15,22 @@ public class EnemyStatus : MonoBehaviour
         sr = GetComponent<SpriteRenderer>();
     }
 
+    public void offStatus() {
+        mutable = false;
+    }
+
+    public void onStatus() {
+        mutable = true;
+    }
+
+    public void updateStatus() {
+        mutable = !mutable;
+    }
     public void updateColor(int ScoreNum) {
-        if (ScoreNum > 0) {
-            if (ScoreNum % enemy_level == 0) {
+        if (!mutable) {
+            sr.color = new Color32(128, 128, 128, 255);
+        } else {
+            if (ScoreNum > 0 && ScoreNum % enemy_level == 0) {
                 sr.color = new Color32(93, 255, 185, 255); // change color to green
                 gameObject.layer = 10; // change layer to "Fake-enemy" layer 10
             } else {
@@ -24,4 +39,5 @@ public class EnemyStatus : MonoBehaviour
             }
         }
     }
+
 }

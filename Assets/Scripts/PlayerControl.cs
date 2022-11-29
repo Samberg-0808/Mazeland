@@ -22,7 +22,6 @@ public class PlayerControl : MonoBehaviour
         
         transform.position += new Vector3(HorizontalMovement, VerticalMovement, 0) * Time.deltaTime *  movementSpeed;
         
-      
     }
 
     public void Speed()
@@ -32,5 +31,4 @@ public class PlayerControl : MonoBehaviour
             movementSpeed++;
         }
     }
-
 }

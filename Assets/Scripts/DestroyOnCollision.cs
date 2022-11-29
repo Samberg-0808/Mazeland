@@ -33,10 +33,10 @@ public class DestroyOnCollision : MonoBehaviour
     public Dictionary<string, int> levelScoreTarget = new Dictionary<string, int>
     {
         ["Tutorial"] = 1000,
-        ["Level1"] = 30,
-        ["Level2"] = 40,
-        ["Level3"] = 50,
-        ["Level4"] = 60
+        ["Level1"] = 20,
+        ["Level2"] = 25,
+        ["Level3"] = 30,
+        ["Level4"] = 30
     };
 
     // **** data code ****
@@ -50,6 +50,7 @@ public class DestroyOnCollision : MonoBehaviour
     public GameObject floatingpoints;
     public HealthSystem life;
     public PlayerControl speed;
+    public circleShrink freeze;
 
     public AudioSource gainSound;
     public AudioSource hitSound;
@@ -125,6 +126,10 @@ public class DestroyOnCollision : MonoBehaviour
             {
                 currLevel = 6;
             }
+            else if (scene.name == "Level20")
+            {
+                currLevel = 20;
+            }
             sc.Send(_sessionID, currLevel, levelTime, -1, life.life);
             sc.enemySend(sg.totalEnemy, enemyKilled, sg.totalCoins, pointGained, sg.totalItems, itemGained);
             // ********
@@ -143,10 +148,7 @@ public class DestroyOnCollision : MonoBehaviour
         {
             if (child.gameObject.tag == "Enemy")
             {
-                if (ScoreNum > 0)
-                {
-                    child.gameObject.GetComponent<EnemyStatus>().updateColor(ScoreNum);
-                }
+                child.gameObject.GetComponent<EnemyStatus>().updateColor(ScoreNum);
             }
         }
 
@@ -259,6 +261,10 @@ public class DestroyOnCollision : MonoBehaviour
             if (collision.gameObject.name == "speed-item(Clone)")
             {
                 speed.Speed();
+            }
+            if (collision.gameObject.name == "freeze-item(Clone)")
+            {
+                freeze.Freeze();
             }
             Destroy(collision.gameObject);
 

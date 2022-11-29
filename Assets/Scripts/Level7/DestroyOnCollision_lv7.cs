@@ -35,7 +35,8 @@ public class DestroyOnCollision_lv7 : MonoBehaviour
         ["Level1"] = 40,
         ["Level2"] = 100,
         ["Level3"] = 100,
-        ["Level7"] = 40
+        ["Level7"] = 40,
+        ["Level16"] = 40
     };
 
     // **** data code ****
@@ -48,6 +49,8 @@ public class DestroyOnCollision_lv7 : MonoBehaviour
     public EnemyStatus enemyStatus;
 
     public GameObject floatingpoints;
+
+    public GameObject tips;
     public HealthSystem life;
     public PlayerControl speed;
 
@@ -66,7 +69,6 @@ public class DestroyOnCollision_lv7 : MonoBehaviour
     private void Awake()
     {
         _sessionID = System.DateTime.Now.Ticks;
-
     }
 
     
@@ -78,6 +80,7 @@ public class DestroyOnCollision_lv7 : MonoBehaviour
         itemGained = 0;
         stopwatch.Start();
         // ********
+        // tips.SetActive(false);
 
         scene = SceneManager.GetActiveScene();
         UnityEngine.Debug.Log(scene.name);
@@ -129,10 +132,7 @@ public class DestroyOnCollision_lv7 : MonoBehaviour
         {
             if (child.gameObject.tag == "Enemy")
             {
-                if (ScoreNum > 0)
-                {
-                    child.gameObject.GetComponent<EnemyStatus>().updateColor(ScoreNum);
-                }
+                child.gameObject.GetComponent<EnemyStatus>().updateColor(ScoreNum);
             }
         }
 

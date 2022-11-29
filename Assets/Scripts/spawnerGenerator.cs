@@ -103,14 +103,20 @@ public class spawnerGenerator : MonoBehaviour
 
     public void spawnCoins()
     {
-        int r = Random.Range(0, coins.Length);
+        if (Time.timeScale == 0)
+        {
 
-        Vector2 center = new Vector2(1.07f, 0.58f);
+        }
+        else
+        {
+            int r = Random.Range(0, coins.Length);
 
-        Vector2 randomPoint = center + Random.insideUnitCircle * 4f;
+            Vector2 center = new Vector2(1.07f, 0.58f);
 
-        Instantiate(coins[r], randomPoint, transform.rotation);
+            Vector2 randomPoint = center + Random.insideUnitCircle * 4f;
 
+            Instantiate(coins[r], randomPoint, transform.rotation);
+        }
 
 
     }
@@ -118,16 +124,23 @@ public class spawnerGenerator : MonoBehaviour
 
     public void spawnEnemies()
     {
-        int r = Random.Range(0, enemies.Length);
-
-        Vector2 center = new Vector2(1.07f, 0.58f);
-
-        Vector2 randomPoint = center + Random.insideUnitCircle * 4f;
-        
-        //copy paste start and also delete the orignal instantiate line
-        if(Vector2.Distance (player_pos, randomPoint) > 1.0f)
+        if (Time.timeScale == 0)
         {
-            Instantiate(enemies[r], randomPoint, transform.rotation);
+
+        }
+        else
+        {
+            int r = Random.Range(0, enemies.Length);
+
+            Vector2 center = new Vector2(1.07f, 0.58f);
+
+            Vector2 randomPoint = center + Random.insideUnitCircle * 4f;
+            
+            //copy paste start and also delete the orignal instantiate line
+            if(Vector2.Distance (player_pos, randomPoint) > 1.0f)
+            {
+                Instantiate(enemies[r], randomPoint, transform.rotation);
+            }
         }
         //copy paste end
     }
@@ -136,22 +149,37 @@ public class spawnerGenerator : MonoBehaviour
 
     void spawnItems()
     {
-        int r = Random.Range(0, items.Length);
+        if(Time.timeScale == 0)
+        {
 
-        Vector2 center = new Vector2(1.07f, 0.58f);
+        }
+        else
+        {
+            int r = Random.Range(0, items.Length);
 
-        Vector2 randomPoint = center + Random.insideUnitCircle * 4f;
-        
-        Instantiate(items[r], randomPoint, transform.rotation);
+            Vector2 center = new Vector2(1.07f, 0.58f);
+
+            Vector2 randomPoint = center + Random.insideUnitCircle * 4f;
+            
+            Instantiate(items[r], randomPoint, transform.rotation);
+        }
     }
 
-    public void spawnImmuneItems() {
-        int r = Random.Range(0, items.Length);
+    public void spawnImmuneItems() 
+    {
+        if (Time.timeScale == 0)
+        {
 
-        Vector2 center = new Vector2(1.07f, 0.58f);
+        }
+        else
+        {
+            int r = Random.Range(0, items.Length);
 
-        Vector2 randomPoint = center + Random.insideUnitCircle * 4f;
+            Vector2 center = new Vector2(1.07f, 0.58f);
 
-        Instantiate(immune_items[r], randomPoint, transform.rotation);
+            Vector2 randomPoint = center + Random.insideUnitCircle * 4f;
+
+            Instantiate(immune_items[r], randomPoint, transform.rotation);
+        }
     }
 }

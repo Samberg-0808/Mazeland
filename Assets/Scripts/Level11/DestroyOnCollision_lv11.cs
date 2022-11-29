@@ -133,10 +133,7 @@ public class DestroyOnCollision_lv11 : MonoBehaviour
             // UnityEngine.Debug.Log("sss");
             if (child != null && child.gameObject.tag == "Enemy")
             {
-                if (ScoreNum > 0)
-                {
-                    child.gameObject.GetComponent<EnemyStatus>().updateColor(ScoreNum);
-                }
+                child.gameObject.GetComponent<EnemyStatus>().updateColor(ScoreNum);
             }
         }
 

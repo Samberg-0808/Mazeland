@@ -126,8 +126,8 @@ public class spawnerGenerator_lv8 : MonoBehaviour
 
         Vector2 randomPoint = center + Random.insideUnitCircle * 4f;
 
-        Instantiate(enemies[r], randomPoint, transform.rotation);
-        if (Vector2.Distance(player_pos, randomPoint) > 1.0f)
+      //  Instantiate(enemies[r], randomPoint, transform.rotation);
+        if (Vector2.Distance(player_pos, randomPoint) > 1.5f) // 1.0f -> 1.5f
         {
             Instantiate(enemies[r], randomPoint, transform.rotation);
         }

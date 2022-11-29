@@ -38,7 +38,8 @@ public class DestroyOnCollision_lv12 : MonoBehaviour
         ["Level3"] = 150,
         ["Level6"] = 200,
         ["Level11"] = 200,
-        ["Level12"] = 200
+        ["Level12"] = 200,
+        ["Level19"] = 200
     };
 
 
@@ -135,10 +136,7 @@ public class DestroyOnCollision_lv12 : MonoBehaviour
             // UnityEngine.Debug.Log("sss");
             if (child != null && child.gameObject.tag == "Enemy")
             {
-                if (ScoreNum > 0)
-                {
-                    child.gameObject.GetComponent<EnemyStatus>().updateColor(ScoreNum);
-                }
+                child.gameObject.GetComponent<EnemyStatus>().updateColor(ScoreNum);
             }
         }
 
